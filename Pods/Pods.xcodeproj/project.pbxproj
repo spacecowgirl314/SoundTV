@@ -1,0 +1,1139 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01DB89B68E34F542B475B1BAF7CDAC61 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90248E9E9DF0BE26D09FC30CF7719568 /* Security.framework */; };
+		0331328225920AA1F55DE5D64C6C9AC1 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC77DC622A94A2D566FFC1CEF2FB907F /* SDWebImageDownloaderOperation.m */; };
+		08980E2E5AF8BC2E5A4693F31490627F /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = BFAC49C191FAC3E0D4CAF5992D4D90A8 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AFC16170EB35395AEA5DF970511DEE2 /* SoundCloud-Cocoa-API-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC40810D06E45DB1499364DF1464F1DF /* SoundCloud-Cocoa-API-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BB349A45CDF2667B6118BDC71582CAF /* NXOAuth2FileStreamWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F60578ADEA3AC51B8CF176AAFC924 /* NXOAuth2FileStreamWrapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0FBCD6F6AB46D38B4717A2AC2C4A2A46 /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A1CBD5B1326E358C9569A1FED4C78C /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FDFAE0CB8D350AC9A15277C1B8E5FD0 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C6E849CD9E463EE74DF5F6847F0520 /* SDImageCache.m */; };
+		105E801E1E2C956F315FD4956CBD56A2 /* SCAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 14989A963890D93FDE2627E86DFD5B88 /* SCAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1110074A8E911359E90666CEA2AEA02D /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D49309D5717FE77C51FA820217F7EA8D /* UIImageView+HighlightedWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11521A50FE1E434B82641618B839A454 /* NXOAuth2Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058A3C425798D0AB042C1566EF46B99 /* NXOAuth2Account.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		126287003CD39162D354401AD6086884 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F8F2194D080253ACA66CA67F370E7F /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13EA1D291ABE268AA7A0F3F524F5AA53 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE6EAFD0E82C68C98A1B68D4FCE29F4 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		140A9794584550151C86515B119436C3 /* NXOAuth2Client-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9CF7C4A9C1667D1B22797D89B333AB /* NXOAuth2Client-dummy.m */; };
+		14C2B06470A7E559E6F6B26CE012C53F /* NXOAuth2Account.h in Headers */ = {isa = PBXBuildFile; fileRef = A15C496F08A16AC7EC125C2309DA83FF /* NXOAuth2Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		159CC350451C7CAA9BC7FC262BB2A3C4 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6DE3C2FED492368607848D6D7B6347 /* SDWebImageDownloader.m */; };
+		15FBB69D9A782C0890FA35B6AF858915 /* SCSoundCloud+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8BC59563C6FD31FE77524ED4C4CA4E /* SCSoundCloud+Private.m */; };
+		21BCBE22229229695AF95BF086547128 /* SCSoundCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB58818D5A4AE51B2D331D30811B311 /* SCSoundCloud.m */; };
+		2476307294B7666FBBDA9D092A9DD0B6 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B5C2266482315487B8896122D053B8 /* UIButton+WebCache.m */; };
+		2911F8596E5E0E65F156D39424F39AA3 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5ABD49DF66FC0439B666D5538F122 /* SDWebImagePrefetcher.m */; };
+		29ED7D2C090D5C23B36E7DE38F86A514 /* Pods-Soundcloud TV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA897424B214B30D63B0440D1D9830 /* Pods-Soundcloud TV-dummy.m */; };
+		2C3C23AA8B51A9A0B7189313DD4EC757 /* SoundCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = F680897FF1BBE5A88637060AFC7712E3 /* SoundCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CFE66826135DC62616FC2C96182A8E9 /* NXOAuth2ConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = FE41B073AC5FE2E2552E3508F0E28FEB /* NXOAuth2ConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35F15461C420361B41DDA9E5BFB7C7D0 /* NSURL+NXOAuth2.h in Headers */ = {isa = PBXBuildFile; fileRef = A2930F9D4F791822CCBB3F468F044F08 /* NSURL+NXOAuth2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39F209EE06587B638FB580527DFC94D4 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B830782E1CF59A636A4A87EB30A2D68 /* UIImage+GIF.m */; };
+		3ABA0947DED9CE3B16B1E98987D04B4D /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 725498FBB1380016541EFE730F7FF882 /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E879D0799411E50BB9E586562E31C82 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C8BD5F87E42CE875F2875B678B3B5E /* SDWebImageCompat.m */; };
+		40E6F28806739D39C4430CF26310FA92 /* NXOAuth2Client-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0ADBD614C34276DCFBF00945B4E096C /* NXOAuth2Client-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		429F79684CAB56AEA1EC6D7F159DB02E /* NXOAuth2Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E7CE83F81CB9C2064B59B1C545568 /* NXOAuth2Connection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		45754D06CAE620677911595A6CD8B33C /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 31D4A115E526F5C9C43A345AC5E274EA /* SDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		512BDCAB2B7B0193FABD208BED97A925 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539992AF413A3E310CD3229232D62E45 /* Foundation.framework */; };
+		5818157A760082AD87FF8B0C740320BF /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = F23E4357CFA366CD8E832185C2218969 /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59172CF415165ABC95F039B4EB083405 /* NXOAuth2.h in Headers */ = {isa = PBXBuildFile; fileRef = 676E4FAE9BAD99BE104387B55D82B21D /* NXOAuth2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EFF69210C884EC164764E8328D31043 /* NXOAuth2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 478428495626FF8790B22C633BAD06EB /* NXOAuth2Request.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6557514A8346D996BE0A999A2B6F4018 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = BF22043D249CCF2AB158A45DA1FD6220 /* UIImage+MultiFormat.m */; };
+		6597C79C582D31F465A114E0BBD6B1CF /* NXOAuth2Connection.h in Headers */ = {isa = PBXBuildFile; fileRef = 587876F9D1C31484E96226FF7AE391AC /* NXOAuth2Connection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A2BBA082B1BEDC1E4BFE0678F31E725 /* NXOAuth2PostBodyStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C92A9DFB0B0700C784CFB755C204FB1 /* NXOAuth2PostBodyStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BAFC68DBA294CE6236A7FC659444765 /* NXOAuth2Request.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F0B0C72D44495104119329A98F04EE /* NXOAuth2Request.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA2E6314185BDCDE247F3DE7AA432E3 /* NXOAuth2AccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC2DA5991037153127782E52171B457 /* NXOAuth2AccessToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D8F789EB17F4D7263FF92D178591BF7 /* NXOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF988DEC6C8E505F589B2EF24973564 /* NXOAuth2Client.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		71B589CEDEF79230CBD07E7DF982488E /* NXOAuth2AccountStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 089E4CC32C43D491871D8F01FBC218DD /* NXOAuth2AccountStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71E4E230EDA183FF7FB6C1C3DBA59592 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D73696FC22D9D690E769D64F0E173535 /* UIImageView+WebCache.m */; };
+		73562C60C919907A885C2D75C9E2F4EE /* NSData+NXOAuth2.h in Headers */ = {isa = PBXBuildFile; fileRef = F976A372FCF64F93191BE014AB82267B /* NSData+NXOAuth2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7832A2E89580F282D50C02EF901490E8 /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = F2ABE48D3B858689F8F2ABDD056D4E8E /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78E316721496A8B9795AD88864770768 /* NXOAuth2Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B60DEA3B56F43218E8E48B06A3ADEAA /* NXOAuth2Constants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7B1E4307E6489C1CFE81EFEAB3682DC4 /* NXOAuth2PostBodyStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3422F00DCEBC8FF5B9A5712C5F472195 /* NXOAuth2PostBodyStream.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7E060C98C5C6DBF4F302282FBD5F51A2 /* NXOAuth2Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF13C9D9B5C3D4C8C9340B07CDD7DBD /* NXOAuth2Client.framework */; };
+		81277D11E9BCBF550BE5EECF41A3728D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539992AF413A3E310CD3229232D62E45 /* Foundation.framework */; };
+		829704CB70966CF4938D760F029EEC8C /* SCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581EB0E75AFDB0AD85CCEA27A06D197 /* SCRequest.m */; };
+		853A28CB05D38DD1402E88BC66F1F8D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539992AF413A3E310CD3229232D62E45 /* Foundation.framework */; };
+		864F0F0E018E5CC3684E6D128A03080F /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96197275214501E7258099920ADCEB0A /* SDWebImage-dummy.m */; };
+		89BD2B7AFF256DB0D351DD29F2CC57A4 /* SCAccount+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F67D274AC4F2432A794D1CD05AD27B /* SCAccount+Private.m */; };
+		8B07734913ABE3F1FF392422C4647BDC /* SCConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A14E51DCE0368A9E7EA3DE4574C187 /* SCConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E37884407F4A7A24FE88C1E521F7DFA /* SDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = D20A0E015DA47ECB5CE8F950493BAF73 /* SDWebImageDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		914ED8D676B95CAA8E2F3B0AD0FD6906 /* SCAccount+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 457A16416CE8A6737D1862FA6C45E3EC /* SCAccount+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		928FFC8203928AA2EFA54A8893EE5104 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 12455AC04A011D49C9EE67F2CDA8C0CD /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D935EBD8245273BC581667FE093DE3D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90248E9E9DF0BE26D09FC30CF7719568 /* Security.framework */; };
+		A2592B301C5A299FEEEE466059DF95EC /* NXOAuth2PostBodyPart.m in Sources */ = {isa = PBXBuildFile; fileRef = F316656B8D3D4E710CCA0AA4B7BF0CA3 /* NXOAuth2PostBodyPart.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A2E5B529B7A9284E33CEB2508A5355FB /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 04A5BD25992210642C552BDC805EB414 /* UIImage+MultiFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3F513DE0F3CCABB3C1E735C684D6B41 /* SCSoundCloud+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 757E15BCF2C3F6C6617A43778C5EB443 /* SCSoundCloud+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A539B2F09EFBD16518F2D2AE18188888 /* NSString+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F745FF99CE16CB743D83909E3DDEBD /* NSString+NXOAuth2.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AC38FE20B9565C10AB5459EECD3B55CA /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A22981F63F3961B14A34B0193449927 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE7FB81A1627604AE05F51425B1A0636 /* NSString+NXOAuth2.h in Headers */ = {isa = PBXBuildFile; fileRef = CFC25CEB3EF9F168EF81EE41D6F6BD55 /* NSString+NXOAuth2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AED0A31CEC8631CA77959C7ED46958B2 /* SCRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFF19A60E84BFFB9B6EA26B101A20D7 /* SCRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B131CA0F11D0BD82704562E9B9F5452A /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = C65F632811C32D3D8C6C726F250F2DCB /* NSURL+NXOAuth2.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B22E57F5F4682350A27710CA6C690FF0 /* NXOAuth2FileStreamWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B29930397539981989A1CD98785983D /* NXOAuth2FileStreamWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B548C2C7DFC9AEA30F5555489BAB9324 /* Pods-Soundcloud TV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 147685FE92CB6E2A7BC3F980C9117A89 /* Pods-Soundcloud TV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5A3BC1486DB6EDECC921839BE074997 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2EBFAF4091C0C93E0255F7953C0F83 /* SDWebImageDecoder.m */; };
+		BA952F44A66AD38993997B5F64C6249B /* NXOAuth2PostBodyPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 92761E75C0D2F2E5B6D32193A64585AF /* NXOAuth2PostBodyPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAD2F089471A9E237A9D81C515E8FE4F /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1B5F755D5233F4AE2FA72B0798F610 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD09B1CC8E0ADE8A93AFFE14D3B755EA /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CA17ED8559113B8B163C87C9D72B9B03 /* UIView+WebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDC7C7ABA4FD4B5EB79DF909AE00779B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539992AF413A3E310CD3229232D62E45 /* Foundation.framework */; };
+		BF728827E8D5690197FC6BB98C3F80B1 /* NXOAuth2TrustDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AB1E18E92D2D2B2C0A5D9CE194BBF0 /* NXOAuth2TrustDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C132A0F04F72B2360DDB81B1C710C315 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 899DD62CCF5ECB8107BF03A4F0FBC4D5 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C17CAA4E8B6E2D0BAE40B37979AF8F59 /* SoundCloud-Cocoa-API-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64E57F36835986A872156E3642B515 /* SoundCloud-Cocoa-API-dummy.m */; };
+		C7AA78CF460A7238366DF46E284C29BC /* NXOAuth2Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = FC14227BDC437A2A1BECFF8E91F333CA /* NXOAuth2Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB5DD8A63843BA9C238FCF7A3F074A5F /* NXOAuth2AccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D320A06D8B6EBF9DDFFCEB31A3FFC71F /* NXOAuth2AccessToken.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CC1DC07BEA6F5C27CBB995A84ACABE8B /* SCAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = C20F2BE64521832286731A83A11A17F6 /* SCAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC306318A2B7696167C988D36AD1D9A7 /* SCAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4314598B49DDC4CE508AAC07DC3C9 /* SCAccount.m */; };
+		CE6CA658FAC818E971F4DC8E932C3560 /* SoundCloud-Cocoa-API.h in Headers */ = {isa = PBXBuildFile; fileRef = FA298AE0804797124DE094C0533821B3 /* SoundCloud-Cocoa-API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF914147E88CE44FE88E099EB2542E0B /* NXOAuth2Account+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E3FB9BD43349054AC808A9DC8880E57 /* NXOAuth2Account+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFFB99D8E346C0D8FC94261CD9C369EF /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A6BA97C19834677804D0F775A2AE94 /* SDWebImageManager.m */; };
+		D7C7576DE4CB29413C788537BA3E32FB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40D4670058A96541C0DE8E2754E3252 /* ImageIO.framework */; };
+		DAA457239E5CB0C6828BDA95040045A4 /* NXOAuth2Client.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE14FF1F620622BA512C90F59C8382A /* NXOAuth2Client.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAA9D57F3564D59291FB91CE8850069E /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0817E606588C7803AB6A21C37BD03E /* UIView+WebCacheOperation.m */; };
+		DC652665E41ABB08E40C95FA77BE6C26 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BBA7771305E53D2D21E307CF046E9 /* UIImageView+HighlightedWebCache.m */; };
+		E1C50BE919472D8BF2F9DA04F1562A97 /* NXOAuth2AccountStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D37B1188F5EF39C23E579FA444FEE5 /* NXOAuth2AccountStore.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E4CBB985511E401E4830F54D5BAA910B /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = B91FCDD546E52B571C4139EDCE586E11 /* NSData+ImageContentType.m */; };
+		E527604DBBCBD0021C22E68BEEEEB063 /* SCSoundCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4D1A963C2BEC8EFED0CD1C420D9306 /* SCSoundCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F68881702D965F0F37A3495D19053EAA /* SCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EC552F11FDC848AD432CC438008C77C0 /* SCConstants.m */; };
+		F7F5FCC0CD22997D8ECC2E100AC2FBB1 /* NSData+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC3FB832DE726A5C8F4D316EFFC6E88 /* NSData+NXOAuth2.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FA393649C8041C1CEE8288D1815C45C3 /* NXOAuth2ClientDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C663BDD4A1624455FC468F43D381FFF /* NXOAuth2ClientDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FEA1ECDBCEFBC60A88C5B9BB122F435 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E2060A6AE6C46CDA0BA36F24FF908FC;
+			remoteInfo = NXOAuth2Client;
+		};
+		560F28ECD44335D4CF3561C756F49CEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E2060A6AE6C46CDA0BA36F24FF908FC;
+			remoteInfo = NXOAuth2Client;
+		};
+		B060834E08F427F493602573A0036BD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF9A07E5762719726E32997C90972DB5;
+			remoteInfo = SDWebImage;
+		};
+		C93CCB6ADEC38343B07082252C87C25F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E876C8B6C8650FDBC0C4AC757ECA415D;
+			remoteInfo = "SoundCloud-Cocoa-API";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04A5BD25992210642C552BDC805EB414 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		06F0B0C72D44495104119329A98F04EE /* NXOAuth2Request.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Request.h; path = Sources/OAuth2Client/NXOAuth2Request.h; sourceTree = "<group>"; };
+		07B5C2266482315487B8896122D053B8 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
+		089E4CC32C43D491871D8F01FBC218DD /* NXOAuth2AccountStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2AccountStore.h; path = Sources/OAuth2Client/NXOAuth2AccountStore.h; sourceTree = "<group>"; };
+		12455AC04A011D49C9EE67F2CDA8C0CD /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
+		147685FE92CB6E2A7BC3F980C9117A89 /* Pods-Soundcloud TV-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Soundcloud TV-umbrella.h"; sourceTree = "<group>"; };
+		14989A963890D93FDE2627E86DFD5B88 /* SCAccount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SCAccount.h; sourceTree = "<group>"; };
+		151FE3FEAA0DA2CF267C016459F7BF1F /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1581EB0E75AFDB0AD85CCEA27A06D197 /* SCRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SCRequest.m; sourceTree = "<group>"; };
+		1CA4314598B49DDC4CE508AAC07DC3C9 /* SCAccount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SCAccount.m; sourceTree = "<group>"; };
+		1CFF19A60E84BFFB9B6EA26B101A20D7 /* SCRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SCRequest.h; sourceTree = "<group>"; };
+		1D0817E606588C7803AB6A21C37BD03E /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		1DD5ABD49DF66FC0439B666D5538F122 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		1E4D1A963C2BEC8EFED0CD1C420D9306 /* SCSoundCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SCSoundCloud.h; sourceTree = "<group>"; };
+		1F64E57F36835986A872156E3642B515 /* SoundCloud-Cocoa-API-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SoundCloud-Cocoa-API-dummy.m"; sourceTree = "<group>"; };
+		21B5D1F42339023CFC73782FB2B29269 /* SoundCloud-Cocoa-API.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SoundCloud-Cocoa-API.modulemap"; sourceTree = "<group>"; };
+		22C6E849CD9E463EE74DF5F6847F0520 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
+		230D434EFA19EAF6D4EFC3F1B9ECE596 /* Pods-Soundcloud TV-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Soundcloud TV-acknowledgements.markdown"; sourceTree = "<group>"; };
+		23EDEEB2A5DE9EEE6BE88001052DDA7F /* Pods-Soundcloud TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Soundcloud TV.release.xcconfig"; sourceTree = "<group>"; };
+		24FDB10904A1D612848C3F1AD5987D68 /* Pods-Soundcloud TV.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Soundcloud TV.modulemap"; sourceTree = "<group>"; };
+		27F8F2194D080253ACA66CA67F370E7F /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		284C4F112C55DD63E03FFCC569B7E95F /* Pods_Soundcloud_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundcloud_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC3FB832DE726A5C8F4D316EFFC6E88 /* NSData+NXOAuth2.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+NXOAuth2.m"; path = "Sources/NSData+NXOAuth2.m"; sourceTree = "<group>"; };
+		2C92A9DFB0B0700C784CFB755C204FB1 /* NXOAuth2PostBodyStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2PostBodyStream.h; path = Sources/OAuth2Client/NXOAuth2PostBodyStream.h; sourceTree = "<group>"; };
+		2E3FB9BD43349054AC808A9DC8880E57 /* NXOAuth2Account+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NXOAuth2Account+Private.h"; sourceTree = "<group>"; };
+		31D4A115E526F5C9C43A345AC5E274EA /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
+		3422F00DCEBC8FF5B9A5712C5F472195 /* NXOAuth2PostBodyStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2PostBodyStream.m; path = Sources/OAuth2Client/NXOAuth2PostBodyStream.m; sourceTree = "<group>"; };
+		39F67D274AC4F2432A794D1CD05AD27B /* SCAccount+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCAccount+Private.m"; sourceTree = "<group>"; };
+		3A7EC3CA8B78B5128B136235D06C4851 /* Pods-Soundcloud TV-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Soundcloud TV-frameworks.sh"; sourceTree = "<group>"; };
+		3E9CF7C4A9C1667D1B22797D89B333AB /* NXOAuth2Client-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NXOAuth2Client-dummy.m"; sourceTree = "<group>"; };
+		3F3E7CE83F81CB9C2064B59B1C545568 /* NXOAuth2Connection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Connection.m; path = Sources/OAuth2Client/NXOAuth2Connection.m; sourceTree = "<group>"; };
+		40ABC071B994C75BBCA24EAFC20D1D0F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40F891A9A23FBD48135148DAE772FE38 /* SoundCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SoundCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45003C8BD59FA5DDB57C01DF5165B362 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		457A16416CE8A6737D1862FA6C45E3EC /* SCAccount+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCAccount+Private.h"; sourceTree = "<group>"; };
+		478428495626FF8790B22C633BAD06EB /* NXOAuth2Request.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Request.m; path = Sources/OAuth2Client/NXOAuth2Request.m; sourceTree = "<group>"; };
+		4AB90F1CA7E14E24AC08FFB6567EFEC2 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
+		4B60DEA3B56F43218E8E48B06A3ADEAA /* NXOAuth2Constants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Constants.m; path = Sources/OAuth2Client/NXOAuth2Constants.m; sourceTree = "<group>"; };
+		4BB58818D5A4AE51B2D331D30811B311 /* SCSoundCloud.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SCSoundCloud.m; sourceTree = "<group>"; };
+		5058A3C425798D0AB042C1566EF46B99 /* NXOAuth2Account.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Account.m; path = Sources/OAuth2Client/NXOAuth2Account.m; sourceTree = "<group>"; };
+		50BF1841B6B5DA814BDD620E5B503EA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		539992AF413A3E310CD3229232D62E45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		587876F9D1C31484E96226FF7AE391AC /* NXOAuth2Connection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Connection.h; path = Sources/OAuth2Client/NXOAuth2Connection.h; sourceTree = "<group>"; };
+		5BF988DEC6C8E505F589B2EF24973564 /* NXOAuth2Client.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Client.m; path = Sources/OAuth2Client/NXOAuth2Client.m; sourceTree = "<group>"; };
+		5F9D5DFE2B98A8073C9200A4E357A084 /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
+		5FC2DA5991037153127782E52171B457 /* NXOAuth2AccessToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2AccessToken.h; path = Sources/OAuth2Client/NXOAuth2AccessToken.h; sourceTree = "<group>"; };
+		60A6BA97C19834677804D0F775A2AE94 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
+		63FA897424B214B30D63B0440D1D9830 /* Pods-Soundcloud TV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Soundcloud TV-dummy.m"; sourceTree = "<group>"; };
+		65A1CBD5B1326E358C9569A1FED4C78C /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
+		676E4FAE9BAD99BE104387B55D82B21D /* NXOAuth2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2.h; path = Sources/OAuth2Client/NXOAuth2.h; sourceTree = "<group>"; };
+		6B29930397539981989A1CD98785983D /* NXOAuth2FileStreamWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2FileStreamWrapper.h; path = Sources/OAuth2Client/NXOAuth2FileStreamWrapper.h; sourceTree = "<group>"; };
+		6B830782E1CF59A636A4A87EB30A2D68 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
+		6E4BBA7771305E53D2D21E307CF046E9 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		725498FBB1380016541EFE730F7FF882 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		757E15BCF2C3F6C6617A43778C5EB443 /* SCSoundCloud+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCSoundCloud+Private.h"; sourceTree = "<group>"; };
+		7EE14FF1F620622BA512C90F59C8382A /* NXOAuth2Client.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Client.h; path = Sources/OAuth2Client/NXOAuth2Client.h; sourceTree = "<group>"; };
+		816046CE1756138B28F62701CE144AF8 /* Pods-Soundcloud TV-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Soundcloud TV-acknowledgements.plist"; sourceTree = "<group>"; };
+		850D46128CD2CDD9556DA0FBD5C5A65A /* NXOAuth2Client.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NXOAuth2Client.xcconfig; sourceTree = "<group>"; };
+		899DD62CCF5ECB8107BF03A4F0FBC4D5 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
+		8A22981F63F3961B14A34B0193449927 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
+		8C0A26E21ED354722046195AA9B4D7AD /* Pods-Soundcloud TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Soundcloud TV.debug.xcconfig"; sourceTree = "<group>"; };
+		90248E9E9DF0BE26D09FC30CF7719568 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		91A14E51DCE0368A9E7EA3DE4574C187 /* SCConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SCConstants.h; sourceTree = "<group>"; };
+		92761E75C0D2F2E5B6D32193A64585AF /* NXOAuth2PostBodyPart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2PostBodyPart.h; path = Sources/OAuth2Client/NXOAuth2PostBodyPart.h; sourceTree = "<group>"; };
+		96197275214501E7258099920ADCEB0A /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
+		98BBA9BDE6DFAED638A55512FFBA6DD1 /* Pods-Soundcloud TV-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Soundcloud TV-resources.sh"; sourceTree = "<group>"; };
+		9C663BDD4A1624455FC468F43D381FFF /* NXOAuth2ClientDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2ClientDelegate.h; path = Sources/OAuth2Client/NXOAuth2ClientDelegate.h; sourceTree = "<group>"; };
+		A15C496F08A16AC7EC125C2309DA83FF /* NXOAuth2Account.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Account.h; path = Sources/OAuth2Client/NXOAuth2Account.h; sourceTree = "<group>"; };
+		A2930F9D4F791822CCBB3F468F044F08 /* NSURL+NXOAuth2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+NXOAuth2.h"; path = "Sources/NSURL+NXOAuth2.h"; sourceTree = "<group>"; };
+		A3056103B8644BA41EF463D14B5686D4 /* NXOAuth2Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NXOAuth2Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A589224A5CF90FB7391B80B4B7C42CD5 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
+		A6AB1E18E92D2D2B2C0A5D9CE194BBF0 /* NXOAuth2TrustDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2TrustDelegate.h; path = Sources/OAuth2Client/NXOAuth2TrustDelegate.h; sourceTree = "<group>"; };
+		ABE6EAFD0E82C68C98A1B68D4FCE29F4 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		B0ADBD614C34276DCFBF00945B4E096C /* NXOAuth2Client-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NXOAuth2Client-umbrella.h"; sourceTree = "<group>"; };
+		B91FCDD546E52B571C4139EDCE586E11 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC77DC622A94A2D566FFC1CEF2FB907F /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		BE2EBFAF4091C0C93E0255F7953C0F83 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = SDWebImage/SDWebImageDecoder.m; sourceTree = "<group>"; };
+		BE9F60578ADEA3AC51B8CF176AAFC924 /* NXOAuth2FileStreamWrapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2FileStreamWrapper.m; path = Sources/OAuth2Client/NXOAuth2FileStreamWrapper.m; sourceTree = "<group>"; };
+		BF22043D249CCF2AB158A45DA1FD6220 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		BF56D6D3DCB9B02B42E09509DF014E7C /* SoundCloud-Cocoa-API-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundCloud-Cocoa-API-prefix.pch"; sourceTree = "<group>"; };
+		BFAC49C191FAC3E0D4CAF5992D4D90A8 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
+		C20F2BE64521832286731A83A11A17F6 /* SCAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SCAPI.h; sourceTree = "<group>"; };
+		C24556F1CCFF67628C4CCA9B6D385BC7 /* NXOAuth2Client-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NXOAuth2Client-prefix.pch"; sourceTree = "<group>"; };
+		C2C8BD5F87E42CE875F2875B678B3B5E /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
+		C40D4670058A96541C0DE8E2754E3252 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		C65F632811C32D3D8C6C726F250F2DCB /* NSURL+NXOAuth2.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+NXOAuth2.m"; path = "Sources/NSURL+NXOAuth2.m"; sourceTree = "<group>"; };
+		C96E9E2E14D81C7A342E42DE13BDCAC4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA17ED8559113B8B163C87C9D72B9B03 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		CD8BC59563C6FD31FE77524ED4C4CA4E /* SCSoundCloud+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCSoundCloud+Private.m"; sourceTree = "<group>"; };
+		CE1B5F755D5233F4AE2FA72B0798F610 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		CFC25CEB3EF9F168EF81EE41D6F6BD55 /* NSString+NXOAuth2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+NXOAuth2.h"; path = "Sources/NSString+NXOAuth2.h"; sourceTree = "<group>"; };
+		D20A0E015DA47ECB5CE8F950493BAF73 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
+		D320A06D8B6EBF9DDFFCEB31A3FFC71F /* NXOAuth2AccessToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2AccessToken.m; path = Sources/OAuth2Client/NXOAuth2AccessToken.m; sourceTree = "<group>"; };
+		D49309D5717FE77C51FA820217F7EA8D /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		D73696FC22D9D690E769D64F0E173535 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		EA6DE3C2FED492368607848D6D7B6347 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
+		EC40810D06E45DB1499364DF1464F1DF /* SoundCloud-Cocoa-API-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundCloud-Cocoa-API-umbrella.h"; sourceTree = "<group>"; };
+		EC552F11FDC848AD432CC438008C77C0 /* SCConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SCConstants.m; sourceTree = "<group>"; };
+		F23E4357CFA366CD8E832185C2218969 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
+		F2ABE48D3B858689F8F2ABDD056D4E8E /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
+		F316656B8D3D4E710CCA0AA4B7BF0CA3 /* NXOAuth2PostBodyPart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2PostBodyPart.m; path = Sources/OAuth2Client/NXOAuth2PostBodyPart.m; sourceTree = "<group>"; };
+		F4F745FF99CE16CB743D83909E3DDEBD /* NSString+NXOAuth2.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+NXOAuth2.m"; path = "Sources/NSString+NXOAuth2.m"; sourceTree = "<group>"; };
+		F680897FF1BBE5A88637060AFC7712E3 /* SoundCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SoundCloud.h; sourceTree = "<group>"; };
+		F85B4AA5DF08552A71BA63A924960662 /* SoundCloud-Cocoa-API.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SoundCloud-Cocoa-API.xcconfig"; sourceTree = "<group>"; };
+		F976A372FCF64F93191BE014AB82267B /* NSData+NXOAuth2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+NXOAuth2.h"; path = "Sources/NSData+NXOAuth2.h"; sourceTree = "<group>"; };
+		F9D37B1188F5EF39C23E579FA444FEE5 /* NXOAuth2AccountStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2AccountStore.m; path = Sources/OAuth2Client/NXOAuth2AccountStore.m; sourceTree = "<group>"; };
+		FA298AE0804797124DE094C0533821B3 /* SoundCloud-Cocoa-API.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundCloud-Cocoa-API.h"; sourceTree = "<group>"; };
+		FAF13C9D9B5C3D4C8C9340B07CDD7DBD /* NXOAuth2Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NXOAuth2Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC14227BDC437A2A1BECFF8E91F333CA /* NXOAuth2Constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Constants.h; path = Sources/OAuth2Client/NXOAuth2Constants.h; sourceTree = "<group>"; };
+		FCAF1D7EEADD30221D0C53B92095B718 /* NXOAuth2Client.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NXOAuth2Client.modulemap; sourceTree = "<group>"; };
+		FE41B073AC5FE2E2552E3508F0E28FEB /* NXOAuth2ConnectionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NXOAuth2ConnectionDelegate.h; path = Sources/OAuth2Client/NXOAuth2ConnectionDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A775F638DAA15E356B5375E4B45B883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				853A28CB05D38DD1402E88BC66F1F8D4 /* Foundation.framework in Frameworks */,
+				D7C7576DE4CB29413C788537BA3E32FB /* ImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49EDDF0B318DD7718A00068900DC420B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81277D11E9BCBF550BE5EECF41A3728D /* Foundation.framework in Frameworks */,
+				7E060C98C5C6DBF4F302282FBD5F51A2 /* NXOAuth2Client.framework in Frameworks */,
+				9D935EBD8245273BC581667FE093DE3D /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D610C570C2F33F4D0DA66A7C985EBE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC7C7ABA4FD4B5EB79DF909AE00779B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9C28D704A1C313A41841DE6838D78FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				512BDCAB2B7B0193FABD208BED97A925 /* Foundation.framework in Frameworks */,
+				01DB89B68E34F542B475B1BAF7CDAC61 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BBA28A5C1C46EEC2FBF5F3387A781B9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ABE6EAFD0E82C68C98A1B68D4FCE29F4 /* NSData+ImageContentType.h */,
+				B91FCDD546E52B571C4139EDCE586E11 /* NSData+ImageContentType.m */,
+				F23E4357CFA366CD8E832185C2218969 /* SDImageCache.h */,
+				22C6E849CD9E463EE74DF5F6847F0520 /* SDImageCache.m */,
+				F2ABE48D3B858689F8F2ABDD056D4E8E /* SDWebImageCompat.h */,
+				C2C8BD5F87E42CE875F2875B678B3B5E /* SDWebImageCompat.m */,
+				D20A0E015DA47ECB5CE8F950493BAF73 /* SDWebImageDecoder.h */,
+				BE2EBFAF4091C0C93E0255F7953C0F83 /* SDWebImageDecoder.m */,
+				12455AC04A011D49C9EE67F2CDA8C0CD /* SDWebImageDownloader.h */,
+				EA6DE3C2FED492368607848D6D7B6347 /* SDWebImageDownloader.m */,
+				27F8F2194D080253ACA66CA67F370E7F /* SDWebImageDownloaderOperation.h */,
+				BC77DC622A94A2D566FFC1CEF2FB907F /* SDWebImageDownloaderOperation.m */,
+				899DD62CCF5ECB8107BF03A4F0FBC4D5 /* SDWebImageManager.h */,
+				60A6BA97C19834677804D0F775A2AE94 /* SDWebImageManager.m */,
+				31D4A115E526F5C9C43A345AC5E274EA /* SDWebImageOperation.h */,
+				CE1B5F755D5233F4AE2FA72B0798F610 /* SDWebImagePrefetcher.h */,
+				1DD5ABD49DF66FC0439B666D5538F122 /* SDWebImagePrefetcher.m */,
+				BFAC49C191FAC3E0D4CAF5992D4D90A8 /* UIButton+WebCache.h */,
+				07B5C2266482315487B8896122D053B8 /* UIButton+WebCache.m */,
+				8A22981F63F3961B14A34B0193449927 /* UIImage+GIF.h */,
+				6B830782E1CF59A636A4A87EB30A2D68 /* UIImage+GIF.m */,
+				04A5BD25992210642C552BDC805EB414 /* UIImage+MultiFormat.h */,
+				BF22043D249CCF2AB158A45DA1FD6220 /* UIImage+MultiFormat.m */,
+				D49309D5717FE77C51FA820217F7EA8D /* UIImageView+HighlightedWebCache.h */,
+				6E4BBA7771305E53D2D21E307CF046E9 /* UIImageView+HighlightedWebCache.m */,
+				725498FBB1380016541EFE730F7FF882 /* UIImageView+WebCache.h */,
+				D73696FC22D9D690E769D64F0E173535 /* UIImageView+WebCache.m */,
+				CA17ED8559113B8B163C87C9D72B9B03 /* UIView+WebCacheOperation.h */,
+				1D0817E606588C7803AB6A21C37BD03E /* UIView+WebCacheOperation.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		20237F937DF287F93E62F548886D3D2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3056103B8644BA41EF463D14B5686D4 /* NXOAuth2Client.framework */,
+				284C4F112C55DD63E03FFCC569B7E95F /* Pods_Soundcloud_TV.framework */,
+				151FE3FEAA0DA2CF267C016459F7BF1F /* SDWebImage.framework */,
+				40F891A9A23FBD48135148DAE772FE38 /* SoundCloud.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23CEBF00AA2591685E3E174539989868 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF13C9D9B5C3D4C8C9340B07CDD7DBD /* NXOAuth2Client.framework */,
+				5883BB3999ED1B6B33FF486441BA0572 /* tvOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38A9724EA5002591148ACD008034DCB1 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CB0399269549242B40809B18C6236B2 /* SoundCloud-Cocoa-API */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3EC1A6E60ED16D9F2BDE2EE97302D2BE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				50BF1841B6B5DA814BDD620E5B503EA0 /* Info.plist */,
+				FCAF1D7EEADD30221D0C53B92095B718 /* NXOAuth2Client.modulemap */,
+				850D46128CD2CDD9556DA0FBD5C5A65A /* NXOAuth2Client.xcconfig */,
+				3E9CF7C4A9C1667D1B22797D89B333AB /* NXOAuth2Client-dummy.m */,
+				C24556F1CCFF67628C4CCA9B6D385BC7 /* NXOAuth2Client-prefix.pch */,
+				B0ADBD614C34276DCFBF00945B4E096C /* NXOAuth2Client-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NXOAuth2Client";
+			sourceTree = "<group>";
+		};
+		56F0D2CCB812396B6D103347E2F7B3B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89CE83FB15AE1D658081DE155A5B28DA /* NXOAuth2Client */,
+				DF50427599AFE5075208F319EB123EEF /* SDWebImage */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5883BB3999ED1B6B33FF486441BA0572 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				539992AF413A3E310CD3229232D62E45 /* Foundation.framework */,
+				C40D4670058A96541C0DE8E2754E3252 /* ImageIO.framework */,
+				90248E9E9DF0BE26D09FC30CF7719568 /* Security.framework */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		6845553B3EBD0393F6B523C2E3873943 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C96E9E2E14D81C7A342E42DE13BDCAC4 /* Info.plist */,
+				5F9D5DFE2B98A8073C9200A4E357A084 /* SDWebImage.modulemap */,
+				A589224A5CF90FB7391B80B4B7C42CD5 /* SDWebImage.xcconfig */,
+				96197275214501E7258099920ADCEB0A /* SDWebImage-dummy.m */,
+				4AB90F1CA7E14E24AC08FFB6567EFEC2 /* SDWebImage-prefix.pch */,
+				65A1CBD5B1326E358C9569A1FED4C78C /* SDWebImage-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SDWebImage";
+			sourceTree = "<group>";
+		};
+		743904A3923FBAE2CA0F4DACA6A8191E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C668D5F6F822088A4CB77B961381B5AF /* Pods-Soundcloud TV */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				38A9724EA5002591148ACD008034DCB1 /* Development Pods */,
+				23CEBF00AA2591685E3E174539989868 /* Frameworks */,
+				56F0D2CCB812396B6D103347E2F7B3B8 /* Pods */,
+				20237F937DF287F93E62F548886D3D2F /* Products */,
+				743904A3923FBAE2CA0F4DACA6A8191E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		81F542BB82EC86AF4CBCE2FFCCE465B4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				95EB1A81B59C89A91F5B1760EEF8AED2 /* SoundCloudAPI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		89CE83FB15AE1D658081DE155A5B28DA /* NXOAuth2Client */ = {
+			isa = PBXGroup;
+			children = (
+				F976A372FCF64F93191BE014AB82267B /* NSData+NXOAuth2.h */,
+				2BC3FB832DE726A5C8F4D316EFFC6E88 /* NSData+NXOAuth2.m */,
+				CFC25CEB3EF9F168EF81EE41D6F6BD55 /* NSString+NXOAuth2.h */,
+				F4F745FF99CE16CB743D83909E3DDEBD /* NSString+NXOAuth2.m */,
+				A2930F9D4F791822CCBB3F468F044F08 /* NSURL+NXOAuth2.h */,
+				C65F632811C32D3D8C6C726F250F2DCB /* NSURL+NXOAuth2.m */,
+				676E4FAE9BAD99BE104387B55D82B21D /* NXOAuth2.h */,
+				5FC2DA5991037153127782E52171B457 /* NXOAuth2AccessToken.h */,
+				D320A06D8B6EBF9DDFFCEB31A3FFC71F /* NXOAuth2AccessToken.m */,
+				A15C496F08A16AC7EC125C2309DA83FF /* NXOAuth2Account.h */,
+				5058A3C425798D0AB042C1566EF46B99 /* NXOAuth2Account.m */,
+				2E3FB9BD43349054AC808A9DC8880E57 /* NXOAuth2Account+Private.h */,
+				089E4CC32C43D491871D8F01FBC218DD /* NXOAuth2AccountStore.h */,
+				F9D37B1188F5EF39C23E579FA444FEE5 /* NXOAuth2AccountStore.m */,
+				7EE14FF1F620622BA512C90F59C8382A /* NXOAuth2Client.h */,
+				5BF988DEC6C8E505F589B2EF24973564 /* NXOAuth2Client.m */,
+				9C663BDD4A1624455FC468F43D381FFF /* NXOAuth2ClientDelegate.h */,
+				587876F9D1C31484E96226FF7AE391AC /* NXOAuth2Connection.h */,
+				3F3E7CE83F81CB9C2064B59B1C545568 /* NXOAuth2Connection.m */,
+				FE41B073AC5FE2E2552E3508F0E28FEB /* NXOAuth2ConnectionDelegate.h */,
+				FC14227BDC437A2A1BECFF8E91F333CA /* NXOAuth2Constants.h */,
+				4B60DEA3B56F43218E8E48B06A3ADEAA /* NXOAuth2Constants.m */,
+				6B29930397539981989A1CD98785983D /* NXOAuth2FileStreamWrapper.h */,
+				BE9F60578ADEA3AC51B8CF176AAFC924 /* NXOAuth2FileStreamWrapper.m */,
+				92761E75C0D2F2E5B6D32193A64585AF /* NXOAuth2PostBodyPart.h */,
+				F316656B8D3D4E710CCA0AA4B7BF0CA3 /* NXOAuth2PostBodyPart.m */,
+				2C92A9DFB0B0700C784CFB755C204FB1 /* NXOAuth2PostBodyStream.h */,
+				3422F00DCEBC8FF5B9A5712C5F472195 /* NXOAuth2PostBodyStream.m */,
+				06F0B0C72D44495104119329A98F04EE /* NXOAuth2Request.h */,
+				478428495626FF8790B22C633BAD06EB /* NXOAuth2Request.m */,
+				A6AB1E18E92D2D2B2C0A5D9CE194BBF0 /* NXOAuth2TrustDelegate.h */,
+				3EC1A6E60ED16D9F2BDE2EE97302D2BE /* Support Files */,
+			);
+			path = NXOAuth2Client;
+			sourceTree = "<group>";
+		};
+		8CB0399269549242B40809B18C6236B2 /* SoundCloud-Cocoa-API */ = {
+			isa = PBXGroup;
+			children = (
+				81F542BB82EC86AF4CBCE2FFCCE465B4 /* Sources */,
+				E64B0C92B222BA3E840BEFC0BD944D68 /* Support Files */,
+			);
+			name = "SoundCloud-Cocoa-API";
+			path = "../SoundCloud-Cocoa-API";
+			sourceTree = "<group>";
+		};
+		95EB1A81B59C89A91F5B1760EEF8AED2 /* SoundCloudAPI */ = {
+			isa = PBXGroup;
+			children = (
+				14989A963890D93FDE2627E86DFD5B88 /* SCAccount.h */,
+				1CA4314598B49DDC4CE508AAC07DC3C9 /* SCAccount.m */,
+				457A16416CE8A6737D1862FA6C45E3EC /* SCAccount+Private.h */,
+				39F67D274AC4F2432A794D1CD05AD27B /* SCAccount+Private.m */,
+				C20F2BE64521832286731A83A11A17F6 /* SCAPI.h */,
+				91A14E51DCE0368A9E7EA3DE4574C187 /* SCConstants.h */,
+				EC552F11FDC848AD432CC438008C77C0 /* SCConstants.m */,
+				1CFF19A60E84BFFB9B6EA26B101A20D7 /* SCRequest.h */,
+				1581EB0E75AFDB0AD85CCEA27A06D197 /* SCRequest.m */,
+				1E4D1A963C2BEC8EFED0CD1C420D9306 /* SCSoundCloud.h */,
+				4BB58818D5A4AE51B2D331D30811B311 /* SCSoundCloud.m */,
+				757E15BCF2C3F6C6617A43778C5EB443 /* SCSoundCloud+Private.h */,
+				CD8BC59563C6FD31FE77524ED4C4CA4E /* SCSoundCloud+Private.m */,
+				F680897FF1BBE5A88637060AFC7712E3 /* SoundCloud.h */,
+				FA298AE0804797124DE094C0533821B3 /* SoundCloud-Cocoa-API.h */,
+			);
+			path = SoundCloudAPI;
+			sourceTree = "<group>";
+		};
+		C668D5F6F822088A4CB77B961381B5AF /* Pods-Soundcloud TV */ = {
+			isa = PBXGroup;
+			children = (
+				45003C8BD59FA5DDB57C01DF5165B362 /* Info.plist */,
+				24FDB10904A1D612848C3F1AD5987D68 /* Pods-Soundcloud TV.modulemap */,
+				230D434EFA19EAF6D4EFC3F1B9ECE596 /* Pods-Soundcloud TV-acknowledgements.markdown */,
+				816046CE1756138B28F62701CE144AF8 /* Pods-Soundcloud TV-acknowledgements.plist */,
+				63FA897424B214B30D63B0440D1D9830 /* Pods-Soundcloud TV-dummy.m */,
+				3A7EC3CA8B78B5128B136235D06C4851 /* Pods-Soundcloud TV-frameworks.sh */,
+				98BBA9BDE6DFAED638A55512FFBA6DD1 /* Pods-Soundcloud TV-resources.sh */,
+				147685FE92CB6E2A7BC3F980C9117A89 /* Pods-Soundcloud TV-umbrella.h */,
+				8C0A26E21ED354722046195AA9B4D7AD /* Pods-Soundcloud TV.debug.xcconfig */,
+				23EDEEB2A5DE9EEE6BE88001052DDA7F /* Pods-Soundcloud TV.release.xcconfig */,
+			);
+			name = "Pods-Soundcloud TV";
+			path = "Target Support Files/Pods-Soundcloud TV";
+			sourceTree = "<group>";
+		};
+		DF50427599AFE5075208F319EB123EEF /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				0BBA28A5C1C46EEC2FBF5F3387A781B9 /* Core */,
+				6845553B3EBD0393F6B523C2E3873943 /* Support Files */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		E64B0C92B222BA3E840BEFC0BD944D68 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				40ABC071B994C75BBCA24EAFC20D1D0F /* Info.plist */,
+				21B5D1F42339023CFC73782FB2B29269 /* SoundCloud-Cocoa-API.modulemap */,
+				F85B4AA5DF08552A71BA63A924960662 /* SoundCloud-Cocoa-API.xcconfig */,
+				1F64E57F36835986A872156E3642B515 /* SoundCloud-Cocoa-API-dummy.m */,
+				BF56D6D3DCB9B02B42E09509DF014E7C /* SoundCloud-Cocoa-API-prefix.pch */,
+				EC40810D06E45DB1499364DF1464F1DF /* SoundCloud-Cocoa-API-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Pods/Target Support Files/SoundCloud-Cocoa-API";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		42C46527DCBE943FF88B57AF2E9255C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13EA1D291ABE268AA7A0F3F524F5AA53 /* NSData+ImageContentType.h in Headers */,
+				5818157A760082AD87FF8B0C740320BF /* SDImageCache.h in Headers */,
+				0FBCD6F6AB46D38B4717A2AC2C4A2A46 /* SDWebImage-umbrella.h in Headers */,
+				7832A2E89580F282D50C02EF901490E8 /* SDWebImageCompat.h in Headers */,
+				8E37884407F4A7A24FE88C1E521F7DFA /* SDWebImageDecoder.h in Headers */,
+				928FFC8203928AA2EFA54A8893EE5104 /* SDWebImageDownloader.h in Headers */,
+				126287003CD39162D354401AD6086884 /* SDWebImageDownloaderOperation.h in Headers */,
+				C132A0F04F72B2360DDB81B1C710C315 /* SDWebImageManager.h in Headers */,
+				45754D06CAE620677911595A6CD8B33C /* SDWebImageOperation.h in Headers */,
+				BAD2F089471A9E237A9D81C515E8FE4F /* SDWebImagePrefetcher.h in Headers */,
+				08980E2E5AF8BC2E5A4693F31490627F /* UIButton+WebCache.h in Headers */,
+				AC38FE20B9565C10AB5459EECD3B55CA /* UIImage+GIF.h in Headers */,
+				A2E5B529B7A9284E33CEB2508A5355FB /* UIImage+MultiFormat.h in Headers */,
+				1110074A8E911359E90666CEA2AEA02D /* UIImageView+HighlightedWebCache.h in Headers */,
+				3ABA0947DED9CE3B16B1E98987D04B4D /* UIImageView+WebCache.h in Headers */,
+				BD09B1CC8E0ADE8A93AFFE14D3B755EA /* UIView+WebCacheOperation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BA18F2DC5EF4A812CE11281A4D26A5B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B548C2C7DFC9AEA30F5555489BAB9324 /* Pods-Soundcloud TV-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83FDCD5A7E8C5F2A2878CF6B02CE53C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				914ED8D676B95CAA8E2F3B0AD0FD6906 /* SCAccount+Private.h in Headers */,
+				105E801E1E2C956F315FD4956CBD56A2 /* SCAccount.h in Headers */,
+				CC1DC07BEA6F5C27CBB995A84ACABE8B /* SCAPI.h in Headers */,
+				8B07734913ABE3F1FF392422C4647BDC /* SCConstants.h in Headers */,
+				AED0A31CEC8631CA77959C7ED46958B2 /* SCRequest.h in Headers */,
+				A3F513DE0F3CCABB3C1E735C684D6B41 /* SCSoundCloud+Private.h in Headers */,
+				E527604DBBCBD0021C22E68BEEEEB063 /* SCSoundCloud.h in Headers */,
+				0AFC16170EB35395AEA5DF970511DEE2 /* SoundCloud-Cocoa-API-umbrella.h in Headers */,
+				CE6CA658FAC818E971F4DC8E932C3560 /* SoundCloud-Cocoa-API.h in Headers */,
+				2C3C23AA8B51A9A0B7189313DD4EC757 /* SoundCloud.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF7BBFE5D2C972C657A21825234B4621 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73562C60C919907A885C2D75C9E2F4EE /* NSData+NXOAuth2.h in Headers */,
+				AE7FB81A1627604AE05F51425B1A0636 /* NSString+NXOAuth2.h in Headers */,
+				35F15461C420361B41DDA9E5BFB7C7D0 /* NSURL+NXOAuth2.h in Headers */,
+				59172CF415165ABC95F039B4EB083405 /* NXOAuth2.h in Headers */,
+				6CA2E6314185BDCDE247F3DE7AA432E3 /* NXOAuth2AccessToken.h in Headers */,
+				CF914147E88CE44FE88E099EB2542E0B /* NXOAuth2Account+Private.h in Headers */,
+				14C2B06470A7E559E6F6B26CE012C53F /* NXOAuth2Account.h in Headers */,
+				71B589CEDEF79230CBD07E7DF982488E /* NXOAuth2AccountStore.h in Headers */,
+				40E6F28806739D39C4430CF26310FA92 /* NXOAuth2Client-umbrella.h in Headers */,
+				DAA457239E5CB0C6828BDA95040045A4 /* NXOAuth2Client.h in Headers */,
+				FA393649C8041C1CEE8288D1815C45C3 /* NXOAuth2ClientDelegate.h in Headers */,
+				6597C79C582D31F465A114E0BBD6B1CF /* NXOAuth2Connection.h in Headers */,
+				2CFE66826135DC62616FC2C96182A8E9 /* NXOAuth2ConnectionDelegate.h in Headers */,
+				C7AA78CF460A7238366DF46E284C29BC /* NXOAuth2Constants.h in Headers */,
+				B22E57F5F4682350A27710CA6C690FF0 /* NXOAuth2FileStreamWrapper.h in Headers */,
+				BA952F44A66AD38993997B5F64C6249B /* NXOAuth2PostBodyPart.h in Headers */,
+				6A2BBA082B1BEDC1E4BFE0678F31E725 /* NXOAuth2PostBodyStream.h in Headers */,
+				6BAFC68DBA294CE6236A7FC659444765 /* NXOAuth2Request.h in Headers */,
+				BF728827E8D5690197FC6BB98C3F80B1 /* NXOAuth2TrustDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5E2060A6AE6C46CDA0BA36F24FF908FC /* NXOAuth2Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECB2E068B44B55D41C7CC270B335D7DA /* Build configuration list for PBXNativeTarget "NXOAuth2Client" */;
+			buildPhases = (
+				AD0BA0D73F56AA6FAA080F6BDED47285 /* Sources */,
+				B9C28D704A1C313A41841DE6838D78FE /* Frameworks */,
+				FF7BBFE5D2C972C657A21825234B4621 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NXOAuth2Client;
+			productName = NXOAuth2Client;
+			productReference = A3056103B8644BA41EF463D14B5686D4 /* NXOAuth2Client.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF9A07E5762719726E32997C90972DB5 /* SDWebImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A250C6B71720D43CC4D1FB1603B5E4F8 /* Build configuration list for PBXNativeTarget "SDWebImage" */;
+			buildPhases = (
+				F24AC43DA4AF2B05DECDAB89D3B41C2E /* Sources */,
+				2A775F638DAA15E356B5375E4B45B883 /* Frameworks */,
+				42C46527DCBE943FF88B57AF2E9255C8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDWebImage;
+			productName = SDWebImage;
+			productReference = 151FE3FEAA0DA2CF267C016459F7BF1F /* SDWebImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D39B5C46379BD782C55D811703253919 /* Pods-Soundcloud TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E74FCDC41874AECB63E8B04E2F0A12D /* Build configuration list for PBXNativeTarget "Pods-Soundcloud TV" */;
+			buildPhases = (
+				0DFA7FE810D3C1B20E290E51D4499938 /* Sources */,
+				7D610C570C2F33F4D0DA66A7C985EBE2 /* Frameworks */,
+				7BA18F2DC5EF4A812CE11281A4D26A5B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6897ABE062003F6F3A09EE10DC532D3F /* PBXTargetDependency */,
+				C293173330CDA9BAE358751DE8A3E33A /* PBXTargetDependency */,
+				8D796741A7EDCE15CF59F8C2ED61F1F3 /* PBXTargetDependency */,
+			);
+			name = "Pods-Soundcloud TV";
+			productName = "Pods-Soundcloud TV";
+			productReference = 284C4F112C55DD63E03FFCC569B7E95F /* Pods_Soundcloud_TV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E876C8B6C8650FDBC0C4AC757ECA415D /* SoundCloud-Cocoa-API */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15D195D01CC5DFB9B9A93ABFCC3CF4E1 /* Build configuration list for PBXNativeTarget "SoundCloud-Cocoa-API" */;
+			buildPhases = (
+				2126117D812711B93CA0E4CCC03E27CB /* Sources */,
+				49EDDF0B318DD7718A00068900DC420B /* Frameworks */,
+				83FDCD5A7E8C5F2A2878CF6B02CE53C8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F30DF5553BBC08A372BF2C397257D46 /* PBXTargetDependency */,
+			);
+			name = "SoundCloud-Cocoa-API";
+			productName = "SoundCloud-Cocoa-API";
+			productReference = 40F891A9A23FBD48135148DAE772FE38 /* SoundCloud.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 20237F937DF287F93E62F548886D3D2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E2060A6AE6C46CDA0BA36F24FF908FC /* NXOAuth2Client */,
+				D39B5C46379BD782C55D811703253919 /* Pods-Soundcloud TV */,
+				CF9A07E5762719726E32997C90972DB5 /* SDWebImage */,
+				E876C8B6C8650FDBC0C4AC757ECA415D /* SoundCloud-Cocoa-API */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DFA7FE810D3C1B20E290E51D4499938 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29ED7D2C090D5C23B36E7DE38F86A514 /* Pods-Soundcloud TV-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2126117D812711B93CA0E4CCC03E27CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BD2B7AFF256DB0D351DD29F2CC57A4 /* SCAccount+Private.m in Sources */,
+				CC306318A2B7696167C988D36AD1D9A7 /* SCAccount.m in Sources */,
+				F68881702D965F0F37A3495D19053EAA /* SCConstants.m in Sources */,
+				829704CB70966CF4938D760F029EEC8C /* SCRequest.m in Sources */,
+				15FBB69D9A782C0890FA35B6AF858915 /* SCSoundCloud+Private.m in Sources */,
+				21BCBE22229229695AF95BF086547128 /* SCSoundCloud.m in Sources */,
+				C17CAA4E8B6E2D0BAE40B37979AF8F59 /* SoundCloud-Cocoa-API-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD0BA0D73F56AA6FAA080F6BDED47285 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7F5FCC0CD22997D8ECC2E100AC2FBB1 /* NSData+NXOAuth2.m in Sources */,
+				A539B2F09EFBD16518F2D2AE18188888 /* NSString+NXOAuth2.m in Sources */,
+				B131CA0F11D0BD82704562E9B9F5452A /* NSURL+NXOAuth2.m in Sources */,
+				CB5DD8A63843BA9C238FCF7A3F074A5F /* NXOAuth2AccessToken.m in Sources */,
+				11521A50FE1E434B82641618B839A454 /* NXOAuth2Account.m in Sources */,
+				E1C50BE919472D8BF2F9DA04F1562A97 /* NXOAuth2AccountStore.m in Sources */,
+				140A9794584550151C86515B119436C3 /* NXOAuth2Client-dummy.m in Sources */,
+				6D8F789EB17F4D7263FF92D178591BF7 /* NXOAuth2Client.m in Sources */,
+				429F79684CAB56AEA1EC6D7F159DB02E /* NXOAuth2Connection.m in Sources */,
+				78E316721496A8B9795AD88864770768 /* NXOAuth2Constants.m in Sources */,
+				0BB349A45CDF2667B6118BDC71582CAF /* NXOAuth2FileStreamWrapper.m in Sources */,
+				A2592B301C5A299FEEEE466059DF95EC /* NXOAuth2PostBodyPart.m in Sources */,
+				7B1E4307E6489C1CFE81EFEAB3682DC4 /* NXOAuth2PostBodyStream.m in Sources */,
+				5EFF69210C884EC164764E8328D31043 /* NXOAuth2Request.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F24AC43DA4AF2B05DECDAB89D3B41C2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CBB985511E401E4830F54D5BAA910B /* NSData+ImageContentType.m in Sources */,
+				0FDFAE0CB8D350AC9A15277C1B8E5FD0 /* SDImageCache.m in Sources */,
+				864F0F0E018E5CC3684E6D128A03080F /* SDWebImage-dummy.m in Sources */,
+				3E879D0799411E50BB9E586562E31C82 /* SDWebImageCompat.m in Sources */,
+				B5A3BC1486DB6EDECC921839BE074997 /* SDWebImageDecoder.m in Sources */,
+				159CC350451C7CAA9BC7FC262BB2A3C4 /* SDWebImageDownloader.m in Sources */,
+				0331328225920AA1F55DE5D64C6C9AC1 /* SDWebImageDownloaderOperation.m in Sources */,
+				CFFB99D8E346C0D8FC94261CD9C369EF /* SDWebImageManager.m in Sources */,
+				2911F8596E5E0E65F156D39424F39AA3 /* SDWebImagePrefetcher.m in Sources */,
+				2476307294B7666FBBDA9D092A9DD0B6 /* UIButton+WebCache.m in Sources */,
+				39F209EE06587B638FB580527DFC94D4 /* UIImage+GIF.m in Sources */,
+				6557514A8346D996BE0A999A2B6F4018 /* UIImage+MultiFormat.m in Sources */,
+				DC652665E41ABB08E40C95FA77BE6C26 /* UIImageView+HighlightedWebCache.m in Sources */,
+				71E4E230EDA183FF7FB6C1C3DBA59592 /* UIImageView+WebCache.m in Sources */,
+				DAA9D57F3564D59291FB91CE8850069E /* UIView+WebCacheOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F30DF5553BBC08A372BF2C397257D46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NXOAuth2Client;
+			target = 5E2060A6AE6C46CDA0BA36F24FF908FC /* NXOAuth2Client */;
+			targetProxy = 4FEA1ECDBCEFBC60A88C5B9BB122F435 /* PBXContainerItemProxy */;
+		};
+		6897ABE062003F6F3A09EE10DC532D3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NXOAuth2Client;
+			target = 5E2060A6AE6C46CDA0BA36F24FF908FC /* NXOAuth2Client */;
+			targetProxy = 560F28ECD44335D4CF3561C756F49CEF /* PBXContainerItemProxy */;
+		};
+		8D796741A7EDCE15CF59F8C2ED61F1F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SoundCloud-Cocoa-API";
+			target = E876C8B6C8650FDBC0C4AC757ECA415D /* SoundCloud-Cocoa-API */;
+			targetProxy = C93CCB6ADEC38343B07082252C87C25F /* PBXContainerItemProxy */;
+		};
+		C293173330CDA9BAE358751DE8A3E33A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SDWebImage;
+			target = CF9A07E5762719726E32997C90972DB5 /* SDWebImage */;
+			targetProxy = B060834E08F427F493602573A0036BD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		078E524366411E2F07C1B02E3895FAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 850D46128CD2CDD9556DA0FBD5C5A65A /* NXOAuth2Client.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NXOAuth2Client/NXOAuth2Client-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NXOAuth2Client/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NXOAuth2Client/NXOAuth2Client.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = NXOAuth2Client;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		12AEE3E50A190F25397B0F3C2675363F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85B4AA5DF08552A71BA63A924960662 /* SoundCloud-Cocoa-API.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SoundCloud-Cocoa-API/SoundCloud-Cocoa-API-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SoundCloud-Cocoa-API/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SoundCloud-Cocoa-API/SoundCloud-Cocoa-API.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SoundCloud;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		17E0CDE6D64EA3AC1D2C7314FC0CEE0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 850D46128CD2CDD9556DA0FBD5C5A65A /* NXOAuth2Client.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NXOAuth2Client/NXOAuth2Client-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NXOAuth2Client/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NXOAuth2Client/NXOAuth2Client.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = NXOAuth2Client;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		314255690762AFF1CA3DDCB34C702C7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85B4AA5DF08552A71BA63A924960662 /* SoundCloud-Cocoa-API.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SoundCloud-Cocoa-API/SoundCloud-Cocoa-API-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SoundCloud-Cocoa-API/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SoundCloud-Cocoa-API/SoundCloud-Cocoa-API.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SoundCloud;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		413D2D5AAD6E5FF378F606FE48FF0CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A589224A5CF90FB7391B80B4B7C42CD5 /* SDWebImage.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SDWebImage;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		61E9C960176A58563D21517D299990A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		B91F947B5B326DC26F6FB4E4AC7447B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23EDEEB2A5DE9EEE6BE88001052DDA7F /* Pods-Soundcloud TV.release.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Soundcloud TV/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Soundcloud_TV;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C332B185519D08E2641ECF2E00474E29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFA816BC54F0366FFEE114F79AD63B2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C0A26E21ED354722046195AA9B4D7AD /* Pods-Soundcloud TV.debug.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Soundcloud TV/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Soundcloud_TV;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3F177BC285A09589735CDC2B154A2C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A589224A5CF90FB7391B80B4B7C42CD5 /* SDWebImage.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SDWebImage;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15D195D01CC5DFB9B9A93ABFCC3CF4E1 /* Build configuration list for PBXNativeTarget "SoundCloud-Cocoa-API" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				314255690762AFF1CA3DDCB34C702C7E /* Debug */,
+				12AEE3E50A190F25397B0F3C2675363F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E74FCDC41874AECB63E8B04E2F0A12D /* Build configuration list for PBXNativeTarget "Pods-Soundcloud TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFA816BC54F0366FFEE114F79AD63B2C /* Debug */,
+				B91F947B5B326DC26F6FB4E4AC7447B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61E9C960176A58563D21517D299990A4 /* Debug */,
+				C332B185519D08E2641ECF2E00474E29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A250C6B71720D43CC4D1FB1603B5E4F8 /* Build configuration list for PBXNativeTarget "SDWebImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F177BC285A09589735CDC2B154A2C5 /* Debug */,
+				413D2D5AAD6E5FF378F606FE48FF0CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECB2E068B44B55D41C7CC270B335D7DA /* Build configuration list for PBXNativeTarget "NXOAuth2Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17E0CDE6D64EA3AC1D2C7314FC0CEE0D /* Debug */,
+				078E524366411E2F07C1B02E3895FAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

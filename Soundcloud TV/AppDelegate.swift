@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MediaPlayer
+import SoundCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        SCSoundCloud.setClientID(Keys.clientID(), secret: Keys.clientSecret(), redirectURL: NSURL(string: "https://soundcloud.com"))
+        
+        MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.addTargetWithHandler { (event) -> MPRemoteCommandHandlerStatus in
+            SharedAudioPlayer.sharedPlayer().audioPlayer.pause()
+            return .Success
+        }
+        MPRemoteCommandCenter.sharedCommandCenter().playCommand.addTargetWithHandler { (event) -> MPRemoteCommandHandlerStatus in
+            SharedAudioPlayer.sharedPlayer().audioPlayer.play()
+            return .Success
+        }
+        MPRemoteCommandCenter.sharedCommandCenter().nextTrackCommand.addTargetWithHandler { (event) ->
+            MPRemoteCommandHandlerStatus in
+            SharedAudioPlayer.sharedPlayer().nextItem()
+            return .Success
+        }
+        MPRemoteCommandCenter.sharedCommandCenter().previousTrackCommand.addTargetWithHandler { (event) ->
+            MPRemoteCommandHandlerStatus in
+            SharedAudioPlayer.sharedPlayer().previousItem()
+            return .Success
+        }
         return true
     }
 
@@ -35,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if SharedAudioPlayer.sharedPlayer().streamItemsToShowInTableView.count > 0 {
+            SoundCloudAPIClient.sharedClient().getFutureStreamSongs()
+            SoundCloudAPIClient.sharedClient().getFutureFavoriteSongs()
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -1,0 +1,6 @@
+framework module SoundCloud {
+  umbrella header "SoundCloud-Cocoa-API-umbrella.h"
+
+  export *
+  module * { export * }
+}

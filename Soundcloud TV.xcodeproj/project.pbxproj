@@ -7,21 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0818EF371BF6F6E10043988E /* SoundCloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818EF361BF6F6E10043988E /* SoundCloudClient.swift */; };
+		0818EF391BF700100043988E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818EF381BF700100043988E /* FavoritesViewController.swift */; };
+		0818EF3B1BF86F330043988E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818EF3A1BF86F330043988E /* TabBarController.swift */; };
+		08496D7A1BF9BA7F0073FF32 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08496D791BF9BA7F0073FF32 /* SettingsViewController.swift */; };
+		084C70BB1BFFD19100B64232 /* SharedAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C70BA1BFFD19100B64232 /* SharedAudioPlayer.swift */; };
+		086221D31C0068FA0087D977 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086221D21C0068F90087D977 /* Keys.swift */; };
 		08A670B61BF5AE5000D4821D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B51BF5AE5000D4821D /* AppDelegate.swift */; };
-		08A670B81BF5AE5000D4821D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B71BF5AE5000D4821D /* FirstViewController.swift */; };
-		08A670BA1BF5AE5000D4821D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B91BF5AE5000D4821D /* SecondViewController.swift */; };
+		08A670B81BF5AE5000D4821D /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B71BF5AE5000D4821D /* NowPlayingViewController.swift */; };
+		08A670BA1BF5AE5000D4821D /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B91BF5AE5000D4821D /* StreamViewController.swift */; };
 		08A670BD1BF5AE5000D4821D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A670BB1BF5AE5000D4821D /* Main.storyboard */; };
 		08A670BF1BF5AE5000D4821D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A670BE1BF5AE5000D4821D /* Assets.xcassets */; };
+		08A670C71BF5B85200D4821D /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670C61BF5B85200D4821D /* AuthenticationViewController.swift */; };
+		08A670CF1BF5CDF500D4821D /* SoundCloudTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A670CC1BF5CDF500D4821D /* SoundCloudTrack.m */; };
+		08A670D01BF5CDF500D4821D /* SoundCloudItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A670CE1BF5CDF500D4821D /* SoundCloudItem.m */; };
+		08A670D31BF5CE3A00D4821D /* SoundCloudUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A670D21BF5CE3A00D4821D /* SoundCloudUser.m */; };
+		08A670D61BF5CE5400D4821D /* SoundCloudPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A670D51BF5CE5400D4821D /* SoundCloudPlaylist.m */; };
+		08A670D91BF5D1E300D4821D /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670D81BF5D1E300D4821D /* TrackItemView.swift */; };
+		08A670DC1BF6E5BA00D4821D /* SharedAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A670DB1BF6E5B900D4821D /* SharedAudioPlayer.m */; };
+		08A670DF1BF6EA0E00D4821D /* SoundCloudAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A670DE1BF6EA0E00D4821D /* SoundCloudAPIClient.m */; };
+		08B282B41BFFFB0300EA0ADA /* SoundCloudAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B282B31BFFFB0300EA0ADA /* SoundCloudAPIClient.swift */; };
+		342284186F57F493E1CDD494 /* Pods_Soundcloud_TV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AFFAD81BEAA2B9041207F9 /* Pods_Soundcloud_TV.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		08E340331BFD93BB0003593D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		08A670B21BF5AE5000D4821D /* Soundcloud TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Soundcloud TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0818EF361BF6F6E10043988E /* SoundCloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudClient.swift; sourceTree = "<group>"; };
+		0818EF381BF700100043988E /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		0818EF3A1BF86F330043988E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		08496D791BF9BA7F0073FF32 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		084C70BA1BFFD19100B64232 /* SharedAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedAudioPlayer.swift; sourceTree = "<group>"; };
+		086221D21C0068F90087D977 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		08A670B21BF5AE5000D4821D /* Sound TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A670B51BF5AE5000D4821D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08A670B71BF5AE5000D4821D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		08A670B91BF5AE5000D4821D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		08A670B71BF5AE5000D4821D /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		08A670B91BF5AE5000D4821D /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		08A670BC1BF5AE5000D4821D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08A670BE1BF5AE5000D4821D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A670C01BF5AE5000D4821D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A670C61BF5B85200D4821D /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		08A670CA1BF5CDF400D4821D /* Soundcloud TV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Soundcloud TV-Bridging-Header.h"; sourceTree = "<group>"; };
+		08A670CB1BF5CDF500D4821D /* SoundCloudTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudTrack.h; sourceTree = "<group>"; };
+		08A670CC1BF5CDF500D4821D /* SoundCloudTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudTrack.m; sourceTree = "<group>"; };
+		08A670CD1BF5CDF500D4821D /* SoundCloudItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudItem.h; sourceTree = "<group>"; };
+		08A670CE1BF5CDF500D4821D /* SoundCloudItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudItem.m; sourceTree = "<group>"; };
+		08A670D11BF5CE3A00D4821D /* SoundCloudUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudUser.h; sourceTree = "<group>"; };
+		08A670D21BF5CE3A00D4821D /* SoundCloudUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudUser.m; sourceTree = "<group>"; };
+		08A670D41BF5CE5400D4821D /* SoundCloudPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudPlaylist.h; sourceTree = "<group>"; };
+		08A670D51BF5CE5400D4821D /* SoundCloudPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudPlaylist.m; sourceTree = "<group>"; };
+		08A670D81BF5D1E300D4821D /* TrackItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
+		08A670DA1BF6E5B900D4821D /* SharedAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedAudioPlayer.h; sourceTree = "<group>"; };
+		08A670DB1BF6E5B900D4821D /* SharedAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedAudioPlayer.m; sourceTree = "<group>"; };
+		08A670DD1BF6EA0E00D4821D /* SoundCloudAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCloudAPIClient.h; sourceTree = "<group>"; };
+		08A670DE1BF6EA0E00D4821D /* SoundCloudAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCloudAPIClient.m; sourceTree = "<group>"; };
+		08B282B31BFFFB0300EA0ADA /* SoundCloudAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudAPIClient.swift; sourceTree = "<group>"; };
+		64AFFAD81BEAA2B9041207F9 /* Pods_Soundcloud_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundcloud_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97575F72181181428D45C407 /* Pods-Soundcloud TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundcloud TV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV.debug.xcconfig"; sourceTree = "<group>"; };
+		9D22329923A0678B1761BD1A /* Pods-Soundcloud TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundcloud TV.release.xcconfig"; path = "Pods/Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,24 +83,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342284186F57F493E1CDD494 /* Pods_Soundcloud_TV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08496D7B1BF9BA880073FF32 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08A670C61BF5B85200D4821D /* AuthenticationViewController.swift */,
+				08A670B71BF5AE5000D4821D /* NowPlayingViewController.swift */,
+				08A670B91BF5AE5000D4821D /* StreamViewController.swift */,
+				0818EF381BF700100043988E /* FavoritesViewController.swift */,
+				0818EF3A1BF86F330043988E /* TabBarController.swift */,
+				08496D791BF9BA7F0073FF32 /* SettingsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		08496D7C1BF9BA920073FF32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08A670D81BF5D1E300D4821D /* TrackItemView.swift */,
+				084C70BA1BFFD19100B64232 /* SharedAudioPlayer.swift */,
+				08B282B31BFFFB0300EA0ADA /* SoundCloudAPIClient.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		08A670A91BF5AE5000D4821D = {
 			isa = PBXGroup;
 			children = (
 				08A670B41BF5AE5000D4821D /* Soundcloud TV */,
 				08A670B31BF5AE5000D4821D /* Products */,
+				26183B966C8DC1319C37C1FC /* Pods */,
+				31433137B6B977B134D8B2DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		08A670B31BF5AE5000D4821D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08A670B21BF5AE5000D4821D /* Soundcloud TV.app */,
+				08A670B21BF5AE5000D4821D /* Sound TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,33 +135,77 @@
 			isa = PBXGroup;
 			children = (
 				08A670B51BF5AE5000D4821D /* AppDelegate.swift */,
-				08A670B71BF5AE5000D4821D /* FirstViewController.swift */,
-				08A670B91BF5AE5000D4821D /* SecondViewController.swift */,
+				086221D21C0068F90087D977 /* Keys.swift */,
+				08496D7B1BF9BA880073FF32 /* View Controllers */,
+				08496D7C1BF9BA920073FF32 /* Views */,
+				08A670D71BF5CE5800D4821D /* Models */,
 				08A670BB1BF5AE5000D4821D /* Main.storyboard */,
 				08A670BE1BF5AE5000D4821D /* Assets.xcassets */,
 				08A670C01BF5AE5000D4821D /* Info.plist */,
+				08A670CA1BF5CDF400D4821D /* Soundcloud TV-Bridging-Header.h */,
 			);
 			path = "Soundcloud TV";
+			sourceTree = "<group>";
+		};
+		08A670D71BF5CE5800D4821D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0818EF361BF6F6E10043988E /* SoundCloudClient.swift */,
+				08A670DD1BF6EA0E00D4821D /* SoundCloudAPIClient.h */,
+				08A670DE1BF6EA0E00D4821D /* SoundCloudAPIClient.m */,
+				08A670DA1BF6E5B900D4821D /* SharedAudioPlayer.h */,
+				08A670DB1BF6E5B900D4821D /* SharedAudioPlayer.m */,
+				08A670CB1BF5CDF500D4821D /* SoundCloudTrack.h */,
+				08A670CC1BF5CDF500D4821D /* SoundCloudTrack.m */,
+				08A670CD1BF5CDF500D4821D /* SoundCloudItem.h */,
+				08A670CE1BF5CDF500D4821D /* SoundCloudItem.m */,
+				08A670D41BF5CE5400D4821D /* SoundCloudPlaylist.h */,
+				08A670D51BF5CE5400D4821D /* SoundCloudPlaylist.m */,
+				08A670D11BF5CE3A00D4821D /* SoundCloudUser.h */,
+				08A670D21BF5CE3A00D4821D /* SoundCloudUser.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		26183B966C8DC1319C37C1FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97575F72181181428D45C407 /* Pods-Soundcloud TV.debug.xcconfig */,
+				9D22329923A0678B1761BD1A /* Pods-Soundcloud TV.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		31433137B6B977B134D8B2DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64AFFAD81BEAA2B9041207F9 /* Pods_Soundcloud_TV.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		08A670B11BF5AE5000D4821D /* Soundcloud TV */ = {
+		08A670B11BF5AE5000D4821D /* SoundCloud TV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08A670C31BF5AE5000D4821D /* Build configuration list for PBXNativeTarget "Soundcloud TV" */;
+			buildConfigurationList = 08A670C31BF5AE5000D4821D /* Build configuration list for PBXNativeTarget "SoundCloud TV" */;
 			buildPhases = (
+				7B4E1075C7FD5216FBB20A3B /* Check Pods Manifest.lock */,
 				08A670AE1BF5AE5000D4821D /* Sources */,
 				08A670AF1BF5AE5000D4821D /* Frameworks */,
 				08A670B01BF5AE5000D4821D /* Resources */,
+				B5D5EF571F14045440F3CD4C /* Embed Pods Frameworks */,
+				91539AC4428543DE6A4F2157 /* Copy Pods Resources */,
+				08E340331BFD93BB0003593D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Soundcloud TV";
+			name = "SoundCloud TV";
 			productName = "Soundcloud TV";
-			productReference = 08A670B21BF5AE5000D4821D /* Soundcloud TV.app */;
+			productReference = 08A670B21BF5AE5000D4821D /* Sound TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 08A670AD1BF5AE5000D4821D /* Build configuration list for PBXProject "Soundcloud TV" */;
+			buildConfigurationList = 08A670AD1BF5AE5000D4821D /* Build configuration list for PBXProject "SoundCloud TV" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,7 +236,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				08A670B11BF5AE5000D4821D /* Soundcloud TV */,
+				08A670B11BF5AE5000D4821D /* SoundCloud TV */,
 			);
 		};
 /* End PBXProject section */
@@ -129,14 +253,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B4E1075C7FD5216FBB20A3B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91539AC4428543DE6A4F2157 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5D5EF571F14045440F3CD4C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		08A670AE1BF5AE5000D4821D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A670BA1BF5AE5000D4821D /* SecondViewController.swift in Sources */,
+				0818EF391BF700100043988E /* FavoritesViewController.swift in Sources */,
+				08A670CF1BF5CDF500D4821D /* SoundCloudTrack.m in Sources */,
+				08A670D61BF5CE5400D4821D /* SoundCloudPlaylist.m in Sources */,
+				08A670DF1BF6EA0E00D4821D /* SoundCloudAPIClient.m in Sources */,
+				08A670DC1BF6E5BA00D4821D /* SharedAudioPlayer.m in Sources */,
+				08A670D91BF5D1E300D4821D /* TrackItemView.swift in Sources */,
+				08A670C71BF5B85200D4821D /* AuthenticationViewController.swift in Sources */,
+				086221D31C0068FA0087D977 /* Keys.swift in Sources */,
+				08A670D31BF5CE3A00D4821D /* SoundCloudUser.m in Sources */,
+				08496D7A1BF9BA7F0073FF32 /* SettingsViewController.swift in Sources */,
+				08A670BA1BF5AE5000D4821D /* StreamViewController.swift in Sources */,
+				08B282B41BFFFB0300EA0ADA /* SoundCloudAPIClient.swift in Sources */,
+				0818EF371BF6F6E10043988E /* SoundCloudClient.swift in Sources */,
 				08A670B61BF5AE5000D4821D /* AppDelegate.swift in Sources */,
-				08A670B81BF5AE5000D4821D /* FirstViewController.swift in Sources */,
+				0818EF3B1BF86F330043988E /* TabBarController.swift in Sources */,
+				084C70BB1BFFD19100B64232 /* SharedAudioPlayer.swift in Sources */,
+				08A670D01BF5CDF500D4821D /* SoundCloudItem.m in Sources */,
+				08A670B81BF5AE5000D4821D /* NowPlayingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,32 +424,39 @@
 		};
 		08A670C41BF5AE5000D4821D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97575F72181181428D45C407 /* Pods-Soundcloud TV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Soundcloud TV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.chloestars.Soundcloud-TV";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Sound TV";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundCloud TV/Soundcloud TV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		08A670C51BF5AE5000D4821D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D22329923A0678B1761BD1A /* Pods-Soundcloud TV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Soundcloud TV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.chloestars.Soundcloud-TV";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Sound TV";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundCloud TV/Soundcloud TV-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08A670AD1BF5AE5000D4821D /* Build configuration list for PBXProject "Soundcloud TV" */ = {
+		08A670AD1BF5AE5000D4821D /* Build configuration list for PBXProject "SoundCloud TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08A670C11BF5AE5000D4821D /* Debug */,
@@ -271,13 +465,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08A670C31BF5AE5000D4821D /* Build configuration list for PBXNativeTarget "Soundcloud TV" */ = {
+		08A670C31BF5AE5000D4821D /* Build configuration list for PBXNativeTarget "SoundCloud TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08A670C41BF5AE5000D4821D /* Debug */,
 				08A670C51BF5AE5000D4821D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

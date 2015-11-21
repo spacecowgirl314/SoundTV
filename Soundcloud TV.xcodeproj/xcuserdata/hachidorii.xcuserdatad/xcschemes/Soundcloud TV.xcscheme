@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "08A670B11BF5AE5000D4821D"
-               BuildableName = "Soundcloud TV.app"
-               BlueprintName = "Soundcloud TV"
-               ReferencedContainer = "container:Soundcloud TV.xcodeproj">
+               BuildableName = "Sound TV.app"
+               BlueprintName = "SoundCloud TV"
+               ReferencedContainer = "container:SoundCloud TV.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "08A670B11BF5AE5000D4821D"
-            BuildableName = "Soundcloud TV.app"
-            BlueprintName = "Soundcloud TV"
-            ReferencedContainer = "container:Soundcloud TV.xcodeproj">
+            BuildableName = "Sound TV.app"
+            BlueprintName = "SoundCloud TV"
+            ReferencedContainer = "container:SoundCloud TV.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "08A670B11BF5AE5000D4821D"
-            BuildableName = "Soundcloud TV.app"
-            BlueprintName = "Soundcloud TV"
-            ReferencedContainer = "container:Soundcloud TV.xcodeproj">
+            BuildableName = "Sound TV.app"
+            BlueprintName = "SoundCloud TV"
+            ReferencedContainer = "container:SoundCloud TV.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "08A670B11BF5AE5000D4821D"
-            BuildableName = "Soundcloud TV.app"
-            BlueprintName = "Soundcloud TV"
-            ReferencedContainer = "container:Soundcloud TV.xcodeproj">
+            BuildableName = "Sound TV.app"
+            BlueprintName = "SoundCloud TV"
+            ReferencedContainer = "container:SoundCloud TV.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,53 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
-        <scene sceneID="hNz-n2-bh7">
+        <!--Authentication-->
+        <scene sceneID="ii4-hC-Zze">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UvB-nS-0cN" customClass="AuthenticationViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="MbZ-6s-t7e"/>
+                        <viewControllerLayoutGuide type="bottom" id="RtH-b5-J7a"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                    <view key="view" contentMode="scaleToFill" id="X8v-Pl-EkE">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="884" y="519" width="153" height="43"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="863" y="570" width="194" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJl-oJ-kXe">
+                                <rect key="frame" x="811" y="887" width="299" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Authenticate"/>
+                                <connections>
+                                    <action selector="authenticate:" destination="UvB-nS-0cN" eventType="primaryActionTriggered" id="CCf-LZ-eFR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-eC-1Dw">
+                                <rect key="frame" x="652" y="513" width="616" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9SJ-0a-Zpn">
+                                <rect key="frame" x="652" y="655" width="616" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login to SoundCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulh-C3-c2S">
+                                <rect key="frame" x="667" y="359" width="586" height="72"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
+                        <animations/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Authentication" id="Zam-UW-wW3"/>
+                    <connections>
+                        <outlet property="passwordField" destination="9SJ-0a-Zpn" id="wFd-n7-9za"/>
+                        <outlet property="usernameField" destination="PoP-eC-1Dw" id="KGG-M9-j7n"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aur-rx-2bt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="-640"/>
+            <point key="canvasLocation" x="2285" y="-1023"/>
         </scene>
-        <!--Second-->
+        <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SettingsViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -56,46 +70,611 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="857" y="519" width="207" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created with love by Chloe Stars (follow @getSoundTV)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFF-u7-kr8">
+                                <rect key="frame" x="712" y="254" width="496" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohb-qH-HGd">
+                                <rect key="frame" x="945" y="225" width="31" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound TV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-wD-Vyh">
+                                <rect key="frame" x="824" y="154" width="273" height="72"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="uHW-Ec-qzi">
+                                <rect key="frame" x="412" y="430" width="1096" height="559"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <string key="text">SDWebImage
+Copyright (c) 2009 Olivier Poitrey &lt;rs@dailymotion.com&gt;
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+SoundCloud Cocoa API
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acknowledgements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHq-7s-50d">
+                                <rect key="frame" x="881" y="430" width="158" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="853" y="570" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-7k-ae0">
+                                <rect key="frame" x="860" y="311" width="200" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout" destination="8rJ-Kc-sve" eventType="primaryActionTriggered" id="Oti-Rj-VRZ"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="acknowledgementsView" destination="uHW-Ec-qzi" id="tlF-6m-rw4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="624"/>
+            <point key="canvasLocation" x="2326" y="-72"/>
+        </scene>
+        <!--Now Playing-->
+        <scene sceneID="94q-ZY-1XL">
+            <objects>
+                <viewController id="zPq-xj-bdx" customClass="NowPlayingViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dqh-1T-3hG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZXc-D7-pAy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CJq-GX-oDz">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-yQ-Toz">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <animations/>
+                            </imageView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdc-AA-2F6">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="TPW-Yc-2DB">
+                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <animations/>
+                                </view>
+                                <animations/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-af-z5l">
+                                <rect key="frame" x="710" y="826" width="500" height="33"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Wpy-pQ-QNb"/>
+                                    <constraint firstAttribute="width" constant="500" id="rhr-Ik-LbG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OcU-zR-neL">
+                                <rect key="frame" x="76" y="1005" width="1768" height="10"/>
+                                <animations/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfl-e4-MAk">
+                                <rect key="frame" x="1802" y="1023" width="42" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="TcI-vH-O0I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wq-DF-2Kq">
+                                <rect key="frame" x="76" y="1023" width="42" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Ix2-S0-c2b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-zT-YZQ">
+                                <rect key="frame" x="710" y="798" width="500" height="33"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="7TO-Id-pV4"/>
+                                    <constraint firstAttribute="height" constant="33" id="Uc3-hX-nQf"/>
+                                    <constraint firstAttribute="width" constant="500" id="lP1-ZR-aQY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lP1-ZR-aQY"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0A-ay-3ie">
+                                <rect key="frame" x="710" y="290" width="500" height="500"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="SIU-cU-Mgn"/>
+                                    <constraint firstAttribute="height" constant="500" id="fci-lD-lyj"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" backgroundImage="Placeholder"/>
+                                <connections>
+                                    <action selector="togglePlayer" destination="zPq-xj-bdx" eventType="primaryActionTriggered" id="X2x-HP-6L6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwV-UT-D1b">
+                                <rect key="frame" x="885" y="819" width="150" height="86"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="Gs5-Ei-i57"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="UX3-cQ-uoz"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Like"/>
+                                <connections>
+                                    <action selector="favoriteTrack" destination="zPq-xj-bdx" eventType="primaryActionTriggered" id="o3d-tJ-8Vu"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9cm-5q-jG6">
+                                <rect key="frame" x="265" y="468" width="336" height="322"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="aPO-Rd-Ub9">
+                                    <rect key="frame" x="0.0" y="0.0" width="336" height="322"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <animations/>
+                                </view>
+                                <animations/>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="e0A-ay-3ie" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="0Sz-ew-eL6"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="leading" secondItem="e0A-ay-3ie" secondAttribute="leading" id="26Y-pL-C7c"/>
+                            <constraint firstItem="7wq-DF-2Kq" firstAttribute="top" secondItem="OcU-zR-neL" secondAttribute="bottom" constant="8" id="3bN-TB-kvM"/>
+                            <constraint firstItem="e0A-ay-3ie" firstAttribute="centerY" secondItem="CJq-GX-oDz" secondAttribute="centerY" id="4E7-Rn-4rG"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="trailing" secondItem="e0A-ay-3ie" secondAttribute="trailing" id="4Nl-HJ-ihh"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="leading" secondItem="e0A-ay-3ie" secondAttribute="leading" id="5lp-ej-AgT"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="top" relation="lessThanOrEqual" secondItem="e0A-ay-3ie" secondAttribute="bottom" constant="36" id="7Oc-rv-t3K"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="top" secondItem="e0A-ay-3ie" secondAttribute="bottom" constant="8" id="8pE-aS-6E3"/>
+                            <constraint firstItem="OcU-zR-neL" firstAttribute="top" secondItem="NwV-UT-D1b" secondAttribute="bottom" constant="100" id="96z-dw-4cS"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="top" secondItem="e0A-ay-3ie" secondAttribute="bottom" constant="8" id="AX1-4a-z1M"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="leading" secondItem="e0A-ay-3ie" secondAttribute="leading" id="AhY-nf-bst"/>
+                            <constraint firstItem="OcU-zR-neL" firstAttribute="top" secondItem="NwV-UT-D1b" secondAttribute="bottom" constant="105" id="BiL-fz-8h9"/>
+                            <constraint firstItem="7wq-DF-2Kq" firstAttribute="leading" secondItem="CJq-GX-oDz" secondAttribute="leadingMargin" constant="56" id="Dxf-65-X9a"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="trailing" secondItem="e0A-ay-3ie" secondAttribute="trailing" id="EvK-am-epu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OcU-zR-neL" secondAttribute="trailing" constant="56" id="F1T-Ge-mzi"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="width" secondItem="e0A-ay-3ie" secondAttribute="width" id="H6D-W3-Wft"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="HhS-G1-MpM"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="HiQ-BW-Cch"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="leading" secondItem="e0A-ay-3ie" secondAttribute="leading" id="HwB-EO-xMJ"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="top" secondItem="XrC-zT-YZQ" secondAttribute="bottom" constant="-5" id="I3F-cb-hRn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zfl-e4-MAk" secondAttribute="trailing" constant="56" id="IZ7-qr-KXM"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="trailing" secondItem="e0A-ay-3ie" secondAttribute="trailing" id="J1b-A3-O7z"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="Ml3-6U-gIR"/>
+                            <constraint firstItem="e0A-ay-3ie" firstAttribute="centerY" secondItem="CJq-GX-oDz" secondAttribute="centerY" id="Rs8-hC-b33"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="S9P-JQ-Pjb"/>
+                            <constraint firstItem="7mn-yQ-Toz" firstAttribute="leading" secondItem="CJq-GX-oDz" secondAttribute="leadingMargin" constant="-20" id="Tsp-NX-LZZ"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="centerX" secondItem="e0A-ay-3ie" secondAttribute="centerX" id="Uw7-8d-Fhl"/>
+                            <constraint firstItem="7mn-yQ-Toz" firstAttribute="top" secondItem="CJq-GX-oDz" secondAttribute="topMargin" id="Vh7-Gm-oi4"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="top" secondItem="XrC-zT-YZQ" secondAttribute="bottom" constant="-5" id="Wtq-Nk-jnH"/>
+                            <constraint firstItem="ZXc-D7-pAy" firstAttribute="top" secondItem="OcU-zR-neL" secondAttribute="bottom" constant="65" id="Xjo-mk-6Uu"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="top" secondItem="XrC-zT-YZQ" secondAttribute="bottom" constant="-5" id="YKO-zf-sFE"/>
+                            <constraint firstItem="ZXc-D7-pAy" firstAttribute="top" secondItem="7mn-yQ-Toz" secondAttribute="bottom" id="bHV-dM-5Wi"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="c9c-IH-4U9"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="top" secondItem="XrC-zT-YZQ" secondAttribute="bottom" constant="8" id="cNO-FT-W4Z"/>
+                            <constraint firstItem="e0A-ay-3ie" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="eAN-py-w9i"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="leading" secondItem="e0A-ay-3ie" secondAttribute="leading" id="ffK-hl-qBK"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="trailing" secondItem="e0A-ay-3ie" secondAttribute="trailing" id="hwh-Ra-0I6"/>
+                            <constraint firstItem="zfl-e4-MAk" firstAttribute="top" secondItem="OcU-zR-neL" secondAttribute="bottom" constant="8" id="ifl-bP-sbw"/>
+                            <constraint firstItem="NwV-UT-D1b" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="lCj-tg-oCz"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="width" secondItem="e0A-ay-3ie" secondAttribute="width" id="nkZ-IO-G3P"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="centerX" secondItem="e0A-ay-3ie" secondAttribute="centerX" id="piu-ng-SAz"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="top" secondItem="e0A-ay-3ie" secondAttribute="bottom" constant="8" id="q4w-M2-D57"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7mn-yQ-Toz" secondAttribute="trailing" constant="-20" id="tDV-hY-jRS"/>
+                            <constraint firstItem="OcU-zR-neL" firstAttribute="leading" secondItem="CJq-GX-oDz" secondAttribute="leadingMargin" constant="56" id="vMh-ry-Fpq"/>
+                            <constraint firstItem="XrC-zT-YZQ" firstAttribute="centerX" secondItem="CJq-GX-oDz" secondAttribute="centerX" id="y36-2l-Z57"/>
+                            <constraint firstItem="jFJ-af-z5l" firstAttribute="leading" secondItem="e0A-ay-3ie" secondAttribute="leading" id="zaH-If-uas"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Rs8-hC-b33"/>
+                                <exclude reference="eAN-py-w9i"/>
+                                <exclude reference="BiL-fz-8h9"/>
+                                <exclude reference="26Y-pL-C7c"/>
+                                <exclude reference="8pE-aS-6E3"/>
+                                <exclude reference="HiQ-BW-Cch"/>
+                                <exclude reference="HwB-EO-xMJ"/>
+                                <exclude reference="J1b-A3-O7z"/>
+                                <exclude reference="Uw7-8d-Fhl"/>
+                                <exclude reference="nkZ-IO-G3P"/>
+                                <exclude reference="y36-2l-Z57"/>
+                                <exclude reference="5lp-ej-AgT"/>
+                                <exclude reference="7Oc-rv-t3K"/>
+                                <exclude reference="AhY-nf-bst"/>
+                                <exclude reference="EvK-am-epu"/>
+                                <exclude reference="H6D-W3-Wft"/>
+                                <exclude reference="I3F-cb-hRn"/>
+                                <exclude reference="Ml3-6U-gIR"/>
+                                <exclude reference="S9P-JQ-Pjb"/>
+                                <exclude reference="YKO-zf-sFE"/>
+                                <exclude reference="cNO-FT-W4Z"/>
+                                <exclude reference="piu-ng-SAz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Now Playing" id="6v2-C3-arD"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="jFJ-af-z5l" id="XaR-w7-Jgq"/>
+                        <outlet property="artistLabelWidthConstraint" destination="rhr-Ik-LbG" id="OXc-FC-Q7w"/>
+                        <outlet property="artworkButton" destination="e0A-ay-3ie" id="X5L-SU-yA3"/>
+                        <outlet property="artworkHeightConstraint" destination="fci-lD-lyj" id="w4F-Rl-kH9"/>
+                        <outlet property="artworkWidthConstraint" destination="SIU-cU-Mgn" id="jGl-Rx-qcv"/>
+                        <outlet property="elapsedLabel" destination="7wq-DF-2Kq" id="0px-8G-k4Z"/>
+                        <outlet property="likeButton" destination="NwV-UT-D1b" id="yr4-pE-qmy"/>
+                        <outlet property="progressBar" destination="OcU-zR-neL" id="WUK-tb-8a4"/>
+                        <outlet property="timeLeftLabel" destination="zfl-e4-MAk" id="sP6-do-cRt"/>
+                        <outlet property="trackLabel" destination="XrC-zT-YZQ" id="6qD-4V-JAn"/>
+                        <outlet property="trackLabelWidthConstraint" destination="lP1-ZR-aQY" id="Wb3-id-i7G"/>
+                        <outlet property="vibrancyImageView" destination="7mn-yQ-Toz" id="rbJ-df-yms"/>
+                        <outlet property="vibrancyView" destination="9cm-5q-jG6" id="ZXN-Uv-hmM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9F-BU-qNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-982" y="-1981"/>
+        </scene>
+        <!--Stream-->
+        <scene sceneID="yRy-0L-Z6l">
+            <objects>
+                <collectionViewController id="hHl-h9-7cm" customClass="StreamViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bz6-F6-KwT">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zs7-QN-7PA">
+                            <size key="itemSize" width="450" height="493"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="track" id="wMT-rz-eMC" customClass="TrackItemView" customModule="Sound_TV" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="140" width="450" height="493"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="493"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3R-6U-8f4">
+                                            <rect key="frame" x="38" y="38" width="375" height="375"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="375" id="RIc-D7-8HF"/>
+                                                <constraint firstAttribute="width" constant="375" id="SLn-Ul-We8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZl-0Z-yX3">
+                                            <rect key="frame" x="38" y="450" width="375" height="33"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="375" id="jZG-5s-ecd"/>
+                                                <constraint firstAttribute="height" constant="33" id="khC-kt-dYp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqa-0T-nNi">
+                                            <rect key="frame" x="38" y="423" width="375" height="33"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="GFM-gZ-f2U"/>
+                                                <constraint firstAttribute="width" constant="375" id="gjC-xL-bGp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="mZl-0Z-yX3" firstAttribute="top" secondItem="Fqa-0T-nNi" secondAttribute="bottom" constant="-6" id="2Tf-nH-9BJ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="a3R-6U-8f4" secondAttribute="trailing" constant="29" id="Ojf-7U-X4x"/>
+                                    <constraint firstItem="Fqa-0T-nNi" firstAttribute="top" secondItem="a3R-6U-8f4" secondAttribute="bottom" constant="10" id="PMz-CV-jjU"/>
+                                    <constraint firstItem="mZl-0Z-yX3" firstAttribute="width" secondItem="Fqa-0T-nNi" secondAttribute="width" id="Shp-s7-5EQ"/>
+                                    <constraint firstItem="a3R-6U-8f4" firstAttribute="leading" secondItem="wMT-rz-eMC" secondAttribute="leadingMargin" constant="30" id="bYV-mY-z01"/>
+                                    <constraint firstItem="mZl-0Z-yX3" firstAttribute="centerX" secondItem="wMT-rz-eMC" secondAttribute="centerX" id="eFZ-6w-bC6"/>
+                                    <constraint firstItem="Fqa-0T-nNi" firstAttribute="centerX" secondItem="wMT-rz-eMC" secondAttribute="centerX" id="sRj-fx-4HK"/>
+                                    <constraint firstItem="a3R-6U-8f4" firstAttribute="top" secondItem="wMT-rz-eMC" secondAttribute="topMargin" constant="30" id="u56-G4-8iC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Shp-s7-5EQ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="artistLabel" destination="mZl-0Z-yX3" id="Ztv-5O-FVJ"/>
+                                    <outlet property="artistWidthConstraint" destination="jZG-5s-ecd" id="v1t-do-74z"/>
+                                    <outlet property="imageView" destination="a3R-6U-8f4" id="3dh-Yz-FUo"/>
+                                    <outlet property="topSpaceConstraint" destination="PMz-CV-jjU" id="Win-aO-Lre"/>
+                                    <outlet property="trackLabel" destination="Fqa-0T-nNi" id="1xq-9m-eoC"/>
+                                    <outlet property="trackWidthConstraint" destination="gjC-xL-bGp" id="VIJ-3o-sKb"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="hHl-h9-7cm" id="bNM-Jb-bJl"/>
+                            <outlet property="delegate" destination="hHl-h9-7cm" id="LSV-1R-jSu"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Stream" id="50l-iD-FvR"/>
+                    <connections>
+                        <segue destination="UvB-nS-0cN" kind="presentation" identifier="setup" id="Km7-eU-l1Y"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ExR-yc-shU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-324" y="-760"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="hHl-h9-7cm" kind="relationship" relationship="viewControllers" id="OPZ-2Z-Yf5"/>
+                        <segue destination="7Ce-ig-ihi" kind="relationship" relationship="viewControllers" id="o19-hD-SR3"/>
+                        <segue destination="zPq-xj-bdx" kind="relationship" relationship="viewControllers" id="fQl-BF-dj9"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -103,9 +682,101 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="kzu-kR-98P">
+            <objects>
+                <collectionViewController id="7Ce-ig-ihi" customClass="FavoritesViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hTJ-SB-IME">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OB8-hV-dZg">
+                            <size key="itemSize" width="450" height="493"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="track" id="rQA-lW-eyW" customClass="TrackItemView" customModule="Sound_TV" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="140" width="450" height="493"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="493"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-9U-bky">
+                                            <rect key="frame" x="38" y="38" width="375" height="375"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="375" id="5Vw-eI-AzF"/>
+                                                <constraint firstAttribute="height" constant="375" id="cZg-Fs-0Y2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh3-3N-a1a">
+                                            <rect key="frame" x="38" y="450" width="375" height="33"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="QMd-i3-Hnr"/>
+                                                <constraint firstAttribute="width" constant="375" id="uvm-M8-3Vg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-oI-Yfq">
+                                            <rect key="frame" x="38" y="423" width="375" height="33"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="375" id="EAS-YO-5CY"/>
+                                                <constraint firstAttribute="height" constant="33" id="Y9z-Ig-q5N"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="Oh3-3N-a1a" firstAttribute="width" secondItem="xTn-oI-Yfq" secondAttribute="width" id="5dV-0l-jNn"/>
+                                    <constraint firstItem="xTn-oI-Yfq" firstAttribute="centerX" secondItem="rQA-lW-eyW" secondAttribute="centerX" id="BHL-g0-34V"/>
+                                    <constraint firstItem="Oh3-3N-a1a" firstAttribute="centerX" secondItem="rQA-lW-eyW" secondAttribute="centerX" id="Cdf-PK-igY"/>
+                                    <constraint firstItem="xTn-oI-Yfq" firstAttribute="top" secondItem="eTh-9U-bky" secondAttribute="bottom" constant="10" id="Dz6-ME-trm"/>
+                                    <constraint firstItem="eTh-9U-bky" firstAttribute="leading" secondItem="rQA-lW-eyW" secondAttribute="leadingMargin" constant="30" id="PIB-F0-bqu"/>
+                                    <constraint firstItem="eTh-9U-bky" firstAttribute="top" secondItem="rQA-lW-eyW" secondAttribute="topMargin" constant="30" id="chh-m6-hX1"/>
+                                    <constraint firstItem="Oh3-3N-a1a" firstAttribute="top" secondItem="xTn-oI-Yfq" secondAttribute="bottom" constant="-6" id="emE-fw-Bha"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="eTh-9U-bky" secondAttribute="trailing" constant="29" id="p0d-9s-5se"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5dV-0l-jNn"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="artistLabel" destination="Oh3-3N-a1a" id="DzX-5Q-0Ff"/>
+                                    <outlet property="artistWidthConstraint" destination="uvm-M8-3Vg" id="XrE-aZ-jig"/>
+                                    <outlet property="imageView" destination="eTh-9U-bky" id="Zv6-G6-j4o"/>
+                                    <outlet property="topSpaceConstraint" destination="Dz6-ME-trm" id="cPn-NN-Q40"/>
+                                    <outlet property="trackLabel" destination="xTn-oI-Yfq" id="BOI-A2-PhZ"/>
+                                    <outlet property="trackWidthConstraint" destination="EAS-YO-5CY" id="gHg-q8-pND"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7Ce-ig-ihi" id="Ksk-3a-y1z"/>
+                            <outlet property="delegate" destination="7Ce-ig-ihi" id="J4j-xB-LRN"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="4e0-d4-Dej"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ava-An-hzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2453" y="-913"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Placeholder" width="500" height="500"/>
     </resources>
 </document>
