@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController : UIViewController {
     @IBOutlet var acknowledgementsView : UIScrollView!
+    override weak var preferredFocusedView: UIView? { return self.acknowledgementsView }
     
     override func viewDidAppear(animated: Bool) {
         let touchType = UITouchType.Indirect
