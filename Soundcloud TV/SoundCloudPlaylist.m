@@ -17,9 +17,6 @@
 - (instancetype)initWithDict:(NSDictionary *)dict {
     self = [super init];
     if (self){
-        if (![dict isKindOfClass:[NSDictionary class]]) {
-            return self;
-        }
         NSLog(@"dictionary: %@", dict.description);
         if ([[dict objectForKey:@"artwork_url"] isKindOfClass:[NSString class]])
             self.artworkUrl = [NSURL URLWithString:[dict objectForKey:@"artwork_url"]];
