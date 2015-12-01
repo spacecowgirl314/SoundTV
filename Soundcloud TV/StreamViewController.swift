@@ -14,6 +14,7 @@ import SDWebImage
 class StreamViewController: UICollectionViewController {
     let player = SharedAudioPlayer.sharedPlayer()
     let playerSession = AVAudioSession.sharedInstance()
+    var isClosing = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,12 @@ class StreamViewController: UICollectionViewController {
                 SoundCloudAPIClient.sharedClient().getInitialStreamSongs()
             }
             else {
+                // if we close the authentication view by hitting the menu button without auth, kill the app
+                if isClosing {
+                    exit(0)
+                }
                 self.performSegueWithIdentifier("setup", sender: nil)
+                isClosing = true
             }
         }
         else {
@@ -126,6 +132,10 @@ class StreamViewController: UICollectionViewController {
             assert(false, "Unexpected element kind")
         }
     }
+    
+//    override func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//        
+//    }
     
     @IBAction func reload(sender: UIButton) {
         SoundCloudAPIClient.sharedClient().reloadStream()
