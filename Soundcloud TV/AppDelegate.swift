@@ -56,10 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        if SharedAudioPlayer.sharedPlayer().streamItemsToShowInTableView.count > 0 {
-            SoundCloudAPIClient.sharedClient().getFutureStreamSongs()
-            SoundCloudAPIClient.sharedClient().getFutureFavoriteSongs()
-        }
+//        if SharedAudioPlayer.sharedPlayer().streamItemsToShowInTableView.count > 0 {
+//            SoundCloudAPIClient.sharedClient().getFutureStreamSongs()
+//            SoundCloudAPIClient.sharedClient().getFutureFavoriteSongs()
+//        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

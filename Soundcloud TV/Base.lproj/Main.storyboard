@@ -374,7 +374,7 @@ SoundCloud Cocoa API
                                     <animations/>
                                 </view>
                                 <animations/>
-                                <blurEffect style="light"/>
+                                <blurEffect style="extraLight"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-af-z5l">
                                 <rect key="frame" x="710" y="826" width="500" height="33"/>
@@ -574,13 +574,13 @@ SoundCloud Cocoa API
                         <animations/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zs7-QN-7PA">
                             <size key="itemSize" width="450" height="493"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="125"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="track" id="wMT-rz-eMC" customClass="TrackItemView" customModule="Sound_TV" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="450" height="493"/>
+                                <rect key="frame" x="0.0" y="265" width="450" height="493"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="493"/>
@@ -646,6 +646,29 @@ SoundCloud Cocoa API
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="wbG-vb-8m6">
+                            <rect key="frame" x="0.0" y="140" width="1920" height="125"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8v-Ng-h1F">
+                                    <rect key="frame" x="1682" y="20" width="198" height="86"/>
+                                    <animations/>
+                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                    <state key="normal" title="Reload"/>
+                                    <connections>
+                                        <action selector="reload:" destination="hHl-h9-7cm" eventType="primaryActionTriggered" id="C9X-ow-dCK"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-NZ-2fa">
+                                    <rect key="frame" x="892" y="39" width="137" height="48"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="hHl-h9-7cm" id="bNM-Jb-bJl"/>
                             <outlet property="delegate" destination="hHl-h9-7cm" id="LSV-1R-jSu"/>
@@ -692,13 +715,13 @@ SoundCloud Cocoa API
                         <animations/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OB8-hV-dZg">
                             <size key="itemSize" width="450" height="493"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="125"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="track" id="rQA-lW-eyW" customClass="TrackItemView" customModule="Sound_TV" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="450" height="493"/>
+                                <rect key="frame" x="0.0" y="265" width="450" height="493"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="493"/>
@@ -764,6 +787,30 @@ SoundCloud Cocoa API
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="6zt-eC-kXE">
+                            <rect key="frame" x="0.0" y="140" width="1920" height="125"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTV-GV-7hr">
+                                    <rect key="frame" x="1682" y="20" width="198" height="86"/>
+                                    <animations/>
+                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                    <state key="normal" title="Reload"/>
+                                    <connections>
+                                        <action selector="reload:" destination="hHl-h9-7cm" eventType="primaryActionTriggered" id="qxa-LA-Krd"/>
+                                        <action selector="reload:" destination="7Ce-ig-ihi" eventType="primaryActionTriggered" id="u5R-di-a0p"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-0M-2lw">
+                                    <rect key="frame" x="873" y="39" width="174" height="48"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="7Ce-ig-ihi" id="Ksk-3a-y1z"/>
                             <outlet property="delegate" destination="7Ce-ig-ihi" id="J4j-xB-LRN"/>

@@ -109,6 +109,7 @@ class NowPlayingViewController: UIViewController {
             artworkButton.clipsToBounds = false
             artworkButton.contentMode = .ScaleAspectFill
             artworkButton.sd_setBackgroundImageWithURL(NSURL(string: SoundCloudClient.imageURLForItem(item, size: "t500x500")), forState: .Normal, placeholderImage: UIImage(named: "Placeholder"))
+//            vibrancyImageView.sd_setImageWithURL(NSURL(string: SoundCloudClient.imageURLForItem(item, size: "t500x500")))
             
             if let isFavorited = item.userFavorite {
                 if isFavorited == 1 {
@@ -244,16 +245,16 @@ class NowPlayingViewController: UIViewController {
                 // Whereas the unlikelihood of a song being removed from the main stream and causing problems is
                 // incredibly low, removing a song here will cause it not to reflect in the favorites.
                 // This is behavior that would be expected but since it won't behave as such it's been disabled.
-//                else {
-//                    SoundCloudAPIClient.sharedClient().removeFavoriteWithSongID(item.identifier.stringValue
-//                        , completion: { (error: NSError?) -> Void in
-//                        if error == nil {
-//                            print("removed favorite")
-//                            item.userFavorite = 0
-//                            self.likeButton.setTitle("Like", forState: .Normal)
-//                        }
-//                    })
-//                }
+                else {
+                    SoundCloudAPIClient.sharedClient().removeFavoriteWithSongID(item.identifier.stringValue
+                        , completion: { (error: NSError?) -> Void in
+                        if error == nil {
+                            print("removed favorite")
+                            item.userFavorite = 0
+                            self.likeButton.setTitle("Like", forState: .Normal)
+                        }
+                    })
+                }
             }
             else {
                 SoundCloudAPIClient.sharedClient().saveFavoriteWithSongID(item.identifier.stringValue, completion: { (error: NSError?) -> Void in

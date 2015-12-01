@@ -37,7 +37,8 @@ class StreamViewController: UICollectionViewController {
         }
         else {
             // insert new items if available
-            SoundCloudAPIClient.sharedClient().getFutureStreamSongs()
+//            SoundCloudAPIClient.sharedClient().reloadStream()
+//            SoundCloudAPIClient.sharedClient().getFutureStreamSongs()
         }
         do {
             try playerSession.setCategory(AVAudioSessionCategoryPlayback) // TODO: mix in
@@ -112,6 +113,22 @@ class StreamViewController: UICollectionViewController {
         }
         
         return view
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Header", forIndexPath: indexPath)
+            
+            return headerView
+            
+        default:
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
+    @IBAction func reload(sender: UIButton) {
+        SoundCloudAPIClient.sharedClient().reloadStream()
     }
 }
 
