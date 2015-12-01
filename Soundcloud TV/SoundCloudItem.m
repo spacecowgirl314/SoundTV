@@ -22,7 +22,7 @@
         NSString *kindString = [dict objectForKey:@"kind"];
         self.user = [SoundCloudUser userForDict:[dict objectForKey:@"user"]];
 
-        if (kindString && [kindString isEqualToString:@"track"]){
+        if (kindString && [kindString isEqualToString:@"track"] && [dict isKindOfClass:[NSDictionary class]]){
             self.type = SoundCloudItemTypeTrack;
             self.item = [SoundCloudTrack trackForDict:dict withPlaylist:nil repostedBy:nil];
 //            if ([dict objectForKey:@"track"] && [[dict objectForKey:@"track"] isKindOfClass:[NSDictionary class]]){
@@ -33,10 +33,10 @@
 //                self.item = [SoundCloudPlaylist playlistForDict:[dict objectForKey:@"playlist"] repostedBy:nil];
 //            }
         } else {
-            if ([typeString isEqualToString:@"track"]) {
+            if ([typeString isEqualToString:@"track"] && [[dict objectForKey:@"origin"] isKindOfClass:[NSDictionary class]]) {
                 self.type = SoundCloudItemTypeTrack;
                 self.item = [SoundCloudTrack trackForDict:[dict objectForKey:@"origin"] withPlaylist:nil repostedBy:nil];
-            } else if ([typeString isEqualToString:@"track-repost"]) {
+            } else if ([typeString isEqualToString:@"track-repost"] && [[dict objectForKey:@"origin"] isKindOfClass:[NSDictionary class]]) {
                 self.type = SoundCloudItemTypeTrackRepost;
                 self.item = [SoundCloudTrack trackForDict:[dict objectForKey:@"origin"] withPlaylist:nil repostedBy:self.user];
             } else if ([typeString isEqualToString:@"playlist"]){
@@ -62,8 +62,6 @@
                 SoundCloudItem *itemFromCollectionItem = [[SoundCloudItem alloc]initWithCollectionDict:collectionItem];
                 if ([[response objectForKey:@"next_href"] isKindOfClass:[NSString class]])
                     itemFromCollectionItem.nextHref = [NSURL URLWithString:[response objectForKey:@"next_href"]];
-                if ([[response objectForKey:@"future_href"] isKindOfClass:[NSString class]])
-                    itemFromCollectionItem.futureHref = [NSURL URLWithString:[response objectForKey:@"future_href"]];
                 [arrayToReturn addObject:itemFromCollectionItem];
             }
         }

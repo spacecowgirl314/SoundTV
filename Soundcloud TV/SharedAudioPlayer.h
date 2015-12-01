@@ -53,6 +53,8 @@ typedef enum : NSUInteger {
 - (void)advanceToTime:(float)timeToGo;
 - (SoundCloudTrack *)currentItem;
 - (void)getNextSongs;
+- (void)getNextStreamSongs;
+- (void)getNextFavoriteSongs;
 - (void)toggleRepeatMode;
 - (void)reset;
 - (void)switchToFavorites;

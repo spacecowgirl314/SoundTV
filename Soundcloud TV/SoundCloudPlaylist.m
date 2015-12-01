@@ -17,6 +17,10 @@
 - (instancetype)initWithDict:(NSDictionary *)dict {
     self = [super init];
     if (self){
+        if (![dict isKindOfClass:[NSDictionary class]]) {
+            return self;
+        }
+        NSLog(@"dictionary: %@", dict.description);
         if ([[dict objectForKey:@"artwork_url"] isKindOfClass:[NSString class]])
             self.artworkUrl = [NSURL URLWithString:[dict objectForKey:@"artwork_url"]];
         self.createdAt = [NSDate date];
@@ -40,7 +44,8 @@
 }
 
 + (SoundCloudPlaylist *)playlistForDict:(NSDictionary *)dict repostedBy:(SoundCloudUser *)repostedBy {
-    SoundCloudPlaylist *playlistToReturn = [[SoundCloudPlaylist alloc]initWithDict:dict];
+//    SoundCloudPlaylist *playlistToReturn = [[SoundCloudPlaylist alloc]initWithDict:dict];
+    SoundCloudPlaylist *playlistToReturn = [[SoundCloudPlaylist alloc]init];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudPlaylistTracksWillLoad" object:playlistToReturn];
     [playlistToReturn loadTracksForPlaylist];
     if (repostedBy)

@@ -25,7 +25,6 @@ typedef enum : NSUInteger {
 @property (nonatomic) id item;
 @property (nonatomic, strong) SoundCloudUser *user;
 @property (nonatomic, strong) NSURL *nextHref;
-@property (nonatomic, strong) NSURL *futureHref;
 
 + (NSArray *)soundCloudItemsFromResponse:(id)response;
 

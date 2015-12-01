@@ -762,6 +762,14 @@
     });
 }
 
+- (void)getNextStreamSongs {
+    [[SoundCloudAPIClient sharedClient] getStreamSongsWithURL:self.nextStreamPartURL.absoluteString];
+}
+
+- (void)getNextFavoriteSongs {
+    [[SoundCloudAPIClient sharedClient] getFavoriteSongsWithURL:self.nextFavoritesPartURL.absoluteString];
+}
+
 - (void)getNextSongs {
     if (self.nextStreamPartURL && self.sourceType == CurrentSourceTypeStream){
         [[SoundCloudAPIClient sharedClient] getStreamSongsWithURL:self.nextStreamPartURL.absoluteString];

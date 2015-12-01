@@ -13,15 +13,22 @@ import SoundCloud
 class FavoritesViewController : UICollectionViewController {
     let player = SharedAudioPlayer.sharedPlayer()
     let playerSession = AVAudioSession.sharedInstance()
+    var isLoadingMore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.remembersLastFocusedIndexPath = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name: "SoundCloudAPIClientDidLoadSongs", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "failed", name: "SoundCloudAPIClientDidFailToLoadSongs", object: nil)
+    }
+    
+    func failed() {
+        isLoadingMore = false
     }
     
     func reload() {
+        isLoadingMore = false
         self.collectionView?.reloadData()
     }
     
@@ -109,6 +116,19 @@ class FavoritesViewController : UICollectionViewController {
             
         default:
             assert(false, "Unexpected element kind")
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+        if collectionView == self.collectionView {
+            if let row = context.nextFocusedIndexPath?.row {
+                if player.favoriteItemsToShowInTableView.count - row <= 4 {
+                    if isLoadingMore == false {
+                        SharedAudioPlayer.sharedPlayer().getNextFavoriteSongs()
+                    }
+                    isLoadingMore = true
+                }
+            }
         }
     }
     

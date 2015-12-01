@@ -14,6 +14,7 @@ import SDWebImage
 class StreamViewController: UICollectionViewController {
     let player = SharedAudioPlayer.sharedPlayer()
     let playerSession = AVAudioSession.sharedInstance()
+    var isLoadingMore = false
     var isClosing = false
 
     override func viewDidLoad() {
@@ -21,9 +22,15 @@ class StreamViewController: UICollectionViewController {
         self.collectionView!.remembersLastFocusedIndexPath = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name: "SoundCloudAPIClientDidLoadSongs", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "failed", name: "SoundCloudAPIClientDidFailToLoadSongs", object: nil)
+    }
+    
+    func failed() {
+        isLoadingMore = false
     }
 
     func reload() {
+        isLoadingMore = false
         self.collectionView?.reloadData()
     }
     
@@ -133,10 +140,21 @@ class StreamViewController: UICollectionViewController {
         }
     }
     
-//    override func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        
-//    }
-    
+    override func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+        if collectionView == self.collectionView {
+            if let row = context.nextFocusedIndexPath?.row {
+                let number = player.streamItemsToShowInTableView.count - row
+                print("left: \(number)")
+                if player.streamItemsToShowInTableView.count - row <= 4 {
+                    if isLoadingMore == false {
+                        SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
+                    }
+                    isLoadingMore = true
+                }
+            }
+        }
+    }
+
     @IBAction func reload(sender: UIButton) {
         SoundCloudAPIClient.sharedClient().reloadStream()
     }

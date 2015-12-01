@@ -20,6 +20,9 @@
 - (instancetype)initWithDict:(NSDictionary *)dict {
     self = [super init];
     if (self){
+        if ([dict isKindOfClass:[NSNull class]]) {
+            return self;
+        }
         if ([[dict objectForKey:@"artwork_url"] isKindOfClass:[NSString class]])
             self.artworkUrl = [NSURL URLWithString:[dict objectForKey:@"artwork_url"]];
         self.commentCount = [dict objectForKey:@"comment_count"];

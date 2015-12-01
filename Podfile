@@ -3,8 +3,13 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'Soundcloud TV' do
+target 'SoundCloud TV' do
 	pod 'SoundCloud-Cocoa-API', :path => 'SoundCloud-Cocoa-API'
     pod 'SDWebImage', '~> 3.7.3'
+end
+
+post_install do | installer |
+    require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods/Pods-Acknowledgements.plist', 'Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
 end
 

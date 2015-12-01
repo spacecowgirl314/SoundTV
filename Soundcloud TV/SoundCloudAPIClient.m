@@ -86,6 +86,9 @@
                          NSArray *itemsFromResponse = [SoundCloudItem soundCloudItemsFromResponse:objectFromData];
                          [[SharedAudioPlayer sharedPlayer] insertStreamItems:itemsFromResponse];
                      }
+                     else {
+                         [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientDidFailToLoadSongs" object:nil];
+                     }
                  }
              }];
     
@@ -117,6 +120,10 @@
 - (void)getStreamSongsWithURL:(NSString *)url {
     SCAccount *account = [SCSoundCloud account];
     
+    if (url == nil) {
+        return;
+    }
+    
     [SCRequest performMethod:SCRequestMethodGET
                   onResource:[NSURL URLWithString:url]
              usingParameters:nil
@@ -136,6 +143,9 @@
                              [[SharedAudioPlayer sharedPlayer]insertStreamItems:itemsToInsert];
                          }
                      }
+                     else {
+                         [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientDidFailToLoadSongs" object:nil];
+                     }
                  }
              }];
 
@@ -145,7 +155,7 @@
     SCAccount *account = [SCSoundCloud account];
     
     [SCRequest performMethod:SCRequestMethodGET
-                  onResource:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.soundcloud.com/users/%@/favorites?limit=100&offset=0&linked_partitioning=1",[[NSUserDefaults standardUserDefaults] objectForKey:@"scUserId"]]] // https://api-v2.soundcloud.com/users/%@/track_likes?limit=100&offset=0&linked_partitioning=1
+                  onResource:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.soundcloud.com/users/%@/favorites?limit=25&offset=0&linked_partitioning=1",[[NSUserDefaults standardUserDefaults] objectForKey:@"scUserId"]]] // https://api-v2.soundcloud.com/users/%@/track_likes?limit=100&offset=0&linked_partitioning=1
              usingParameters:nil
                  withAccount:account
       sendingProgressHandler:nil
@@ -164,6 +174,9 @@
                              
                          }
                      }
+                     else {
+                         [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientDidFailToLoadSongs" object:nil];
+                     }
                  }
              }];
 
@@ -171,6 +184,10 @@
 
 - (void)getFavoriteSongsWithURL:(NSString *)url {
     SCAccount *account = [SCSoundCloud account];
+    
+    if (url == nil) {
+        return;
+    }
     
     [SCRequest performMethod:SCRequestMethodGET
                   onResource:[NSURL URLWithString:url]
@@ -190,6 +207,9 @@
                              NSArray *itemsToInsert = [SoundCloudItem soundCloudItemsFromResponse:objectFromData];
                              [[SharedAudioPlayer sharedPlayer]insertFavoriteItems:itemsToInsert];
                          }
+                     }
+                     else {
+                         [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientDidFailToLoadSongs" object:nil];
                      }
                  }
              }];
