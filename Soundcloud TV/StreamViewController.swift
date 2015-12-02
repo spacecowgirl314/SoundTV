@@ -143,8 +143,6 @@ class StreamViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         if collectionView == self.collectionView {
             if let row = context.nextFocusedIndexPath?.row {
-                let number = player.streamItemsToShowInTableView.count - row
-                print("left: \(number)")
                 if player.streamItemsToShowInTableView.count - row <= 4 {
                     if isLoadingMore == false {
                         SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
