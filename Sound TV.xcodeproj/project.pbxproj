@@ -79,6 +79,8 @@
 		08CF50391C1031240086D02F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08CF503D1C1037BF0086D02F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		08CF503E1C103B290086D02F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		08CF50441C1041470086D02F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		08CF50451C1042110086D02F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6079A95CB57230FF1F4AF479 /* Pods-Sound TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound TV.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sound TV/Pods-Sound TV.release.xcconfig"; sourceTree = "<group>"; };
 		64AFFAD81BEAA2B9041207F9 /* Pods_Soundcloud_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundcloud_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97575F72181181428D45C407 /* Pods-Soundcloud TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundcloud TV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Soundcloud TV/Pods-Soundcloud TV.debug.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,8 @@
 				it,
 				es,
 				de,
+				"en-GB",
+				fr,
 			);
 			mainGroup = 08A670A91BF5AE5000D4821D;
 			productRefGroup = 08A670B31BF5AE5000D4821D /* Products */;
@@ -355,6 +359,7 @@
 				08A670BC1BF5AE5000D4821D /* Base */,
 				0899F4D91C0EB3E000635717 /* it */,
 				08CF503D1C1037BF0086D02F /* es */,
+				08CF50441C1041470086D02F /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				08CF50371C1031170086D02F /* Base */,
 				08CF50391C1031240086D02F /* it */,
 				08CF503E1C103B290086D02F /* es */,
+				08CF50451C1042110086D02F /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
