@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Sound TV
+
+  Created by Chloe Stars on 12/3/15.
+  Copyright © 2015 Chloe Stars. All rights reserved.
+*/
+
+"incorrect" = "Are you sure you entered the right email and password?";
+"like" = "Like";
+"like.remove" = "Unlike";

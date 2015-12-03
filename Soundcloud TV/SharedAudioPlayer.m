@@ -346,7 +346,7 @@
             SoundCloudTrack *trackFromItem = item.item;
             [self.favoriteItemsToShowInTableView insertObject:trackFromItem atIndex:0];
         } else if (item.type == SoundCloudItemTypePlaylist || item.type == SoundCloudItemTypePlaylistRepost) {
-            SoundCloudPlaylist *playlistFromItem = item.item;
+//            SoundCloudPlaylist *playlistFromItem = item.item;
             // TODO: Playlists disabled
 //            [self.favoriteItemsToShowInTableView insertObject:playlistFromItem atIndex:0];
 //            for (SoundCloudTrack *playlistTrack in playlistFromItem.tracks){
@@ -397,11 +397,11 @@
         [self.audioPlayer addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
         [self.audioPlayer addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
         self.audioPlayerCallback = [self.audioPlayer addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1.0, NSEC_PER_SEC) queue:NULL usingBlock:^(CMTime time) {
-            if (!isnan(CMTimeGetSeconds(time))) {
-                [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedAudioPlayerUpdatedTimePlayed" object:[NSNumber numberWithFloat:CMTimeGetSeconds(time)]];
-                float seconds = CMTimeGetSeconds(time);
-                SoundCloudTrack *currentItem = [[SharedAudioPlayer sharedPlayer] currentItem];
-            }
+//            if (!isnan(CMTimeGetSeconds(time))) {
+//                [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedAudioPlayerUpdatedTimePlayed" object:[NSNumber numberWithFloat:CMTimeGetSeconds(time)]];
+//                float seconds = CMTimeGetSeconds(time);
+//                SoundCloudTrack *currentItem = [[SharedAudioPlayer sharedPlayer] currentItem];
+//            }
         }];
         [self.audioPlayer setActionAtItemEnd:AVPlayerActionAtItemEndAdvance];
     } else {
@@ -469,8 +469,8 @@
         self.audioPlayerCallback = [self.audioPlayer addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1.0, NSEC_PER_SEC) queue:NULL usingBlock:^(CMTime time) {
             if (!isnan(CMTimeGetSeconds(time))) {
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedAudioPlayerUpdatedTimePlayed" object:[NSNumber numberWithFloat:CMTimeGetSeconds(time)]];
-                float seconds = CMTimeGetSeconds(time);
-                SoundCloudTrack *currentItem = [[SharedAudioPlayer sharedPlayer] currentItem];
+//                float seconds = CMTimeGetSeconds(time);
+//                SoundCloudTrack *currentItem = [[SharedAudioPlayer sharedPlayer] currentItem];
 //                if (currentItem) {
 //                BOOL doScrobble = [[NSUserDefaults standardUserDefaults] boolForKey:@"useLastFM"];
 //                    if (doScrobble && (seconds > 240 || seconds > currentItem.duration*0.3) && ![[SharedAudioPlayer sharedPlayer].scrobbledItems containsObject:currentItem]) {
@@ -531,8 +531,8 @@
             SoundCloudTrack *trackFromItem = item.item;
             [self.favoriteItemsToShowInTableView addObject:trackFromItem];
         } else if (item.type == SoundCloudItemTypePlaylist || item.type == SoundCloudItemTypePlaylistRepost) {
-            SoundCloudPlaylist *playlistFromItem = item.item;
-            // TODO: Playlists disabled
+//            SoundCloudPlaylist *playlistFromItem = item.item;
+//             TODO: Playlists disabled
 //            [self.favoriteItemsToShowInTableView addObject:playlistFromItem];
 //            for (SoundCloudTrack *playlistTrack in playlistFromItem.tracks){
 //                [self.favoriteItemsToShowInTableView addObject:playlistTrack];

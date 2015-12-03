@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/hachidorii/Projects/Soundcloud TV/Sound TV.xcodeproj">
+      location = "group:Sound TV.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

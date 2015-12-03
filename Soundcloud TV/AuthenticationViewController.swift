@@ -35,7 +35,7 @@ class AuthenticationViewController: UIViewController {
     
     func didFailToAuthenticate() {
         // let the user know it failed
-        let actionSheetController: UIAlertController = UIAlertController(title: "Error", message: "Failed to authenticate with SoundCloud", preferredStyle: .ActionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "Error", message: NSLocalizedString("incorrect", comment: "Are you sure you entered the right email and password?"), preferredStyle: .ActionSheet)
 
         let dismissAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in }
         actionSheetController.addAction(dismissAction)

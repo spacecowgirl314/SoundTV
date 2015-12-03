@@ -89,7 +89,7 @@ extension SharedAudioPlayer {
                     }
                     // the below two for loops might be able to be simplified into itemsToPlay.removeObject(track)
                     if itemsToPlay != nil {
-                        let test = itemsToPlay
+//                        let test = itemsToPlay
                         searching: for item in itemsToPlay {
                             if let asset = item.asset as? AVURLAsset {
                                 if let _ = track as? SoundCloudTrack {

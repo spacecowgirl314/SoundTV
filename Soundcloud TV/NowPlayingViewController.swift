@@ -113,10 +113,10 @@ class NowPlayingViewController: UIViewController {
             
             if let isFavorited = item.userFavorite {
                 if isFavorited == 1 {
-                    likeButton.setTitle("Liked", forState: .Normal)
+                    likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
                 }
                 else {
-                    likeButton.setTitle("Like", forState: .Normal)
+                    likeButton.setTitle(NSLocalizedString("like", comment: "Like"), forState: .Normal)
                 }
             }
             
@@ -237,7 +237,7 @@ class NowPlayingViewController: UIViewController {
                         if error == nil {
                             print("saved favorite")
                             item.userFavorite = 1
-                            self.likeButton.setTitle("Liked", forState: .Normal)
+                            self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
                         }
                     })
                 }
@@ -251,7 +251,7 @@ class NowPlayingViewController: UIViewController {
                         if error == nil {
                             print("removed favorite")
                             item.userFavorite = 0
-                            self.likeButton.setTitle("Like", forState: .Normal)
+                            self.likeButton.setTitle(NSLocalizedString("like", comment: "Like"), forState: .Normal)
                         }
                     })
                 }
@@ -261,7 +261,7 @@ class NowPlayingViewController: UIViewController {
                     if error == nil {
                         print("saved favorite")
                         item.userFavorite = 1
-                        self.likeButton.setTitle("Liked", forState: .Normal)
+                        self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
                     }
                 })
             }

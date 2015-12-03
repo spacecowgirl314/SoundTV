@@ -17,29 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJl-oJ-kXe">
-                                <rect key="frame" x="811" y="887" width="299" height="86"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJl-oJ-kXe">
+                                <rect key="frame" x="863" y="882" width="195" height="86"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="195" id="cZS-53-fYx"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Authenticate"/>
+                                <state key="normal" title="Sign in"/>
                                 <connections>
                                     <action selector="authenticate:" destination="UvB-nS-0cN" eventType="primaryActionTriggered" id="CCf-LZ-eFR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-eC-1Dw">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-eC-1Dw">
                                 <rect key="frame" x="652" y="513" width="616" height="66"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9SJ-0a-Zpn">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9SJ-0a-Zpn">
                                 <rect key="frame" x="652" y="655" width="616" height="66"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login to SoundCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulh-C3-c2S">
-                                <rect key="frame" x="667" y="359" width="586" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sign in to SoundCloud" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulh-C3-c2S">
+                                <rect key="frame" x="650" y="359" width="620" height="72"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,6 +50,11 @@
                             </label>
                         </subviews>
                         <animations/>
+                        <constraints>
+                            <constraint firstItem="PoP-eC-1Dw" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="Fha-AB-JsY"/>
+                            <constraint firstItem="ulh-C3-c2S" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="YzB-Bh-dGe"/>
+                            <constraint firstItem="9SJ-0a-Zpn" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="n8o-av-Jdg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Authentication" id="Zam-UW-wW3"/>
                     <connections>
@@ -58,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="2285" y="-1023"/>
         </scene>
-        <!--Settings-->
+        <!--More-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SettingsViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,15 +99,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-7k-ae0">
-                                <rect key="frame" x="860" y="974" width="200" height="86"/>
-                                <animations/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logout" destination="8rJ-Kc-sve" eventType="primaryActionTriggered" id="Oti-Rj-VRZ"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="uHW-Ec-qzi">
                                 <rect key="frame" x="412" y="319" width="1096" height="559"/>
                                 <animations/>
@@ -359,11 +358,24 @@ SoundCloud Cocoa API
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-7k-ae0">
+                                <rect key="frame" x="849" y="974" width="222" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="logout" destination="8rJ-Kc-sve" eventType="primaryActionTriggered" id="Oti-Rj-VRZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Hyy-7k-ae0" secondAttribute="bottom" constant="20" id="Hd9-4f-g2s"/>
+                            <constraint firstItem="Hyy-7k-ae0" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="d4n-E8-guN"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="More" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="acknowledgementsView" destination="uHW-Ec-qzi" id="tlF-6m-rw4"/>
                     </connections>
@@ -672,16 +684,19 @@ SoundCloud Cocoa API
                             <rect key="frame" x="0.0" y="140" width="1920" height="125"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8v-Ng-h1F">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8v-Ng-h1F">
                                     <rect key="frame" x="1682" y="20" width="198" height="86"/>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="198" id="4bJ-dg-WYL"/>
+                                    </constraints>
                                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                     <state key="normal" title="Reload"/>
                                     <connections>
                                         <action selector="reload:" destination="hHl-h9-7cm" eventType="primaryActionTriggered" id="C9X-ow-dCK"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-NZ-2fa">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Stream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-NZ-2fa">
                                     <rect key="frame" x="892" y="39" width="137" height="48"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
@@ -690,6 +705,10 @@ SoundCloud Cocoa API
                                 </label>
                             </subviews>
                             <animations/>
+                            <constraints>
+                                <constraint firstItem="dLo-NZ-2fa" firstAttribute="centerX" secondItem="wbG-vb-8m6" secondAttribute="centerX" id="726-Q9-di8"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="v8v-Ng-h1F" secondAttribute="trailing" constant="32" id="dBT-Eg-QOl"/>
+                            </constraints>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="hHl-h9-7cm" id="bNM-Jb-bJl"/>
@@ -727,7 +746,7 @@ SoundCloud Cocoa API
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Favorites-->
+        <!--Likes-->
         <scene sceneID="kzu-kR-98P">
             <objects>
                 <collectionViewController id="7Ce-ig-ihi" customClass="FavoritesViewController" customModule="Sound_TV" customModuleProvider="target" sceneMemberID="viewController">
@@ -813,9 +832,12 @@ SoundCloud Cocoa API
                             <rect key="frame" x="0.0" y="140" width="1920" height="125"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTV-GV-7hr">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTV-GV-7hr">
                                     <rect key="frame" x="1682" y="20" width="198" height="86"/>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="198" id="hgB-2q-YUI"/>
+                                    </constraints>
                                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                     <state key="normal" title="Reload"/>
                                     <connections>
@@ -823,8 +845,8 @@ SoundCloud Cocoa API
                                         <action selector="reload:" destination="7Ce-ig-ihi" eventType="primaryActionTriggered" id="u5R-di-a0p"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-0M-2lw">
-                                    <rect key="frame" x="873" y="39" width="174" height="48"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-0M-2lw">
+                                    <rect key="frame" x="912" y="38" width="96" height="48"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -832,13 +854,17 @@ SoundCloud Cocoa API
                                 </label>
                             </subviews>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="fTV-GV-7hr" secondAttribute="trailing" constant="32" id="CrW-4i-R6y"/>
+                                <constraint firstItem="yEh-0M-2lw" firstAttribute="centerX" secondItem="6zt-eC-kXE" secondAttribute="centerX" id="Rcp-qH-XOS"/>
+                            </constraints>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="7Ce-ig-ihi" id="Ksk-3a-y1z"/>
                             <outlet property="delegate" destination="7Ce-ig-ihi" id="J4j-xB-LRN"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="4e0-d4-Dej"/>
+                    <tabBarItem key="tabBarItem" title="Likes" id="4e0-d4-Dej"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ava-An-hzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
