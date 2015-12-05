@@ -45,30 +45,30 @@ class FavoritesViewController : UICollectionViewController {
         do {
             try playerSession.setCategory(AVAudioSessionCategoryPlayback) // TODO: mix in
             try playerSession.setActive(true, withOptions: .NotifyOthersOnDeactivation)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
+//            NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
         }
         catch {
             
         }
     }
     
-    func audioSessionInterrupted(notification: NSNotification) {
-        let interruptionTypeAsObject =
-        notification.userInfo![AVAudioSessionInterruptionTypeKey] as! NSNumber
-        
-        let interruptionType = AVAudioSessionInterruptionType(rawValue:
-            interruptionTypeAsObject.unsignedLongValue)
-        
-        if let type = interruptionType{
-            if type == .Began{
-                player.audioPlayer.pause()
-            }
-            if type == .Ended{
-                player.audioPlayer.play()
-                /* resume the audio if needed */
-            }
-        }
-    }
+//    func audioSessionInterrupted(notification: NSNotification) {
+//        let interruptionTypeAsObject =
+//        notification.userInfo![AVAudioSessionInterruptionTypeKey] as! NSNumber
+//        
+//        let interruptionType = AVAudioSessionInterruptionType(rawValue:
+//            interruptionTypeAsObject.unsignedLongValue)
+//        
+//        if let type = interruptionType{
+//            if type == .Began{
+//                player.audioPlayer.pause()
+//            }
+//            if type == .Ended{
+//                player.audioPlayer.play()
+//                /* resume the audio if needed */
+//            }
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

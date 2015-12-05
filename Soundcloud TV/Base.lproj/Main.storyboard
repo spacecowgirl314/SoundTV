@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJl-oJ-kXe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJl-oJ-kXe">
                                 <rect key="frame" x="863" y="882" width="195" height="86"/>
                                 <animations/>
                                 <constraints>
@@ -51,9 +51,11 @@
                         </subviews>
                         <animations/>
                         <constraints>
+                            <constraint firstItem="RtH-b5-J7a" firstAttribute="top" secondItem="jJl-oJ-kXe" secondAttribute="bottom" constant="112" id="2c6-ds-9dN"/>
                             <constraint firstItem="PoP-eC-1Dw" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="Fha-AB-JsY"/>
                             <constraint firstItem="ulh-C3-c2S" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="YzB-Bh-dGe"/>
                             <constraint firstItem="9SJ-0a-Zpn" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="n8o-av-Jdg"/>
+                            <constraint firstItem="jJl-oJ-kXe" firstAttribute="centerX" secondItem="X8v-Pl-EkE" secondAttribute="centerX" id="x3o-X6-IcM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Authentication" id="Zam-UW-wW3"/>
@@ -78,31 +80,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created with love by Chloe Stars (follow @getSoundTV)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFF-u7-kr8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created with love by Chloe Stars (follow @getSoundTV)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFF-u7-kr8">
                                 <rect key="frame" x="712" y="254" width="496" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohb-qH-HGd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohb-qH-HGd">
                                 <rect key="frame" x="945" y="225" width="31" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound TV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-wD-Vyh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound TV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-wD-Vyh">
                                 <rect key="frame" x="824" y="154" width="273" height="72"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="uHW-Ec-qzi">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="uHW-Ec-qzi">
                                 <rect key="frame" x="412" y="319" width="1096" height="559"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="559" id="3cY-q7-SPG"/>
+                                </constraints>
                                 <string key="text">Portions of StreamCloud included
 Copyright (c) 2014-2015 Peter Amende, Philip Brechler
 
@@ -351,15 +356,15 @@ SoundCloud Cocoa API
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acknowledgements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHq-7s-50d">
-                                <rect key="frame" x="881" y="300" width="158" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acknowledgements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHq-7s-50d">
+                                <rect key="frame" x="881" y="298" width="158" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-7k-ae0">
-                                <rect key="frame" x="849" y="974" width="222" height="86"/>
+                                <rect key="frame" x="849" y="902" width="222" height="86"/>
                                 <animations/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Sign out"/>
@@ -371,9 +376,33 @@ SoundCloud Cocoa API
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Hyy-7k-ae0" firstAttribute="top" secondItem="uHW-Ec-qzi" secondAttribute="bottom" constant="24" id="2Kx-pG-uKV"/>
+                            <constraint firstItem="JN3-wD-Vyh" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="14" id="7xC-ub-aMt"/>
+                            <constraint firstItem="JN3-wD-Vyh" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Cev-oj-ku0"/>
+                            <constraint firstItem="bFF-u7-kr8" firstAttribute="top" secondItem="ohb-qH-HGd" secondAttribute="bottom" constant="8" id="DeE-6b-QnW"/>
+                            <constraint firstItem="qHq-7s-50d" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="GSU-Dg-q3s"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Hyy-7k-ae0" secondAttribute="bottom" constant="20" id="Hd9-4f-g2s"/>
+                            <constraint firstItem="bFF-u7-kr8" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Lj8-uE-6i4"/>
+                            <constraint firstItem="qHq-7s-50d" firstAttribute="top" secondItem="bFF-u7-kr8" secondAttribute="bottom" constant="22" id="RkU-dL-xDy"/>
+                            <constraint firstItem="uHW-Ec-qzi" firstAttribute="top" secondItem="qHq-7s-50d" secondAttribute="bottom" id="aar-bz-eAs"/>
                             <constraint firstItem="Hyy-7k-ae0" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="d4n-E8-guN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uHW-Ec-qzi" secondAttribute="trailing" constant="392" id="dNS-tA-7Fj"/>
+                            <constraint firstItem="Hyy-7k-ae0" firstAttribute="top" secondItem="uHW-Ec-qzi" secondAttribute="bottom" constant="96" id="eVl-YI-cCg"/>
+                            <constraint firstItem="uHW-Ec-qzi" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="392" id="iVL-WU-cOL"/>
+                            <constraint firstItem="uHW-Ec-qzi" firstAttribute="top" secondItem="qHq-7s-50d" secondAttribute="bottom" constant="-2" id="j0D-uB-71o"/>
+                            <constraint firstItem="qHq-7s-50d" firstAttribute="top" secondItem="bFF-u7-kr8" secondAttribute="bottom" constant="20" id="j3Z-8c-9Vc"/>
+                            <constraint firstItem="ohb-qH-HGd" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="jSt-HG-ybe"/>
+                            <constraint firstItem="ohb-qH-HGd" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="85" id="lkM-uS-dTY"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Hyy-7k-ae0" secondAttribute="bottom" constant="92" id="shE-Vg-CTw"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="j0D-uB-71o"/>
+                                <exclude reference="RkU-dL-xDy"/>
+                                <exclude reference="Hd9-4f-g2s"/>
+                                <exclude reference="eVl-YI-cCg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="More" id="cPa-gy-q4n"/>
                     <connections>
@@ -696,9 +725,12 @@ SoundCloud Cocoa API
                                         <action selector="reload:" destination="hHl-h9-7cm" eventType="primaryActionTriggered" id="C9X-ow-dCK"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Stream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-NZ-2fa">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-NZ-2fa">
                                     <rect key="frame" x="892" y="39" width="137" height="48"/>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="137" id="fDu-wV-Uxa"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -707,6 +739,7 @@ SoundCloud Cocoa API
                             <animations/>
                             <constraints>
                                 <constraint firstItem="dLo-NZ-2fa" firstAttribute="centerX" secondItem="wbG-vb-8m6" secondAttribute="centerX" id="726-Q9-di8"/>
+                                <constraint firstItem="dLo-NZ-2fa" firstAttribute="centerY" secondItem="wbG-vb-8m6" secondAttribute="centerY" id="QhA-5u-wJF"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="v8v-Ng-h1F" secondAttribute="trailing" constant="32" id="dBT-Eg-QOl"/>
                             </constraints>
                         </collectionReusableView>
@@ -832,7 +865,7 @@ SoundCloud Cocoa API
                             <rect key="frame" x="0.0" y="140" width="1920" height="125"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTV-GV-7hr">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTV-GV-7hr">
                                     <rect key="frame" x="1682" y="20" width="198" height="86"/>
                                     <animations/>
                                     <constraints>
@@ -845,9 +878,12 @@ SoundCloud Cocoa API
                                         <action selector="reload:" destination="7Ce-ig-ihi" eventType="primaryActionTriggered" id="u5R-di-a0p"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-0M-2lw">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-0M-2lw">
                                     <rect key="frame" x="912" y="38" width="96" height="48"/>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="96" id="vVO-r5-nWo"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -856,7 +892,9 @@ SoundCloud Cocoa API
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="trailingMargin" secondItem="fTV-GV-7hr" secondAttribute="trailing" constant="32" id="CrW-4i-R6y"/>
+                                <constraint firstItem="fTV-GV-7hr" firstAttribute="centerY" secondItem="6zt-eC-kXE" secondAttribute="centerY" id="E7h-e9-lA5"/>
                                 <constraint firstItem="yEh-0M-2lw" firstAttribute="centerX" secondItem="6zt-eC-kXE" secondAttribute="centerX" id="Rcp-qH-XOS"/>
+                                <constraint firstItem="yEh-0M-2lw" firstAttribute="centerY" secondItem="6zt-eC-kXE" secondAttribute="centerY" id="aC8-mf-lwT"/>
                             </constraints>
                         </collectionReusableView>
                         <connections>
