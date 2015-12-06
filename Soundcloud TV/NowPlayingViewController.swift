@@ -124,18 +124,20 @@ class NowPlayingViewController: UIViewController {
             var interval = 0.1
             
             let playerDuration = self.playerItemDuration()
-            if (CMTIME_IS_INVALID(playerDuration))
+            if CMTIME_IS_INVALID(playerDuration)
             {
                 return
             }
+            
             let duration = CMTimeGetSeconds(playerDuration);
-            if (isfinite(duration))
+            if isfinite(duration)
             {
                 let width = CGRectGetWidth(progressBar.bounds);
                 interval = 0.5 * duration / Double(width);
             }
             
-            player.audioPlayer.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(interval, Int32(NSEC_PER_SEC)), queue: nil) { (time: CMTime) -> Void in
+            // we're protected from calling on a nil player because we return if we get an invalid time
+            player.audioPlayer!.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(interval, Int32(NSEC_PER_SEC)), queue: nil) { (time: CMTime) -> Void in
                 self.syncScrubber()
             }
         }
@@ -143,10 +145,14 @@ class NowPlayingViewController: UIViewController {
     
     func playerItemDuration() -> CMTime
     {
-        if let thePlayerItem = player.audioPlayer.currentItem {
+        guard let audioPlayer = player.audioPlayer else {
+            return kCMTimeInvalid
+        }
+        
+        if let thePlayerItem = audioPlayer.currentItem {
             if thePlayerItem.status == .ReadyToPlay
             {
-                return player.audioPlayer.currentItem!.duration
+                return audioPlayer.currentItem!.duration
             }
         }
         
@@ -170,7 +176,7 @@ class NowPlayingViewController: UIViewController {
     
     func syncScrubber() {
         let playerDuration = self.playerItemDuration()
-        if (CMTIME_IS_INVALID(playerDuration))
+        if CMTIME_IS_INVALID(playerDuration)
         {
             progressBar.progress = 0
             elapsedLabel.text = "--:--"
@@ -179,15 +185,15 @@ class NowPlayingViewController: UIViewController {
         }
         
         let duration : Float64 = CMTimeGetSeconds(playerDuration);
-        if (isfinite(duration) && (duration > 0))
+        if isfinite(duration) && duration > 0
         {
             let minValue : Float64 = 0.0
             let maxValue : Float64 = 1.0
-            let time = CMTimeGetSeconds(player.audioPlayer.currentTime());
+            let time = CMTimeGetSeconds(player.audioPlayer!.currentTime());
             progressBar.progress = Float((maxValue - minValue) * time / duration + minValue)
             
-            elapsedLabel.text = formatTime(player.audioPlayer.currentTime())
-            timeLeftLabel.text = "-\(formatTime(self.playerItemDuration()-player.audioPlayer.currentTime()))"
+            elapsedLabel.text = formatTime(player.audioPlayer!.currentTime())
+            timeLeftLabel.text = "-\(formatTime(self.playerItemDuration()-player.audioPlayer!.currentTime()))"
         }
     }
 

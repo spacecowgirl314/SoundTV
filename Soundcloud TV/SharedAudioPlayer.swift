@@ -76,11 +76,11 @@ extension SharedAudioPlayer {
                 favoriteItemsToShowInTableView.removeObject(track)
                 // find in queue items by matching against url
                 if sourceType == CurrentSourceTypeFavorites {
-                    searching: for item in audioPlayer.items() {
+                    searching: for item in audioPlayer!.items() {
                         if let asset = item.asset as? AVURLAsset {
                             if let _ = track as? SoundCloudTrack {
                                 if asset.URL == track.streamingUrl {
-                                    audioPlayer.removeItem(item)
+                                    audioPlayer!.removeItem(item)
                                     // adjust player position item number
                                     break searching
                                 }
@@ -190,11 +190,11 @@ extension SharedAudioPlayer {
                 streamItemsToShowInTableView.removeObject(track)
                 // find in queue items by matching against url
                 if sourceType == CurrentSourceTypeStream {
-                    searching: for item in audioPlayer.items() {
+                    searching: for item in audioPlayer!.items() {
                         if let asset = item.asset as? AVURLAsset {
                             if let _ = track as? SoundCloudTrack {
                                 if asset.URL == track.streamingUrl {
-                                    audioPlayer.removeItem(item)
+                                    audioPlayer!.removeItem(item)
                                     // adjust player position item number
                                     break searching
                                 }
