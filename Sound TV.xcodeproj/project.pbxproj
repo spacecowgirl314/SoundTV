@@ -13,6 +13,7 @@
 		08496D7A1BF9BA7F0073FF32 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08496D791BF9BA7F0073FF32 /* SettingsViewController.swift */; };
 		084C70BB1BFFD19100B64232 /* SharedAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C70BA1BFFD19100B64232 /* SharedAudioPlayer.swift */; };
 		086221D31C0068FA0087D977 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086221D21C0068F90087D977 /* Keys.swift */; };
+		08833D711C19660200B1C004 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833D701C19660200B1C004 /* AcknowledgementsViewController.swift */; };
 		08A670B61BF5AE5000D4821D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B51BF5AE5000D4821D /* AppDelegate.swift */; };
 		08A670B81BF5AE5000D4821D /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B71BF5AE5000D4821D /* NowPlayingViewController.swift */; };
 		08A670BA1BF5AE5000D4821D /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A670B91BF5AE5000D4821D /* StreamViewController.swift */; };
@@ -51,7 +52,8 @@
 		08496D791BF9BA7F0073FF32 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		084C70BA1BFFD19100B64232 /* SharedAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedAudioPlayer.swift; sourceTree = "<group>"; };
 		086221D21C0068F90087D977 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		0899F4D91C0EB3E000635717 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		08833D6F1C19644800B1C004 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		08833D701C19660200B1C004 /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
 		08A670B21BF5AE5000D4821D /* Sound TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A670B51BF5AE5000D4821D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08A670B71BF5AE5000D4821D /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				0818EF381BF700100043988E /* FavoritesViewController.swift */,
 				0818EF3A1BF86F330043988E /* TabBarController.swift */,
 				08496D791BF9BA7F0073FF32 /* SettingsViewController.swift */,
+				08833D701C19660200B1C004 /* AcknowledgementsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				08A670CF1BF5CDF500D4821D /* SoundCloudTrack.m in Sources */,
 				08A670D61BF5CE5400D4821D /* SoundCloudPlaylist.m in Sources */,
 				08A670DF1BF6EA0E00D4821D /* SoundCloudAPIClient.m in Sources */,
+				08833D711C19660200B1C004 /* AcknowledgementsViewController.swift in Sources */,
 				08A670DC1BF6E5BA00D4821D /* SharedAudioPlayer.m in Sources */,
 				08A670D91BF5D1E300D4821D /* TrackItemView.swift in Sources */,
 				08A670C71BF5B85200D4821D /* AuthenticationViewController.swift in Sources */,
@@ -357,9 +361,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				08A670BC1BF5AE5000D4821D /* Base */,
-				0899F4D91C0EB3E000635717 /* it */,
 				08CF503D1C1037BF0086D02F /* es */,
 				08CF50441C1041470086D02F /* fr */,
+				08833D6F1C19644800B1C004 /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

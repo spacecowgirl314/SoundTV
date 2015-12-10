@@ -9,14 +9,11 @@
 import UIKit
 
 class SettingsViewController : UIViewController {
-    @IBOutlet var acknowledgementsView : UIScrollView!
-    override weak var preferredFocusedView: UIView? { return self.acknowledgementsView }
+    @IBOutlet var iconView : UIImageView!
     
-    override func viewDidAppear(animated: Bool) {
-        let touchType = UITouchType.Indirect
-        
-        acknowledgementsView.userInteractionEnabled = true
-        acknowledgementsView.panGestureRecognizer.allowedTouchTypes = [NSNumber(integer: touchType.rawValue)];
+    override func viewDidLoad() {
+        iconView.layer.cornerRadius = 9.0
+        iconView.layer.masksToBounds = true
     }
     
     @IBAction func logout() {
@@ -25,8 +22,3 @@ class SettingsViewController : UIViewController {
     }
 }
 
-class ScrollableScrollView : UITextView {
-    override func canBecomeFocused() -> Bool {
-        return true
-    }
-}
