@@ -22,8 +22,8 @@ class TrackItemView : UICollectionViewCell {
             // move labels below image view
             self.topSpaceConstraint.constant += 32
             // increase width of labels
-            self.artistWidthConstraint.constant += 75
-            self.trackWidthConstraint.constant += 75
+            self.artistWidthConstraint.constant += 60
+            self.trackWidthConstraint.constant += 60
             coordinator.addCoordinatedAnimations({ () -> Void in
                 self.layoutIfNeeded()
                 self.artistLabel.textColor = UIColor.whiteColor()
@@ -44,8 +44,8 @@ class TrackItemView : UICollectionViewCell {
             // put the labels back
             self.topSpaceConstraint.constant -= 32
             // put the width back
-            self.artistWidthConstraint.constant -= 75
-            self.trackWidthConstraint.constant -= 75
+            self.artistWidthConstraint.constant -= 60
+            self.trackWidthConstraint.constant -= 60
             coordinator.addCoordinatedAnimations({ () -> Void in
                 self.layoutIfNeeded()
                 self.artistLabel.textColor = UIColor.darkGrayColor()
