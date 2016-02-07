@@ -549,7 +549,7 @@ SoundCloud Cocoa API
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0A-ay-3ie">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0A-ay-3ie" customClass="NowPlayingArtworkButton" customModule="Sound_TV" customModuleProvider="target">
                                 <rect key="frame" x="710" y="290" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="500" id="SIU-cU-Mgn"/>

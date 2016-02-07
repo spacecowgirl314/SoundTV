@@ -9,8 +9,33 @@
 import UIKit
 import SDWebImage
 
+class NowPlayingArtworkButton: UIButton {
+//    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+//    [tapGestureRecognizer setAllowedPressTypes:@[@(UIPressTypeLeftArrow)]];
+    
+    weak var owner: NowPlayingViewController?
+    
+    var touchesHaveMoved = false
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        touchesHaveMoved = false
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesMoved(touches, withEvent: event)
+        touchesHaveMoved = true
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if touchesHaveMoved == false {
+            owner?.togglePlayer()
+        }
+    }
+}
+
 class NowPlayingViewController: UIViewController {
-    @IBOutlet var artworkButton : UIButton!
+    @IBOutlet var artworkButton : NowPlayingArtworkButton!
     @IBOutlet var artistLabel : UILabel!
     @IBOutlet var trackLabel : UILabel!
     @IBOutlet var progressBar : UIProgressView!
@@ -35,11 +60,16 @@ class NowPlayingViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNowPlaying", name: "SharedPlayerDidFinishObject", object: nil)
         
 //        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
-//        tapRecognizer.delegate = self
-//        let pressType = UIPressType.Select
-//        tapRecognizer.allowedPressTypes = [NSNumber(integer: pressType.rawValue)];
-//        tapRecognizer.allowedTouchTypes = [NSNumber(integer: pressType.rawValue)];
-//        self.view.addGestureRecognizer(tapRecognizer)
+////        tapRecognizer.delegate = self
+//        let pressType = [UIPressType.Select, UIPressType.Menu, UIPressType.PlayPause, UIPressType.UpArrow, UIPressType.DownArrow, UIPressType.LeftArrow, UIPressType.RightArrow]
+//        let touchType =  [UITouchType.Indirect, UITouchType.Direct]
+////        tapRecognizer.allowedTouchTypes = touchType.map { NSNumber(integer: $0.rawValue) }
+//        tapRecognizer.allowedPressTypes = pressType.map { NSNumber(integer: $0.rawValue) }
+////        tapRecognizer.allowedTouchTypes = [NSNumber(integer: pressType.rawValue)];
+//        self.artworkButton.addGestureRecognizer(tapRecognizer)
+//        
+        
+        self.artworkButton.owner = self
         
         // clear out the placement text
         artistLabel.text = ""
