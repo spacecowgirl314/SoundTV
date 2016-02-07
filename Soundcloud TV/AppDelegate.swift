@@ -45,15 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // -----
+        self.window?.makeKeyAndVisible()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didFailToAuthenticate"), name: "SoundCloudAPIClientDidFailToAuthenticate", object: nil)
+        didFailToAuthenticate()
         
+        return true
+    }
+    
+    func didFailToAuthenticate() {
         let rootViewController = self.window!.rootViewController!
         let storyboard = rootViewController.storyboard!
         if !SoundCloudAPIClient.sharedClient().isLoggedIn() {
             let viewController = storyboard.instantiateViewControllerWithIdentifier("Authentication")
             rootViewController.presentViewController(viewController, animated: false, completion: nil)
         }
-        
-        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
