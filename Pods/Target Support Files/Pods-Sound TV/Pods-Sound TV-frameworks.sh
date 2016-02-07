@@ -85,13 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Sound TV/NXOAuth2Client.framework"
-  install_framework "Pods-Sound TV/ReachabilitySwift.framework"
   install_framework "Pods-Sound TV/SDWebImage.framework"
   install_framework "Pods-Sound TV/SoundCloud.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Sound TV/NXOAuth2Client.framework"
-  install_framework "Pods-Sound TV/ReachabilitySwift.framework"
   install_framework "Pods-Sound TV/SDWebImage.framework"
   install_framework "Pods-Sound TV/SoundCloud.framework"
 fi

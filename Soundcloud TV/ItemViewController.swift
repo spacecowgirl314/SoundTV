@@ -22,6 +22,7 @@ class ItemViewController: UICollectionViewController {
     }
     
     let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    let unreachableLabel = UILabel()
     let player = SharedAudioPlayer.sharedPlayer()
     let playerSession = AVAudioSession.sharedInstance()
     let reachability: Reachability? = try? Reachability.reachabilityForInternetConnection()
@@ -36,6 +37,19 @@ class ItemViewController: UICollectionViewController {
         activityView.hidesWhenStopped = true
         self.view.addSubview(activityView)
         
+        unreachableLabel.text = NSLocalizedString("Could not load from SoundCloud.", comment: "Label for network error while loading from SoundCloud.")
+        unreachableLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        unreachableLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        
+        self.view.addSubview(unreachableLabel)
+        unreachableLabel.translatesAutoresizingMaskIntoConstraints = false
+        unreachableLabel.hidden = true
+        
+        NSLayoutConstraint.activateConstraints([
+            unreachableLabel.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor),
+            unreachableLabel.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor),
+        ])
+        
 //        reachability?.whenReachable = { reachability in
 //            dispatch_async(dispatch_get_main_queue(), {
 //            })
@@ -48,17 +62,26 @@ class ItemViewController: UICollectionViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loaded", name: "SoundCloudAPIClientDidLoadSongs", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "failed", name: "SoundCloudAPIClientDidFailToLoadSongs", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unreachable", name: "SoundCloudAPIClientIsUnreachable", object: nil)
     }
     
     func failed() {
         isLoadingMore = false
         self.activityView.stopAnimating()
+        self.unreachableLabel.hidden = false
     }
     
     func loaded() {
         isLoadingMore = false
         self.activityView.stopAnimating()
         self.collectionView?.reloadData()
+        self.unreachableLabel.hidden = true
+    }
+    
+    func unreachable() {
+        isLoadingMore = false
+        self.activityView.stopAnimating()
+        self.unreachableLabel.hidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -68,9 +91,11 @@ class ItemViewController: UICollectionViewController {
                 switch playerSourceType {
                 case .Some(CurrentSourceTypeStream):
                     SoundCloudAPIClient.sharedClient().getInitialStreamSongs()
+                    self.unreachableLabel.hidden = true
                     self.activityView.startAnimating()
                 case .Some(CurrentSourceTypeFavorites):
                     SoundCloudAPIClient.sharedClient().getInitialFavoriteSongs()
+                    self.unreachableLabel.hidden = true
                     self.activityView.startAnimating()
                 default:
                     break
@@ -188,6 +213,7 @@ class ItemViewController: UICollectionViewController {
     }
     
     @IBAction func reload(sender: UIButton) {
+        self.unreachableLabel.hidden = true
         self.activityView.startAnimating()
         SoundCloudAPIClient.sharedClient().reloadStream()
     }

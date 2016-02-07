@@ -1,6 +1,5 @@
 PODS:
   - NXOAuth2Client (1.2.8)
-  - ReachabilitySwift (2.3.3)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -8,7 +7,6 @@ PODS:
     - NXOAuth2Client (~> 1.2.2)
 
 DEPENDENCIES:
-  - ReachabilitySwift (~> 2.3)
   - SDWebImage (~> 3.7)
   - SoundCloud-Cocoa-API (from `SoundCloud-Cocoa-API`)
 
@@ -18,10 +16,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   NXOAuth2Client: 98c4d4c594edd2b289cfc34a8928653e1dab7adf
-  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SoundCloud-Cocoa-API: 4e33ea2922f5c81f893b068454527ca982ff4f5a
 
-PODFILE CHECKSUM: 720ac795a683d54355db812286c108b67cb22215
+PODFILE CHECKSUM: 73465588b2e32c4db669f71c307aa16f69ad18b4
 
 COCOAPODS: 1.0.0.beta.3

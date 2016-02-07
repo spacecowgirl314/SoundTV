@@ -7,7 +7,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Sound TV' do
-    pod 'ReachabilitySwift', '~> 2.3'
 	pod 'SoundCloud-Cocoa-API', :path => 'SoundCloud-Cocoa-API'
     pod 'SDWebImage', '~> 3.7'
 end

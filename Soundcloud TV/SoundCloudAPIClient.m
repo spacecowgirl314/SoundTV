@@ -78,6 +78,7 @@
                  // Handle the response
                  if (error) {
                      NSLog(@"Ooops, something went wrong: %@", [error localizedDescription]);
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientIsUnreachable" object:nil];
                  } else {
                      NSLog(@"Got data, yeah");
                      NSError *error;
@@ -101,6 +102,7 @@
                  // Handle the response
                  if (error) {
                      NSLog(@"Ooops, something went wrong: %@", [error localizedDescription]);
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientIsUnreachable" object:nil];
                  } else {
                      NSLog(@"Got data, yeah");
                      NSError *error;
@@ -133,6 +135,7 @@
                  // Handle the response
                  if (error) {
                      NSLog(@"Ooops, something went wrong: %@", [error localizedDescription]);
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientIsUnreachable" object:nil];
                  } else {
                      NSLog(@"Got data, yeah");
                      NSError *error;
@@ -163,6 +166,7 @@
                  // Handle the response
                  if (error) {
                      NSLog(@"Ooops, something went wrong: %@", [error localizedDescription]);
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientIsUnreachable" object:nil];
                  } else {
                      NSLog(@"Got data, yeah");
                      NSError *error;
@@ -198,6 +202,7 @@
                  // Handle the response
                  if (error) {
                      NSLog(@"Ooops, something went wrong: %@", [error localizedDescription]);
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientIsUnreachable" object:nil];
                  } else {
                      NSLog(@"Got data, yeah");
                      NSError *error;
