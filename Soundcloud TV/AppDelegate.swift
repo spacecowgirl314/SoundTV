@@ -43,6 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SharedAudioPlayer.sharedPlayer().previousItem()
             return .Success
         }
+        
+        // -----
+        
+        let rootViewController = self.window!.rootViewController!
+        let storyboard = rootViewController.storyboard!
+        if !SoundCloudAPIClient.sharedClient().isLoggedIn() {
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("Authentication")
+            rootViewController.presentViewController(viewController, animated: false, completion: nil)
+        }
+        
         return true
     }
 
