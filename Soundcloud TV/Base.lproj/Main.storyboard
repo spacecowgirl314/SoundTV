@@ -789,6 +789,7 @@ SoundCloud Cocoa API
                     <tabBarItem key="tabBarItem" title="Stream" id="50l-iD-FvR"/>
                     <connections>
                         <segue destination="UvB-nS-0cN" kind="presentation" identifier="setup" id="Km7-eU-l1Y"/>
+                        <segue destination="zPq-xj-bdx" kind="presentation" identifier="nowPlaying" id="0F8-YF-tI9"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExR-yc-shU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -925,6 +926,9 @@ SoundCloud Cocoa API
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Likes" id="4e0-d4-Dej"/>
+                    <connections>
+                        <segue destination="zPq-xj-bdx" kind="presentation" identifier="nowPlaying" id="0K9-H0-4dB"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ava-An-hzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -935,4 +939,7 @@ SoundCloud Cocoa API
         <image name="Icon" width="640" height="384"/>
         <image name="Placeholder" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0K9-H0-4dB"/>
+    </inferredMetricsTieBreakers>
 </document>

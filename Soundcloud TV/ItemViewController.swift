@@ -131,6 +131,7 @@ class ItemViewController: UICollectionViewController {
                 // populate Now Playing Info
                 let nowPlaying = MPNowPlayingInfoCenter.defaultCenter()
                 nowPlaying.nowPlayingInfo = [MPMediaItemPropertyTitle: item.title, MPMediaItemPropertyPlaybackDuration: item.duration] //MPMediaItemPropertyArtist: itemForView.user.username
+                self.performSegueWithIdentifier("nowPlaying", sender: self)
             }
             else {
                 print("can't stream track")
