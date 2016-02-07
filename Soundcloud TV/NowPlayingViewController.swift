@@ -59,16 +59,6 @@ class NowPlayingViewController: UIViewController {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNowPlaying", name: "SharedPlayerDidFinishObject", object: nil)
         
-//        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
-////        tapRecognizer.delegate = self
-//        let pressType = [UIPressType.Select, UIPressType.Menu, UIPressType.PlayPause, UIPressType.UpArrow, UIPressType.DownArrow, UIPressType.LeftArrow, UIPressType.RightArrow]
-//        let touchType =  [UITouchType.Indirect, UITouchType.Direct]
-////        tapRecognizer.allowedTouchTypes = touchType.map { NSNumber(integer: $0.rawValue) }
-//        tapRecognizer.allowedPressTypes = pressType.map { NSNumber(integer: $0.rawValue) }
-////        tapRecognizer.allowedTouchTypes = [NSNumber(integer: pressType.rawValue)];
-//        self.artworkButton.addGestureRecognizer(tapRecognizer)
-//        
-        
         self.artworkButton.owner = self
         
         // clear out the placement text
@@ -78,28 +68,35 @@ class NowPlayingViewController: UIViewController {
         timeLeftLabel.text = "--:--"
     }
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        return true
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-    }
-    
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-    }
-    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        
+        if animated {
+            vibrancyImageView.alpha = 0
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.updateNowPlaying()
+        
+        if animated {
+            UIView.animateWithDuration(1) {
+                self.vibrancyImageView.alpha = 1
+            }
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if animated {
+            vibrancyImageView.alpha = 0
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
         isShowingOptions = true
         self.revealOptions()
     }
@@ -139,7 +136,14 @@ class NowPlayingViewController: UIViewController {
             artworkButton.clipsToBounds = false
             artworkButton.contentMode = .ScaleAspectFill
             artworkButton.sd_setBackgroundImageWithURL(NSURL(string: SoundCloudClient.imageURLForItem(item, size: "t500x500")), forState: .Normal, placeholderImage: UIImage(named: "Placeholder"))
-//            vibrancyImageView.sd_setImageWithURL(NSURL(string: SoundCloudClient.imageURLForItem(item, size: "t500x500")))
+            vibrancyImageView.sd_setImageWithURL(NSURL(string: SoundCloudClient.imageURLForItem(item, size: "t500x500")), completed: { (image, error, cacheType, url) -> Void in
+                let newSize = CGSize(width: image.size.width/3, height: image.size.height/3)
+                UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+                image.drawAtPoint(CGPoint(x: -(image.size.width/2-newSize.width/2), y: -(image.size.height/2-newSize.height/2)))
+                let newImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                self.vibrancyImageView.image = newImage
+            })
             
             if let isFavorited = item.userFavorite {
                 if isFavorited == 1 {
