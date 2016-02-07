@@ -204,7 +204,14 @@ class ItemViewController: UICollectionViewController {
             if let row = context.nextFocusedIndexPath?.row {
                 if items.count - row <= 4 {
                     if isLoadingMore == false {
-                        SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
+                        switch playerSourceType {
+                            case .Some(CurrentSourceTypeStream):
+                            SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
+                            case .Some(CurrentSourceTypeFavorites):
+                            SharedAudioPlayer.sharedPlayer().getNextFavoriteSongs()
+                            default:
+                            break
+                        }
                     }
                     isLoadingMore = true
                 }
