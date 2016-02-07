@@ -14,5 +14,13 @@ class FavoritesViewController: ItemViewController {
     override var playerSourceType: CurrentSourceType? {
         return CurrentSourceTypeFavorites
     }
+    
+    override func getInitial() {
+        SoundCloudAPIClient.sharedClient().getInitialFavoriteSongs()
+    }
+    
+    override func getNext() {
+        SharedAudioPlayer.sharedPlayer().getNextFavoriteSongs()
+    }
 }
 

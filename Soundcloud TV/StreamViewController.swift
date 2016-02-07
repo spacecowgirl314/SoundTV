@@ -14,5 +14,13 @@ class StreamViewController: ItemViewController {
     override var playerSourceType: CurrentSourceType? {
         return CurrentSourceTypeStream
     }
+    
+    override func getInitial() {
+        SoundCloudAPIClient.sharedClient().getInitialStreamSongs()
+    }
+    
+    override func getNext() {
+        SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
+    }
 }
 

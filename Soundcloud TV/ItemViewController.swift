@@ -37,6 +37,8 @@ class ItemViewController: UICollectionViewController {
         activityView.hidesWhenStopped = true
         self.view.addSubview(activityView)
         
+        
+        // TODO: Localize
         unreachableLabel.text = NSLocalizedString("Could not load from SoundCloud.", comment: "Label for network error while loading from SoundCloud.")
         unreachableLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         unreachableLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
@@ -49,16 +51,6 @@ class ItemViewController: UICollectionViewController {
             unreachableLabel.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor),
             unreachableLabel.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor),
         ])
-        
-//        reachability?.whenReachable = { reachability in
-//            dispatch_async(dispatch_get_main_queue(), {
-//            })
-//        }
-//        reachability?.whenUnreachable = { reachability in
-//            dispatch_async(dispatch_get_main_queue(), {
-//                self.activityView.stopAnimating()
-//            })
-//        }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loaded", name: "SoundCloudAPIClientDidLoadSongs", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "failed", name: "SoundCloudAPIClientDidFailToLoadSongs", object: nil)
@@ -87,20 +79,7 @@ class ItemViewController: UICollectionViewController {
     override func viewDidAppear(animated: Bool) {
         if items.count < 1 {
             if SoundCloudAPIClient.sharedClient().isLoggedIn() {
-                // TODO: bring superview case decision for loading streams into subclass
-                switch playerSourceType {
-                case .Some(CurrentSourceTypeStream):
-                    SoundCloudAPIClient.sharedClient().getInitialStreamSongs()
-                    self.unreachableLabel.hidden = true
-                    self.activityView.startAnimating()
-                case .Some(CurrentSourceTypeFavorites):
-                    SoundCloudAPIClient.sharedClient().getInitialFavoriteSongs()
-                    self.unreachableLabel.hidden = true
-                    self.activityView.startAnimating()
-                default:
-                    break
-                }
-            
+                self.getInitial()
             }
         }
         else {
@@ -149,9 +128,6 @@ class ItemViewController: UICollectionViewController {
                 if let playerSourceType = self.playerSourceType {
                     SharedAudioPlayer.sharedPlayer().sourceType = playerSourceType
                 }
-                //                dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
-                //                    self.player.jumpToItemAtIndex(indexPath.row)
-                //                })
                 player.jumpToItemAtIndex(indexPath.row)
                 // populate Now Playing Info
                 let nowPlaying = MPNowPlayingInfoCenter.defaultCenter()
@@ -204,14 +180,7 @@ class ItemViewController: UICollectionViewController {
             if let row = context.nextFocusedIndexPath?.row {
                 if items.count - row <= 4 {
                     if isLoadingMore == false {
-                        switch playerSourceType {
-                            case .Some(CurrentSourceTypeStream):
-                            SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
-                            case .Some(CurrentSourceTypeFavorites):
-                            SharedAudioPlayer.sharedPlayer().getNextFavoriteSongs()
-                            default:
-                            break
-                        }
+                        self.getNext()
                     }
                     isLoadingMore = true
                 }
@@ -223,6 +192,15 @@ class ItemViewController: UICollectionViewController {
         self.unreachableLabel.hidden = true
         self.activityView.startAnimating()
         SoundCloudAPIClient.sharedClient().reloadStream()
+    }
+    
+    // Subclass functions
+    func getInitial() {
+        fatalError("Subclasses must provide the functions for data.")
+    }
+    
+    func getNext() {
+        fatalError("Subclasses must provide the functions for data.")
     }
 }
 
