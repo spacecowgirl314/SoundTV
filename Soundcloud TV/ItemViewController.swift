@@ -8,7 +8,6 @@
 
 import UIKit
 import MediaPlayer
-import ReachabilitySwift
 import SoundCloud
 
 class ItemViewController: UICollectionViewController {
@@ -25,7 +24,6 @@ class ItemViewController: UICollectionViewController {
     let unreachableLabel = UILabel()
     let player = SharedAudioPlayer.sharedPlayer()
     let playerSession = AVAudioSession.sharedInstance()
-    let reachability: Reachability? = try? Reachability.reachabilityForInternetConnection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +108,7 @@ class ItemViewController: UICollectionViewController {
     //                player.audioPlayer.pause()
     //            }
     //            if type == .Ended{
+    // check that we were playing when we stopped
     //                player.audioPlayer.play()
     //                /* resume the audio if needed */
     //            }
