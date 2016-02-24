@@ -9,3 +9,4 @@
 "incorrect" = "Are you sure you entered the right email and password?";
 "like" = "Like";
 "like.remove" = "Unlike";
+"unreachable" = "Loading Error";

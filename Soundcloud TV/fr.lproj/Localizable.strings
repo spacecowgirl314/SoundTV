@@ -9,3 +9,4 @@
 "incorrect" = "Êtes-vous certain d'avoir saisi correctement votre adresse électronique et votre mot de passe ?";
 "like" = "J'aime";
 "like.remove" = "Je n'aime plus";
+"unreachable" = "Erreur de chargement";

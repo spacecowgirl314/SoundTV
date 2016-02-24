@@ -36,7 +36,7 @@ class ItemViewController: UICollectionViewController {
         self.view.addSubview(activityView)
         
         // TODO: Localize
-        unreachableLabel.text = NSLocalizedString("Could not load from SoundCloud.", comment: "Label for network error while loading from SoundCloud.")
+        unreachableLabel.text = NSLocalizedString("Loading Error", comment: "unreachable")
         unreachableLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         unreachableLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
         
@@ -151,6 +151,7 @@ class ItemViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         if collectionView == self.collectionView {
             if let row = context.nextFocusedIndexPath?.row {
+                // reached the bottom of the stream, start loading more
                 if items.count - row <= 4 {
                     if isLoadingMore == false {
                         self.getNext()
