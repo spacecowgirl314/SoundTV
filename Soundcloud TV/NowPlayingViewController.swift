@@ -54,8 +54,6 @@ class NowPlayingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNowPlaying", name: "SharedPlayerDidFinishObject", object: nil)
-        
         self.artworkButton.owner = self
         
         // clear out the placement text
@@ -67,6 +65,7 @@ class NowPlayingViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNowPlaying", name: "SharedPlayerDidFinishObject", object: nil)
         
         if animated {
             vibrancyImageView.alpha = 0
@@ -94,6 +93,7 @@ class NowPlayingViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "SharedPlayerDidFinishObject", object: nil)
         isShowingOptions = true
         self.revealOptions()
     }
@@ -149,11 +149,6 @@ class NowPlayingViewController: UIViewController {
             var interval = 0.1
             
             let playerDuration = self.playerItemDuration()
-            if CMTIME_IS_INVALID(playerDuration)
-            {
-                return
-            }
-            
             let duration = CMTimeGetSeconds(playerDuration);
             if isfinite(duration)
             {
