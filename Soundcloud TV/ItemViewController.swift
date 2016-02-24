@@ -12,7 +12,7 @@ import SoundCloud
 
 class ItemViewController: UICollectionViewController {
     var isLoadingMore = false
-    var isClosing = false
+    var isReloading = false
     var items: NSMutableArray {
         get { fatalError("Subclasses must pick where items come from.") }
     }
@@ -35,14 +35,12 @@ class ItemViewController: UICollectionViewController {
         activityView.hidesWhenStopped = true
         self.view.addSubview(activityView)
         
-        // TODO: Localize
         unreachableLabel.text = NSLocalizedString("Loading Error", comment: "unreachable")
         unreachableLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        unreachableLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-        
-        self.view.addSubview(unreachableLabel)
-        unreachableLabel.translatesAutoresizingMaskIntoConstraints = false
         unreachableLabel.hidden = true
+        unreachableLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        unreachableLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(unreachableLabel)
         
         NSLayoutConstraint.activateConstraints([
             unreachableLabel.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor),
@@ -62,7 +60,10 @@ class ItemViewController: UICollectionViewController {
     
     func loaded() {
         isLoadingMore = false
-        self.activityView.stopAnimating()
+        if !isReloading {
+            self.activityView.stopAnimating()
+        }
+        isReloading = false
         self.collectionView?.reloadData()
         self.unreachableLabel.hidden = true
     }
@@ -76,6 +77,7 @@ class ItemViewController: UICollectionViewController {
     override func viewDidAppear(animated: Bool) {
         if items.count < 1 {
             if SoundCloudAPIClient.sharedClient().isLoggedIn() {
+                self.activityView.startAnimating()
                 self.getInitial()
             }
         }
@@ -101,10 +103,12 @@ class ItemViewController: UICollectionViewController {
                 if let playerSourceType = self.playerSourceType {
                     SharedAudioPlayer.sharedPlayer().sourceType = playerSourceType
                 }
+                self.activityView.startAnimating()
                 player.jumpToItemAtIndex(indexPath.row)
                 // populate Now Playing Info
                 let nowPlaying = MPNowPlayingInfoCenter.defaultCenter()
                 nowPlaying.nowPlayingInfo = [MPMediaItemPropertyTitle: item.title, MPMediaItemPropertyPlaybackDuration: item.duration] //MPMediaItemPropertyArtist: itemForView.user.username
+                self.activityView.stopAnimating()
                 self.performSegueWithIdentifier("nowPlaying", sender: self)
             }
             else {
@@ -163,6 +167,7 @@ class ItemViewController: UICollectionViewController {
     }
     
     @IBAction func reload(sender: UIButton) {
+        self.isReloading = true
         self.unreachableLabel.hidden = true
         self.activityView.startAnimating()
         SoundCloudAPIClient.sharedClient().reloadStream()
