@@ -35,7 +35,6 @@ class ItemViewController: UICollectionViewController {
         activityView.hidesWhenStopped = true
         self.view.addSubview(activityView)
         
-        
         // TODO: Localize
         unreachableLabel.text = NSLocalizedString("Could not load from SoundCloud.", comment: "Label for network error while loading from SoundCloud.")
         unreachableLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
@@ -80,40 +79,15 @@ class ItemViewController: UICollectionViewController {
                 self.getInitial()
             }
         }
-        else {
-            // insert new items if available
-            //            SoundCloudAPIClient.sharedClient().reloadStream()
-            //            SoundCloudAPIClient.sharedClient().getFutureStreamSongs()
-        }
         
         do {
             try playerSession.setCategory(AVAudioSessionCategoryPlayback) // TODO: mix in
             try playerSession.setActive(true, withOptions: .NotifyOthersOnDeactivation)
-            //            NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
         }
         catch {
             
         }
     }
-    
-    //    func audioSessionInterrupted(notification: NSNotification) {
-    //        let interruptionTypeAsObject =
-    //        notification.userInfo![AVAudioSessionInterruptionTypeKey] as! NSNumber
-    //
-    //        let interruptionType = AVAudioSessionInterruptionType(rawValue:
-    //            interruptionTypeAsObject.unsignedLongValue)
-    //
-    //        if let type = interruptionType{
-    //            if type == .Began{
-    //                player.audioPlayer.pause()
-    //            }
-    //            if type == .Ended{
-    // check that we were playing when we stopped
-    //                player.audioPlayer.play()
-    //                /* resume the audio if needed */
-    //            }
-    //        }
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

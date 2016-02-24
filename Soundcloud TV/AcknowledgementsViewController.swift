@@ -9,7 +9,6 @@
 import UIKit
 
 class AcknowledgementsViewController : UIViewController {
-    
     @IBOutlet var acknowledgementsView : UIScrollView!
     override weak var preferredFocusedView: UIView? { return self.acknowledgementsView }
     

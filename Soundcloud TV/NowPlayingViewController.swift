@@ -10,9 +10,6 @@ import UIKit
 import SDWebImage
 
 class NowPlayingArtworkButton: UIButton {
-//    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-//    [tapGestureRecognizer setAllowedPressTypes:@[@(UIPressTypeLeftArrow)]];
-    
     weak var owner: NowPlayingViewController?
     
     var touchesHaveMoved = false
@@ -38,9 +35,9 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet var artworkButton : NowPlayingArtworkButton!
     @IBOutlet var artistLabel : UILabel!
     @IBOutlet var trackLabel : UILabel!
-    @IBOutlet var progressBar : UIProgressView!
     @IBOutlet var elapsedLabel : UILabel!
     @IBOutlet var timeLeftLabel : UILabel!
+    @IBOutlet var progressBar : UIProgressView!
     
     @IBOutlet var artworkWidthConstraint : NSLayoutConstraint!
     @IBOutlet var artworkHeightConstraint : NSLayoutConstraint!
@@ -99,12 +96,6 @@ class NowPlayingViewController: UIViewController {
         super.viewDidDisappear(animated)
         isShowingOptions = true
         self.revealOptions()
-    }
-    
-    func tapped(sender: UITapGestureRecognizer) {
-        if sender.state == .Began {
-            print("animate")
-        }
     }
     
     func currentItem() -> SoundCloudTrack? {

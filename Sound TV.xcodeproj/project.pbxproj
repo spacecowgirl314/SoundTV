@@ -471,7 +471,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Soundcloud TV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.chloestars.Soundcloud-TV";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chloestars.SoundTV;
 				PRODUCT_NAME = "Sound TV";
 				SWIFT_OBJC_BRIDGING_HEADER = "SoundCloud TV/Soundcloud TV-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -488,7 +488,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Soundcloud TV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.chloestars.Soundcloud-TV";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chloestars.SoundTV;
 				PRODUCT_NAME = "Sound TV";
 				SWIFT_OBJC_BRIDGING_HEADER = "SoundCloud TV/Soundcloud TV-Bridging-Header.h";
 			};

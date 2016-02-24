@@ -18,7 +18,6 @@ class SettingsViewController : UIViewController {
     
     @IBAction func logout() {
         SoundCloudAPIClient.sharedClient().logout()
-        self.tabBarController?.selectedIndex = 0
     }
 }
 

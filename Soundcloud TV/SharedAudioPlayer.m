@@ -57,7 +57,7 @@
     } else {
         if (self.audioPlayer.status == AVPlayerStatusReadyToPlay){
             [self.audioPlayer play];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedPlayerDidFinishObject" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"SharedPlayerDidFinishObject" object:nil];
 //            if (CMTimeGetSeconds(self.audioPlayer.currentItem.currentTime) <= 3)
 //                [self postNotificationForCurrentItem];
         }
@@ -265,72 +265,6 @@
     self.itemsToPlay = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SoundCloudAPIClientDidLoadSongs" object:nil];
 }
-
-# pragma mark - Posting user notifications
-
-//- (void)postNotificationForCurrentItem {
-//    SoundCloudTrack *currentItem = [self currentItem];
-//    NSString *title = currentItem.title;
-//    NSString *name = currentItem.user.username;
-//    BOOL useAvatar = YES;
-//    if (currentItem.artworkUrl) {
-//        useAvatar = NO;
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        manager.responseSerializer = [AFImageResponseSerializer serializer];
-//        [manager GET:currentItem.artworkUrl.absoluteString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSUserNotificationCenter *defaultCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-//            NSUserNotification *nowPlayingNotification = [[NSUserNotification alloc]init];
-//            [defaultCenter setDelegate:self];
-//            [nowPlayingNotification setTitle:name];
-//            [nowPlayingNotification setInformativeText:title];
-//            [nowPlayingNotification setHasActionButton:NO];
-//            if ([nowPlayingNotification respondsToSelector:@selector(setContentImage:)]) {
-//                [nowPlayingNotification setContentImage:responseObject];
-//            }
-//            [defaultCenter deliverNotification:nowPlayingNotification];
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSUserNotificationCenter *defaultCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-//            NSUserNotification *nowPlayingNotification = [[NSUserNotification alloc]init];
-//            [defaultCenter setDelegate:self];
-//            [nowPlayingNotification setTitle:name];
-//            [nowPlayingNotification setInformativeText:title];
-//            [nowPlayingNotification setHasActionButton:NO];
-//            [defaultCenter deliverNotification:nowPlayingNotification];
-//        }];
-//    }
-//    else if (currentItem.user.avatarUrl) {
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        manager.responseSerializer = [AFImageResponseSerializer serializer];
-//        [manager GET:currentItem.user.avatarUrl.absoluteString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSUserNotificationCenter *defaultCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-//            NSUserNotification *nowPlayingNotification = [[NSUserNotification alloc]init];
-//            [defaultCenter setDelegate:self];
-//            [nowPlayingNotification setTitle:name];
-//            [nowPlayingNotification setInformativeText:title];
-//            [nowPlayingNotification setHasActionButton:NO];
-//            if ([nowPlayingNotification respondsToSelector:@selector(setContentImage:)]) {
-//                [nowPlayingNotification setContentImage:responseObject];
-//            }
-//            [defaultCenter deliverNotification:nowPlayingNotification];
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSUserNotificationCenter *defaultCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-//            NSUserNotification *nowPlayingNotification = [[NSUserNotification alloc]init];
-//            [defaultCenter setDelegate:self];
-//            [nowPlayingNotification setTitle:name];
-//            [nowPlayingNotification setInformativeText:title];
-//            [nowPlayingNotification setHasActionButton:NO];
-//            [defaultCenter deliverNotification:nowPlayingNotification];
-//        }];
-//    }
-//    
-//}
-
-# pragma mark - NSUserNotificationCenterDelegate
-
-//- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
-//    return YES;
-//}
 
 # pragma mark - Inserting new items
 

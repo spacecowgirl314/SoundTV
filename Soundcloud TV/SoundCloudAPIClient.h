@@ -11,7 +11,6 @@
 @interface SoundCloudAPIClient : NSObject
 
 + (SoundCloudAPIClient *)sharedClient;
-//- (void)login;
 - (void)logout;
 - (BOOL)isLoggedIn;
 - (void)getInitialStreamSongs;
