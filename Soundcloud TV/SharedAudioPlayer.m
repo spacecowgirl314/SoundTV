@@ -331,11 +331,11 @@
         [self.audioPlayer addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
         [self.audioPlayer addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
         self.audioPlayerCallback = [self.audioPlayer addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1.0, NSEC_PER_SEC) queue:NULL usingBlock:^(CMTime time) {
-//            if (!isnan(CMTimeGetSeconds(time))) {
-//                [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedAudioPlayerUpdatedTimePlayed" object:[NSNumber numberWithFloat:CMTimeGetSeconds(time)]];
+            if (!isnan(CMTimeGetSeconds(time))) {
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedAudioPlayerUpdatedTimePlayed" object:[NSNumber numberWithFloat:CMTimeGetSeconds(time)]];
 //                float seconds = CMTimeGetSeconds(time);
 //                SoundCloudTrack *currentItem = [[SharedAudioPlayer sharedPlayer] currentItem];
-//            }
+            }
         }];
         [self.audioPlayer setActionAtItemEnd:AVPlayerActionAtItemEndAdvance];
     } else {
