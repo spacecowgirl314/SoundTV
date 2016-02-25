@@ -19,16 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         SCSoundCloud.setClientID(Keys.clientID(), secret: Keys.clientSecret(), redirectURL: NSURL(string: "https://soundcloud.com"))
         
-//        let playerSession = AVAudioSession.sharedInstance()
-//        do {
-//            try playerSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: .DuckOthers)
+        let playerSession = AVAudioSession.sharedInstance()
+        do {
+            try playerSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: .MixWithOthers)
 //            try playerSession.setActive(true)
-//            //            try playerSession.setActive(true, withOptions: .NotifyOthersOnDeactivation)
-//            //NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
-//        }
-//        catch {
-//            
-//        }
+            try playerSession.setActive(true, withOptions: .NotifyOthersOnDeactivation)
+            //NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
+        }
+        catch {
+            
+        }
         
         MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.addTargetWithHandler { (event) -> MPRemoteCommandHandlerStatus in
             guard let audioPlayer = SharedAudioPlayer.sharedPlayer().audioPlayer else {

@@ -22,9 +22,6 @@ class SettingsViewController : UIViewController {
     
     @IBAction func logout() {
         SoundCloudAPIClient.sharedClient().logout()
-        // remove everything that was already loaded
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
-        SharedAudioPlayer.sharedPlayer().reset()
     }
 }
 

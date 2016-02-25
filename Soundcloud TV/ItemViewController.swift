@@ -81,14 +81,6 @@ class ItemViewController: UICollectionViewController {
                 self.getInitial()
             }
         }
-        
-        do {
-            try playerSession.setCategory(AVAudioSessionCategoryPlayback) // TODO: mix in
-            try playerSession.setActive(true, withOptions: .NotifyOthersOnDeactivation)
-        }
-        catch {
-            
-        }
     }
     
     override func didReceiveMemoryWarning() {

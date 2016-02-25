@@ -30,7 +30,11 @@ class AuthenticationViewController: UIViewController {
     }
     
     func dismissViewController() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            // remove everything that was already loaded
+            NSURLCache.sharedURLCache().removeAllCachedResponses()
+            SharedAudioPlayer.sharedPlayer().reset()
+        }
     }
     
     func didFailToAuthenticate() {
