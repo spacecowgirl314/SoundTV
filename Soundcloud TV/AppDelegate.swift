@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let playerSession = AVAudioSession.sharedInstance()
         do {
-            try playerSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: .MixWithOthers)
+            try playerSession.setCategory(AVAudioSessionCategoryPlayback)
+//            try playerSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: .MixWithOthers)
 //            try playerSession.setActive(true)
             try playerSession.setActive(true, withOptions: .NotifyOthersOnDeactivation)
             //NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioSessionInterrupted:", name: AVAudioSessionInterruptionNotification, object: nil)
