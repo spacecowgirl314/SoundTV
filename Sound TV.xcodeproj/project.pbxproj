@@ -213,6 +213,7 @@
 				08E340331BFD93BB0003593D /* Embed App Extensions */,
 				3CC8A110738194AF2F6E5ABE /* Embed Pods Frameworks */,
 				48F4FF7C608FB4579C093068 /* Copy Pods Resources */,
+				89A2D5E11C7E8022001E2157 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -320,6 +321,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sound TV/Pods-Sound TV-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		89A2D5E11C7E8022001E2157 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#Update build number with number of git commits if in release mode\nif [ ${CONFIGURATION} == \"Release\" ]; then\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi;";
 		};
 /* End PBXShellScriptBuildPhase section */
 
