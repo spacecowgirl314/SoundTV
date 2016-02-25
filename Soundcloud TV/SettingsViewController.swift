@@ -10,8 +10,12 @@ import UIKit
 
 class SettingsViewController : UIViewController {
     @IBOutlet var iconView : UIImageView!
+    @IBOutlet var versionLabel : UILabel!
     
     override func viewDidLoad() {
+        if let bundleVersion = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String, shortVersion = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+            versionLabel.text = "v\(shortVersion)(\(bundleVersion))"
+        }
         iconView.layer.cornerRadius = 9.0
         iconView.layer.masksToBounds = true
     }

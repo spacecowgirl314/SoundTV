@@ -164,6 +164,7 @@
                     <tabBarItem key="tabBarItem" title="More" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="iconView" destination="HXl-8O-nPE" id="GMJ-Af-otj"/>
+                        <outlet property="versionLabel" destination="ohb-qH-HGd" id="3wd-dr-aam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -940,6 +941,6 @@ SoundCloud Cocoa API
         <image name="Placeholder" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0K9-H0-4dB"/>
+        <segue reference="0F8-YF-tI9"/>
     </inferredMetricsTieBreakers>
 </document>
