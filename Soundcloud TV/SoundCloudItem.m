@@ -53,7 +53,7 @@
     return self;
 }
 
-+ (NSArray *)soundCloudItemsFromResponse:(id)response {
++ (NSArray <SoundCloudItem *> *)soundCloudItemsFromResponse:(id)response {
     if ([response isKindOfClass:[NSDictionary class]]){
         NSMutableArray *arrayToReturn = [NSMutableArray array];
         NSArray *collectionArray = [response objectForKey:@"collection"];
@@ -65,6 +65,15 @@
                 [arrayToReturn addObject:itemFromCollectionItem];
             }
         }
+        return [NSArray arrayWithArray:arrayToReturn];
+    } else if([response isKindOfClass:[NSArray class]]) {
+        NSMutableArray *arrayToReturn = [NSMutableArray array];
+        
+        for (id collectionItem in response){
+            SoundCloudItem *itemFromCollectionItem = [[SoundCloudItem alloc]initWithCollectionDict:collectionItem];
+            [arrayToReturn addObject:itemFromCollectionItem];
+        }
+        
         return [NSArray arrayWithArray:arrayToReturn];
     } else {
         return nil;

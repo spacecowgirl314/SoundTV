@@ -22,10 +22,10 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic) SoundCloudItemType type;
 @property (nonatomic, strong) NSString *uuid;
-@property (nonatomic) id item;
+@property (nonatomic, nullable) id item;
 @property (nonatomic, strong) SoundCloudUser *user;
 @property (nonatomic, strong) NSURL *nextHref;
 
-+ (NSArray *)soundCloudItemsFromResponse:(id)response;
++ (NSArray <SoundCloudItem *> *)soundCloudItemsFromResponse:(id)response;
 
 @end
