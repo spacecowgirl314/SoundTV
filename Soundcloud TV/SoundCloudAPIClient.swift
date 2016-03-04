@@ -10,47 +10,70 @@ import UIKit
 import SoundCloud
 
 extension SoundCloudAPIClient {
-    func getFutureStreamSongs() {
+    func getUserSongs(identifier: String) {
         let account = SCSoundCloud.account()
         
-        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/me/activities?limit=50"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-            if error != nil {
-                print("Oops, something went wrong \(error!.localizedDescription)")
+        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/users/\(identifier)/tracks"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse!, data: NSData?, error: NSError?) -> Void in
+            if (error != nil) {
+                print("Ooops, something went wrong: \(error?.localizedDescription)")
+                NSNotificationCenter.defaultCenter().postNotificationName("SoundCloudAPIClientIsUnreachable", object: nil)
             }
             else {
                 print("Got data, yeah")
+                guard let data = data else { return }
                 do {
-                    let objectFromData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))
-                    let itemsFromResponse = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
-                    SharedAudioPlayer.sharedPlayer().processStreamForNewSongs(itemsFromResponse)
+                    if let objectFromData = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? NSArray {
+                        let itemsToInsert = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
+                        SharedAudioPlayer.sharedPlayer.insertUserItems(itemsToInsert)
+                    }
                 }
                 catch {
-                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("SoundCloudAPIClientDidFailToLoadSongs", object: nil)
                 }
             }
         }
     }
-    
-    func getFutureFavoriteSongs() {
-        let account = SCSoundCloud.account()
-        
-        if let scUserID = NSUserDefaults.standardUserDefaults().objectForKey("scUserId") {
-            SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/users/\(scUserID)/favorites?limit=100&offset=0&linked_partitioning=1"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-                if error != nil {
-                    print("Oops, something went wrong \(error!.localizedDescription)")
-                }
-                else {
-                    print("Got data, yeah")
-                    do {
-                        let objectFromData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))
-                        let itemsFromResponse = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
-                        SharedAudioPlayer.sharedPlayer().processFavoritesForNewSongs(itemsFromResponse)
-                    }
-                    catch {
-                        
-                    }
-                }
-            }
-        }
-    }
+//    func getFutureStreamSongs() {
+//        let account = SCSoundCloud.account()
+//        
+//        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/me/activities?limit=50"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+//            if error != nil {
+//                print("Oops, something went wrong \(error!.localizedDescription)")
+//            }
+//            else {
+//                print("Got data, yeah")
+//                do {
+//                    let objectFromData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))
+//                    let itemsFromResponse = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
+//                    SharedAudioPlayer.sharedPlayer.processStreamForNewSongs(itemsFromResponse)
+//                }
+//                catch {
+//                    
+//                }
+//            }
+//        }
+//    }
+//    
+//    func getFutureFavoriteSongs() {
+//        let account = SCSoundCloud.account()
+//        
+//        if let scUserID = NSUserDefaults.standardUserDefaults().objectForKey("scUserId") {
+//            SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/users/\(scUserID)/favorites?limit=100&offset=0&linked_partitioning=1"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+//                if error != nil {
+//                    print("Oops, something went wrong \(error!.localizedDescription)")
+//                }
+//                else {
+//                    print("Got data, yeah")
+//                    do {
+//                        let objectFromData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))
+//                        let itemsFromResponse = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
+//                        SharedAudioPlayer.sharedPlayer().processFavoritesForNewSongs(itemsFromResponse)
+//                    }
+//                    catch {
+//                        
+//                    }
+//                }
+//            }
+//        }
+//    }
 }

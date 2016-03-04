@@ -33,7 +33,7 @@ class AuthenticationViewController: UIViewController {
         self.dismissViewControllerAnimated(true) { () -> Void in
             // remove everything that was already loaded
             NSURLCache.sharedURLCache().removeAllCachedResponses()
-            SharedAudioPlayer.sharedPlayer().reset()
+            SharedAudioPlayer.sharedPlayer.reset()
         }
     }
     

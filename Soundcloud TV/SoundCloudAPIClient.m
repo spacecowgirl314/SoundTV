@@ -9,7 +9,8 @@
 #import "SoundCloudAPIClient.h"
 @import SoundCloud;
 //#import <SoundCloudAPI/SCAPI.h>
-#import "SharedAudioPlayer.h"
+//#import "SharedAudioPlayer.h"
+#import "Sound_TV-Swift.h"
 #import "SoundCloudItem.h"
 
 @implementation SoundCloudAPIClient

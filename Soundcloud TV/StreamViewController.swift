@@ -7,12 +7,12 @@
 //
 
 class StreamViewController: ItemViewController {
-    override var items: NSMutableArray {
-        return self.player.streamItemsToShowInTableView
+    override var items: [AnyObject] {
+        return self.player.streamItems
     }
     
     override var playerSourceType: CurrentSourceType? {
-        return CurrentSourceTypeStream
+        return .Stream
     }
     
     override func getInitial() {
@@ -20,7 +20,7 @@ class StreamViewController: ItemViewController {
     }
     
     override func getNext() {
-        SharedAudioPlayer.sharedPlayer().getNextStreamSongs()
+        SharedAudioPlayer.sharedPlayer.getNextStreamSongs()
     }
 }
 

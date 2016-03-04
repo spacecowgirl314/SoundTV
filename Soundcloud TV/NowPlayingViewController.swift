@@ -49,7 +49,7 @@ class NowPlayingViewController: UIViewController {
     
     @IBOutlet var likeButton : UIButton!
     
-    let player = SharedAudioPlayer.sharedPlayer()
+    let player = SharedAudioPlayer.sharedPlayer
     var isShowingOptions = false
 
     override func viewDidLoad() {
@@ -100,18 +100,21 @@ class NowPlayingViewController: UIViewController {
     
     func currentItem() -> SoundCloudTrack? {
         switch player.sourceType {
-        case CurrentSourceTypeStream:
-            if player.streamItemsToShowInTableView.count < 1 {
+        case .Stream:
+            if player.streamItems.count < 1 {
                 return nil
             }
-            return player.streamItemsToShowInTableView[player.positionInPlaylist] as? SoundCloudTrack
-        case CurrentSourceTypeFavorites:
-            if player.favoriteItemsToShowInTableView.count < 1 {
+            return player.streamItems[player.positionInPlaylist] as? SoundCloudTrack
+        case .Favorites:
+            if player.favoriteItems.count < 1 {
                 return nil
             }
-            return player.favoriteItemsToShowInTableView[player.positionInPlaylist] as? SoundCloudTrack
-        default:
-            return nil
+            return player.favoriteItems[player.positionInPlaylist] as? SoundCloudTrack
+        case .User:
+            if player.userItems.count < 1 {
+                return nil
+            }
+            return player.userItems[player.positionInPlaylist] as? SoundCloudTrack
         }
     }
     
@@ -157,7 +160,7 @@ class NowPlayingViewController: UIViewController {
             }
             
             // we're protected from calling on a nil player because we return if we get an invalid time
-            player.audioPlayer!.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(interval, Int32(NSEC_PER_SEC)), queue: nil) { (time: CMTime) -> Void in
+            player.audioPlayer?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(interval, Int32(NSEC_PER_SEC)), queue: nil) { (time: CMTime) -> Void in
                 self.syncScrubber()
             }
         }

@@ -10,10 +10,10 @@ import UIKit
 import MediaPlayer
 import SoundCloud
 
-class ItemViewController: UICollectionViewController {
+class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegate {
     var isLoadingMore = false
     var isReloading = false
-    var items: NSMutableArray {
+    var items: [AnyObject] {
         get { fatalError("Subclasses must pick where items come from.") }
     }
     var playerSourceType: CurrentSourceType? {
@@ -22,7 +22,7 @@ class ItemViewController: UICollectionViewController {
     
     let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     let unreachableLabel = UILabel()
-    let player = SharedAudioPlayer.sharedPlayer()
+    let player = SharedAudioPlayer.sharedPlayer
     let playerSession = AVAudioSession.sharedInstance()
     
     override func viewDidLoad() {
@@ -46,6 +46,12 @@ class ItemViewController: UICollectionViewController {
             unreachableLabel.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor),
             unreachableLabel.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor),
         ])
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "openContextMenu:")
+        longPressGestureRecognizer.minimumPressDuration = 0.5
+        longPressGestureRecognizer.delaysTouchesBegan = true
+        longPressGestureRecognizer.delegate = self
+        self.collectionView!.addGestureRecognizer(longPressGestureRecognizer)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loaded", name: "SoundCloudAPIClientDidLoadSongs", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "failed", name: "SoundCloudAPIClientDidFailToLoadSongs", object: nil)
@@ -88,12 +94,55 @@ class ItemViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func openContextMenu(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state != UIGestureRecognizerState.Began {
+            return
+        }
+        
+        guard let collectionView = self.collectionView else { return }
+        
+        var indexPath: NSIndexPath?
+        
+        for cell in collectionView.visibleCells() {
+            if cell.focused {
+                indexPath = self.collectionView?.indexPathForCell(cell)
+                break
+            }
+        }
+        
+        guard let index = indexPath else { return }
+        
+        guard let item = self.items[index.row] as? SoundCloudTrack else { return }
+        
+        let actionSheet = UIAlertController(title: item.title, message: item.user.username, preferredStyle: .ActionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Go to Artist", style: .Default, handler: { (action: UIAlertAction) -> Void in
+            // open view controller with artist info for index.row
+            let identifier = item.user.identifier
+            print("identifier:\(identifier)")
+            SoundCloudAPIClient.sharedClient().getUserSongs("\(identifier)")
+            let rootViewController = self
+            let storyboard = rootViewController.storyboard!
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("User")
+            self.presentViewController(viewController, animated: false, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Like", style: .Default, handler: { (action: UIAlertAction) -> Void in
+            return
+        }))
+        // this could also double as a follow button for following users that were reposted
+        actionSheet.addAction(UIAlertAction(title: "Unfollow", style: .Destructive, handler: { (action: UIAlertAction) -> Void in
+            return
+        }))
+        self.presentViewController(actionSheet, animated: true, completion: { () -> Void in
+            return
+        })
+    }
+    
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("collection item selected")
         if let item = items[indexPath.row] as? SoundCloudTrack {
             if item.streamable == true {
                 if let playerSourceType = self.playerSourceType {
-                    SharedAudioPlayer.sharedPlayer().sourceType = playerSourceType
+                    SharedAudioPlayer.sharedPlayer.sourceType = playerSourceType
                 }
                 self.activityView.startAnimating()
                 player.jumpToItemAtIndex(indexPath.row)

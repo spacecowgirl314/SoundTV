@@ -22,6 +22,7 @@ typedef enum : NSUInteger {
 typedef enum : NSUInteger {
     CurrentSourceTypeStream,
     CurrentSourceTypeFavorites,
+    CurrentSourceTypeUser,
 } CurrentSourceType;
 
 @import AVFoundation;
@@ -32,11 +33,13 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSMutableArray *itemsToPlay;
 @property (nonatomic, strong) NSMutableArray *streamItemsToShowInTableView;
 @property (nonatomic, strong) NSMutableArray *favoriteItemsToShowInTableView;
+@property (nonatomic, strong) NSMutableArray *userItemsToShowInTableView;
 @property (nonatomic, strong) NSMutableArray *shuffledItemsToPlay;
 @property (nonatomic) BOOL shuffleEnabled;
 @property (nonatomic) NSInteger positionInPlaylist;
 @property (nonatomic, strong) NSURL *nextStreamPartURL;
 @property (nonatomic, strong) NSURL *nextFavoritesPartURL;
+@property (nonatomic, strong) NSURL *nextUserPartURL;
 @property (nonatomic) RepeatMode repeatMode;
 @property (nonatomic) CurrentSourceType sourceType;
 @property (nonatomic, strong) NSMutableArray *scrobbledItems;

@@ -29,6 +29,7 @@
         self.itemsToPlay = [NSMutableArray array];
         self.streamItemsToShowInTableView = [NSMutableArray array];
         self.favoriteItemsToShowInTableView = [NSMutableArray array];
+        self.userItemsToShowInTableView = [NSMutableArray array];
         self.positionInPlaylist = 0;
         [self setRepeatMode:RepeatModeNone];
         self.scrobbledItems = [NSMutableArray array];
@@ -72,7 +73,7 @@
             if (self.sourceType == CurrentSourceTypeStream){
                 [self jumpToItemAtIndex:[self.streamItemsToShowInTableView indexOfObject:currentShuffledItem]startPlaying:YES resetShuffle:NO];
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedPlayerDidFinishObject" object:nil];
-            }else {
+            }else { // ADJ
                 [self jumpToItemAtIndex:[self.streamItemsToShowInTableView indexOfObject:currentShuffledItem]startPlaying:YES resetShuffle:NO];
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"SharedPlayerDidFinishObject" object:nil];
             }
@@ -92,7 +93,7 @@
             if (self.shuffleEnabled){
                 if (self.sourceType == CurrentSourceTypeStream) {
                     [self jumpToItemAtIndex:[self.shuffledItemsToPlay indexOfObject:[self.streamItemsToShowInTableView objectAtIndex:self.positionInPlaylist]]-1 startPlaying:self.audioPlayer.rate];
-                } else {
+                } else { // ADJ
                     [self jumpToItemAtIndex:[self.shuffledItemsToPlay indexOfObject:[self.favoriteItemsToShowInTableView objectAtIndex:self.positionInPlaylist]]-1 startPlaying:self.audioPlayer.rate];
                 }
             } else {
@@ -136,7 +137,7 @@
             } else {
                 done = YES;
             }
-        } else {
+        } else { // ADJ
             if (i < self.favoriteItemsToShowInTableView.count && [[self.favoriteItemsToShowInTableView objectAtIndex:i] isKindOfClass:[SoundCloudTrack class]]) {
                 SoundCloudTrack *itemInList = [self.favoriteItemsToShowInTableView objectAtIndex:i];
                 if ([self.audioPlayer canInsertItem:itemInList.playerItem afterItem:nil]) {
@@ -185,7 +186,7 @@
         NSArray *tracksOnlyArray = [self.streamItemsToShowInTableView filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"class == %@",[SoundCloudTrack class]]];
         NSArray *tracksForCurrentItem = [tracksOnlyArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"playerItem == %@",currentPlayerItem]];
         return [tracksForCurrentItem firstObject];
-    } else if (self.sourceType == CurrentSourceTypeFavorites) {
+    } else if (self.sourceType == CurrentSourceTypeFavorites) { // ADJ
         NSArray *tracksOnlyArray = [self.favoriteItemsToShowInTableView filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"class == %@",[SoundCloudTrack class]]];
         NSArray *tracksForCurrentItem = [tracksOnlyArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"playerItem == %@",self.audioPlayer.currentItem]];
         return [tracksForCurrentItem firstObject];
@@ -210,7 +211,7 @@
     if (shuffleEnabled) {
         if (self.sourceType == CurrentSourceTypeStream)
             self.shuffledItemsToPlay = [NSMutableArray arrayWithArray:self.streamItemsToShowInTableView];
-        else if (self.sourceType == CurrentSourceTypeFavorites)
+        else if (self.sourceType == CurrentSourceTypeFavorites) // ADJ
             self.shuffledItemsToPlay = [NSMutableArray arrayWithArray:self.favoriteItemsToShowInTableView];
         NSUInteger count = [self.shuffledItemsToPlay count];
         for (NSUInteger i = 0; i < count; ++i) {
@@ -528,7 +529,7 @@
                         [self.audioPlayer insertItem:nextItem.playerItem afterItem:nil];
                 }
             }
-        } else if (self.sourceType == CurrentSourceTypeFavorites){
+        } else if (self.sourceType == CurrentSourceTypeFavorites){ // ADJ
             NSInteger indexOfCurrentItem = [self.favoriteItemsToShowInTableView indexOfObject:currentItem];
             if (indexOfCurrentItem+2 < self.favoriteItemsToShowInTableView.count) {
                 SoundCloudTrack *nextItem = [self.favoriteItemsToShowInTableView objectAtIndex:indexOfCurrentItem+2];
@@ -635,7 +636,7 @@
                 NSArray *tracksForCurrentItem = [tracksOnlyArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"playerItem == %@",itemFromNotification]];
                 SoundCloudTrack *finishedTrack = [tracksForCurrentItem firstObject];
                 indexOfFinishedItem = [self.streamItemsToShowInTableView indexOfObject:finishedTrack];
-            } else if (self.sourceType == CurrentSourceTypeFavorites){
+            } else if (self.sourceType == CurrentSourceTypeFavorites){ // ADJ
                 NSArray *tracksOnlyArray = [self.favoriteItemsToShowInTableView filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"class == %@",[SoundCloudTrack class]]];
                 NSArray *tracksForCurrentItem = [tracksOnlyArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"playerItem == %@",itemFromNotification]];
                 SoundCloudTrack *finishedTrack = [tracksForCurrentItem firstObject];
@@ -650,7 +651,7 @@
             break;
         }
         case RepeatModeAll: {
-            NSInteger itemCount = self.sourceType == CurrentSourceTypeStream ? self.streamItemsToShowInTableView.count : self.favoriteItemsToShowInTableView.count;
+            NSInteger itemCount = self.sourceType == CurrentSourceTypeStream ? self.streamItemsToShowInTableView.count : self.favoriteItemsToShowInTableView.count; // ADJ
             if (self.shuffleEnabled)
                 itemCount = self.shuffledItemsToPlay.count;
             if (self.positionInPlaylist < itemCount-1) {
@@ -666,7 +667,7 @@
                 if (_positionInPlaylist < self.shuffledItemsToPlay.count-1) {
                     if (self.sourceType == CurrentSourceTypeStream) {
                         self.positionInPlaylist = [self.streamItemsToShowInTableView indexOfObject:[self.shuffledItemsToPlay objectAtIndex:_positionInPlaylist+1]];
-                    } else if (self.sourceType == CurrentSourceTypeFavorites){
+                    } else if (self.sourceType == CurrentSourceTypeFavorites){ // ADJ
                         self.positionInPlaylist = [self.favoriteItemsToShowInTableView indexOfObject:[self.shuffledItemsToPlay objectAtIndex:_positionInPlaylist+1]];
                     }
                     [self jumpToItemAtIndex: _positionInPlaylist];
@@ -708,7 +709,7 @@
     if (self.nextStreamPartURL && self.sourceType == CurrentSourceTypeStream){
         [[SoundCloudAPIClient sharedClient] getStreamSongsWithURL:self.nextStreamPartURL.absoluteString];
     }
-    if (self.nextFavoritesPartURL && self.sourceType == CurrentSourceTypeFavorites) {
+    if (self.nextFavoritesPartURL && self.sourceType == CurrentSourceTypeFavorites) { // ADJ
         [[SoundCloudAPIClient sharedClient] getFavoriteSongsWithURL:self.nextFavoritesPartURL.absoluteString];
     }
 }

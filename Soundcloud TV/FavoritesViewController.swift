@@ -7,12 +7,12 @@
 //
 
 class FavoritesViewController: ItemViewController {
-    override var items: NSMutableArray {
-        return self.player.favoriteItemsToShowInTableView
+    override var items: [AnyObject] {
+        return self.player.favoriteItems
     }
     
     override var playerSourceType: CurrentSourceType? {
-        return CurrentSourceTypeFavorites
+        return .Favorites
     }
     
     override func getInitial() {
@@ -20,7 +20,6 @@ class FavoritesViewController: ItemViewController {
     }
     
     override func getNext() {
-        SharedAudioPlayer.sharedPlayer().getNextFavoriteSongs()
+        SharedAudioPlayer.sharedPlayer.getNextFavoriteSongs()
     }
 }
-

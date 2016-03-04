@@ -32,14 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.addTargetWithHandler { (event) -> MPRemoteCommandHandlerStatus in
-            guard let audioPlayer = SharedAudioPlayer.sharedPlayer().audioPlayer else {
+            guard let audioPlayer = SharedAudioPlayer.sharedPlayer.audioPlayer else {
                 return .NoSuchContent
             }
             audioPlayer.pause()
             return .Success
         }
         MPRemoteCommandCenter.sharedCommandCenter().playCommand.addTargetWithHandler { (event) -> MPRemoteCommandHandlerStatus in
-            guard let audioPlayer = SharedAudioPlayer.sharedPlayer().audioPlayer else {
+            guard let audioPlayer = SharedAudioPlayer.sharedPlayer.audioPlayer else {
                 return .NoSuchContent
             }
             audioPlayer.play()
@@ -47,12 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         MPRemoteCommandCenter.sharedCommandCenter().nextTrackCommand.addTargetWithHandler { (event) ->
             MPRemoteCommandHandlerStatus in
-            SharedAudioPlayer.sharedPlayer().nextItem()
+            SharedAudioPlayer.sharedPlayer.nextItem()
             return .Success
         }
         MPRemoteCommandCenter.sharedCommandCenter().previousTrackCommand.addTargetWithHandler { (event) ->
             MPRemoteCommandHandlerStatus in
-            SharedAudioPlayer.sharedPlayer().previousItem()
+            SharedAudioPlayer.sharedPlayer.previousItem()
             return .Success
         }
         

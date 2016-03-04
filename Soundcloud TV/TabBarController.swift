@@ -13,7 +13,7 @@ class TabBarController : UITabBarController {
         super.pressesEnded(presses, withEvent: event)
         for item in presses {
             if item.type == .PlayPause {
-                SharedAudioPlayer.sharedPlayer().togglePlayPause()
+                SharedAudioPlayer.sharedPlayer.togglePlayPause()
             }
         }
     }
