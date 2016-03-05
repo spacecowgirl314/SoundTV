@@ -122,12 +122,7 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
             SharedAudioPlayer.sharedPlayer.userItems.removeAll()
             print("identifier:\(identifier)")
             SoundCloudAPIClient.sharedClient().getUserSongs("\(identifier)")
-            let rootViewController = self
-            let storyboard = rootViewController.storyboard!
-            if let viewController = storyboard.instantiateViewControllerWithIdentifier("User") as? UserViewController {
-//                if let collectionView = viewController.collectionView as? TitledUICollectionView {
-//                    collectionView.titleLabel?.text = item.user.username
-//                }
+            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("User") as? UserViewController {
                 self.presentViewController(viewController, animated: false, completion: nil)
             }
         }))
@@ -156,7 +151,9 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
                 let nowPlaying = MPNowPlayingInfoCenter.defaultCenter()
                 nowPlaying.nowPlayingInfo = [MPMediaItemPropertyTitle: item.title, MPMediaItemPropertyPlaybackDuration: item.duration] //MPMediaItemPropertyArtist: itemForView.user.username
                 self.activityView.stopAnimating()
-                self.performSegueWithIdentifier("nowPlaying", sender: self)
+                if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("NowPlaying") {
+                    self.presentViewController(viewController, animated: true, completion: nil)
+                }
             }
             else {
                 print("can't stream track")
