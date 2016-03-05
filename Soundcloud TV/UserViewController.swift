@@ -6,6 +6,8 @@
 //  Copyright © 2016 Chloe Stars. All rights reserved.
 //
 
+import UIKit
+
 class UserViewController: ItemViewController {
     override var items: [AnyObject] {
         return self.player.userItems
@@ -16,12 +18,15 @@ class UserViewController: ItemViewController {
     }
     
     override func getInitial() {
-        return;
-        //SoundCloudAPIClient.sharedClient().getInitialFavoriteSongs()
+        return
+        //SoundCloudAPIClient.sharedClient.getInitialFavoriteSongs()
     }
     
     override func getNext() {
-        return;
-        //SharedAudioPlayer.sharedPlayer().getNextFavoriteSongs()
+        SharedAudioPlayer.sharedPlayer.getNextUserSongs()
     }
+}
+
+class TitledUICollectionView: UICollectionReusableView {
+    @IBOutlet var titleLabel: UILabel!
 }

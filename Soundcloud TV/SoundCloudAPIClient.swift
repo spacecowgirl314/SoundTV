@@ -13,16 +13,16 @@ extension SoundCloudAPIClient {
     func getUserSongs(identifier: String) {
         let account = SCSoundCloud.account()
         
-        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/users/\(identifier)/tracks"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse!, data: NSData?, error: NSError?) -> Void in
+        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/users/\(identifier)/tracks?linked_partitioning=1"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse!, data: NSData?, error: NSError?) -> Void in
             if (error != nil) {
-                print("Ooops, something went wrong: \(error?.localizedDescription)")
+                print("Ooops, something went wrong: \(error!.localizedDescription)")
                 NSNotificationCenter.defaultCenter().postNotificationName("SoundCloudAPIClientIsUnreachable", object: nil)
             }
             else {
                 print("Got data, yeah")
                 guard let data = data else { return }
                 do {
-                    if let objectFromData = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? NSArray {
+                    if let objectFromData = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary {
                         let itemsToInsert = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
                         SharedAudioPlayer.sharedPlayer.insertUserItems(itemsToInsert)
                     }
@@ -33,6 +33,28 @@ extension SoundCloudAPIClient {
             }
         }
     }
+    
+    func getUserSongsWith(url: String) {
+        let account = SCSoundCloud.account()
+        
+        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: url), usingParameters:nil, withAccount: account, sendingProgressHandler: nil) { (response:NSURLResponse?, data:NSData?, error: NSError?) -> Void in
+            if let responseError = error {
+                print("Oops, something went wrong \(responseError.localizedDescription)")
+            } else {
+                guard let data = data else { return }
+                do {
+                    if let objectFromData = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary {
+                        let itemsToInsert = SoundCloudItem.soundCloudItemsFromResponse(objectFromData)
+                        SharedAudioPlayer.sharedPlayer.insertUserItems(itemsToInsert)
+                    }
+                }
+                catch {
+                    NSNotificationCenter.defaultCenter().postNotificationName("SoundCloudAPIClientDidFailToLoadSongs", object: nil)
+                }
+            }
+        }
+    }
+    
 //    func getFutureStreamSongs() {
 //        let account = SCSoundCloud.account()
 //        

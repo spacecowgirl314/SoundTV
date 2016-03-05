@@ -118,12 +118,18 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
         actionSheet.addAction(UIAlertAction(title: "Go to Artist", style: .Default, handler: { (action: UIAlertAction) -> Void in
             // open view controller with artist info for index.row
             let identifier = item.user.identifier
+            // remove all previous objects because user items go away (model view) and then change
+            SharedAudioPlayer.sharedPlayer.userItems.removeAll()
             print("identifier:\(identifier)")
             SoundCloudAPIClient.sharedClient().getUserSongs("\(identifier)")
             let rootViewController = self
             let storyboard = rootViewController.storyboard!
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("User")
-            self.presentViewController(viewController, animated: false, completion: nil)
+            if let viewController = storyboard.instantiateViewControllerWithIdentifier("User") as? UserViewController {
+//                if let collectionView = viewController.collectionView as? TitledUICollectionView {
+//                    collectionView.titleLabel?.text = item.user.username
+//                }
+                self.presentViewController(viewController, animated: false, completion: nil)
+            }
         }))
         actionSheet.addAction(UIAlertAction(title: "Like", style: .Default, handler: { (action: UIAlertAction) -> Void in
             return

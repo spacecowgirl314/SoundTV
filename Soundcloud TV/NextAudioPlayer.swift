@@ -123,9 +123,6 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
     }
     
     func insertUserItems(items: [SoundCloudItem]) {
-        // remove all previous objects because user items go away (model view) and then change
-        self.userItems.removeAll()
-        
         if let lastItem = items.last  {
             self.nextUserPartURL = lastItem.nextHref
         }
@@ -179,19 +176,36 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
     }
     
     func getNextSongs() {
+        switch self.sourceType {
+        case .Stream:
+            guard let url = self.nextStreamPartURL else { return }
+            SoundCloudAPIClient.sharedClient().getStreamSongsWithURL(url.absoluteString)
+            break
+        case .Favorites:
+            guard let url = self.nextFavoritesPartURL else { return }
+            SoundCloudAPIClient.sharedClient().getFavoriteSongsWithURL(url.absoluteString)
+            break
+        case .User:
+            guard let url = self.nextUserPartURL else { return }
+            SoundCloudAPIClient.sharedClient().getUserSongsWith(url.absoluteString)
+            break
+        }
         return
     }
     
     func getNextStreamSongs() {
-        return
+        guard let url = self.nextStreamPartURL else { return }
+        SoundCloudAPIClient.sharedClient().getStreamSongsWithURL(url.absoluteString)
     }
     
     func getNextFavoriteSongs() {
-        return
+        guard let url = self.nextFavoritesPartURL else { return }
+        SoundCloudAPIClient.sharedClient().getFavoriteSongsWithURL(url.absoluteString)
     }
     
     func getNextUserSongs() {
-        return
+        guard let url = self.nextUserPartURL else { return }
+        SoundCloudAPIClient.sharedClient().getUserSongsWith(url.absoluteString)
     }
     
     func togglePlayPause() {
