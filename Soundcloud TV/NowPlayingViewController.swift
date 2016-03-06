@@ -262,11 +262,17 @@ class NowPlayingViewController: UIViewController {
         if let item = self.currentItem() {
             if let isFavorited = item.userFavorite {
                 if isFavorited != 1 {
+                    // reflect favorite immediately, will change back upon error
+                    item.userFavorite = 1
+                    self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
                     SoundCloudAPIClient.sharedClient().saveFavoriteWithSongID(item.identifier.stringValue, completion: { (error: NSError?) -> Void in
                         if error == nil {
                             print("saved favorite")
-                            item.userFavorite = 1
-                            self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
+                        }
+                        else {
+                            // revert title upon failure
+                            item.userFavorite = 0
+                            self.likeButton.setTitle(NSLocalizedString("like", comment: "Like"), forState: .Normal)
                         }
                     })
                 }
@@ -275,22 +281,30 @@ class NowPlayingViewController: UIViewController {
                 // incredibly low, removing a song here will cause it not to reflect in the favorites.
                 // This is behavior that would be expected but since it won't behave as such it's been disabled.
                 else {
+                    item.userFavorite = 0
+                    self.likeButton.setTitle(NSLocalizedString("like", comment: "Like"), forState: .Normal)
                     SoundCloudAPIClient.sharedClient().removeFavoriteWithSongID(item.identifier.stringValue
                         , completion: { (error: NSError?) -> Void in
                         if error == nil {
                             print("removed favorite")
-                            item.userFavorite = 0
-                            self.likeButton.setTitle(NSLocalizedString("like", comment: "Like"), forState: .Normal)
+                        }
+                        else {
+                            item.userFavorite = 1
+                            self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unike"), forState: .Normal)
                         }
                     })
                 }
             }
             else {
+                item.userFavorite = 1
+                self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
                 SoundCloudAPIClient.sharedClient().saveFavoriteWithSongID(item.identifier.stringValue, completion: { (error: NSError?) -> Void in
                     if error == nil {
                         print("saved favorite")
-                        item.userFavorite = 1
-                        self.likeButton.setTitle(NSLocalizedString("like.remove", comment: "Unlike"), forState: .Normal)
+                    }
+                    else {
+                        item.userFavorite = 0
+                        self.likeButton.setTitle(NSLocalizedString("like", comment: "Like"), forState: .Normal)
                     }
                 })
             }
