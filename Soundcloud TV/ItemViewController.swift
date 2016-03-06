@@ -126,11 +126,25 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
                 self.presentViewController(viewController, animated: false, completion: nil)
             }
         }))
-        actionSheet.addAction(UIAlertAction(title: "Like", style: .Default, handler: { (action: UIAlertAction) -> Void in
+        
+        var likeActionTitle : String?
+        if let isFavorited = item.userFavorite {
+            if isFavorited == 1 {
+                likeActionTitle = NSLocalizedString("like.remove", comment: "Unlike")
+            }
+            else {
+                likeActionTitle = NSLocalizedString("like", comment: "Like")
+            }
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: likeActionTitle, style: .Default, handler: { (action: UIAlertAction) -> Void in
             return
         }))
         // this could also double as a follow button for following users that were reposted
         actionSheet.addAction(UIAlertAction(title: "Unfollow", style: .Destructive, handler: { (action: UIAlertAction) -> Void in
+            return
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: { (action: UIAlertAction) -> Void in
             return
         }))
         self.presentViewController(actionSheet, animated: true, completion: { () -> Void in
