@@ -138,12 +138,52 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
         }
         
         actionSheet.addAction(UIAlertAction(title: likeActionTitle, style: .Default, handler: { (action: UIAlertAction) -> Void in
-            return
+            if let isFavorited = item.userFavorite {
+                if isFavorited != 1 {
+                    // reflect favorite immediately, will change back upon error
+                    item.userFavorite = 1
+                    SoundCloudAPIClient.sharedClient().saveFavoriteWithSongID(item.identifier.stringValue, completion: { (error: NSError?) -> Void in
+                        if error == nil {
+                            print("saved favorite")
+                        }
+                        else {
+                            // revert title upon failure
+                            item.userFavorite = 0
+                        }
+                    })
+                }
+                    // FIXME: This requires factoring in that favorites can be removed from the stream and this can cause problems
+                    // Whereas the unlikelihood of a song being removed from the main stream and causing problems is
+                    // incredibly low, removing a song here will cause it not to reflect in the favorites.
+                    // This is behavior that would be expected but since it won't behave as such it's been disabled.
+                else {
+                    item.userFavorite = 0
+                    SoundCloudAPIClient.sharedClient().removeFavoriteWithSongID(item.identifier.stringValue
+                        , completion: { (error: NSError?) -> Void in
+                            if error == nil {
+                                print("removed favorite")
+                            }
+                            else {
+                                item.userFavorite = 1
+                            }
+                    })
+                }
+            }
+            else {
+                item.userFavorite = 1
+                SoundCloudAPIClient.sharedClient().saveFavoriteWithSongID(item.identifier.stringValue, completion: { (error: NSError?) -> Void in
+                    if error == nil {
+                        print("saved favorite")
+                    }
+                    else {
+                        item.userFavorite = 0
+                    }
+                })
+            }
         }))
         // this could also double as a follow button for following users that were reposted
-        actionSheet.addAction(UIAlertAction(title: "Unfollow", style: .Destructive, handler: { (action: UIAlertAction) -> Void in
-            return
-        }))
+//        actionSheet.addAction(UIAlertAction(title: "Unfollow", style: .Destructive, handler: { (action: UIAlertAction) -> Void in
+//        }))
         actionSheet.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: { (action: UIAlertAction) -> Void in
             return
         }))

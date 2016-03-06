@@ -55,9 +55,24 @@ extension SoundCloudAPIClient {
         }
     }
     
+    func unfollow(identifier: String, completion: ((NSError?) -> Void)!) {
+        let account = SCSoundCloud.account()
+        
+        SCRequest.performMethod(SCRequestMethodDELETE, onResource: NSURL(string: "https://api.soundcloud.com/me/followings/\(identifier)"), usingParameters:nil, withAccount: account, sendingProgressHandler: nil) { (response:NSURLResponse?, data:NSData?, error: NSError?) -> Void in
+            completion(error)
+        }
+    }
+    
+    func follow(identifier: String, completion: ((NSError?) -> Void)!) {
+        let account = SCSoundCloud.account()
+        
+        SCRequest.performMethod(SCRequestMethodPUT, onResource: NSURL(string: "https://api.soundcloud.com/me/followings/\(identifier)"), usingParameters:nil, withAccount: account, sendingProgressHandler: nil) { (response:NSURLResponse?, data:NSData?, error: NSError?) -> Void in
+            completion(error)
+        }
+    }
 //    func getFutureStreamSongs() {
 //        let account = SCSoundCloud.account()
-//        
+//
 //        SCRequest.performMethod(SCRequestMethodGET, onResource: NSURL(string: "https://api.soundcloud.com/me/activities?limit=50"), usingParameters: nil, withAccount: account, sendingProgressHandler: nil) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
 //            if error != nil {
 //                print("Oops, something went wrong \(error!.localizedDescription)")
