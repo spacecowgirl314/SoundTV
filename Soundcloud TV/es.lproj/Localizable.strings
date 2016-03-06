@@ -6,6 +6,7 @@
   Copyright © 2015 Chloe Stars. All rights reserved.
 */
 
+"dismiss" = "Descartar";
 "incorrect" = "¿Estás seguro de que has introducido dirección de email y la contraseña correctas?";
 "like" = "Me gusta";
 "like.remove" = "Ya no me gusta";
