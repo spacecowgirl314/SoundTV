@@ -808,6 +808,7 @@ SoundCloud Cocoa API
                     </tabBar>
                     <connections>
                         <segue destination="hHl-h9-7cm" kind="relationship" relationship="viewControllers" id="OPZ-2Z-Yf5"/>
+                        <segue destination="7Ce-ig-ihi" kind="relationship" relationship="viewControllers" id="Yd5-ok-UBA"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="FMy-RI-rRj"/>
                         <segue destination="zPq-xj-bdx" kind="relationship" relationship="viewControllers" id="D3q-Py-OK1"/>
                     </connections>
