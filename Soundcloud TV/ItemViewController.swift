@@ -128,15 +128,13 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
         }))
         
         var likeActionTitle = NSLocalizedString("like", comment: "Like")
-        var likeStyleType : UIAlertActionStyle = .Default
         if let isFavorited = item.userFavorite {
             if isFavorited == 1 {
                 likeActionTitle = NSLocalizedString("like.remove", comment: "Unlike")
-                likeStyleType = .Destructive
             }
         }
         
-        actionSheet.addAction(UIAlertAction(title: likeActionTitle, style: likeStyleType, handler: { (action: UIAlertAction) -> Void in
+        actionSheet.addAction(UIAlertAction(title: likeActionTitle, style: .Default, handler: { (action: UIAlertAction) -> Void in
             if let isFavorited = item.userFavorite {
                 if isFavorited != 1 {
                     // reflect favorite immediately, will change back upon error
