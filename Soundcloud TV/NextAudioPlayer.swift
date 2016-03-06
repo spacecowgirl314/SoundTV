@@ -32,7 +32,13 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
     static let sharedPlayer = SharedAudioPlayer()
     
     func reset() {
-        return
+        self.audioPlayer = nil
+        self.streamItems.removeAll()
+        self.favoriteItems.removeAll()
+        self.userItems.removeAll()
+        self.positionInPlaylist = 0
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("SoundCloudAPIClientDidLoadSongs", object: nil)
     }
     
     func insertStreamItems(items: [SoundCloudItem]) {
