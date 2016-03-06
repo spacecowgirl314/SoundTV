@@ -310,6 +310,5 @@ class NowPlayingViewController: UIViewController {
             }
         }
     }
-
 }
 

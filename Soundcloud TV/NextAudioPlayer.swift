@@ -223,46 +223,53 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
     }
     
     func nextItem() {
-        
+        self.jumpToItemAtIndex(self.positionInPlaylist+1)
     }
     
     func previousItem() {
-        
+        self.jumpToItemAtIndex(self.positionInPlaylist-1)
     }
     
     func jumpToItemAtIndex(index: Int) {
-        var asset: AVURLAsset
-        
-        // check overflow count
-        switch self.sourceType {
-        case .Stream:
-            asset = AVURLAsset(URL: streamItems[index].streamingUrl)
-        case .Favorites:
-            asset = AVURLAsset(URL: favoriteItems[index].streamingUrl)
-        case .User:
-            asset = AVURLAsset(URL: userItems[index].streamingUrl)
+        func currentCount() -> Int {
+            switch self.sourceType {
+            case .Stream:
+                return self.streamItems.count
+            case .Favorites:
+                return self.favoriteItems.count
+            case .User:
+                return self.userItems.count
+            }
         }
         
-        self.audioPlayer = nil
-        
-        let keys = ["playable"]
-        asset.loadValuesAsynchronouslyForKeys(keys) { () -> Void in
-            let playerItem = AVPlayerItem(asset: asset)
+        if positionInPlaylist < currentCount() {
+            var asset: AVURLAsset
             
+            // check overflow count
+            switch self.sourceType {
+            case .Stream:
+                asset = AVURLAsset(URL: streamItems[index].streamingUrl)
+            case .Favorites:
+                asset = AVURLAsset(URL: favoriteItems[index].streamingUrl)
+            case .User:
+                asset = AVURLAsset(URL: userItems[index].streamingUrl)
+            }
+            
+            let playerItem = AVPlayerItem(asset: asset)
             self.audioPlayer = AVPlayer(playerItem: playerItem)
-            self.audioPlayer!.play()
+            self.audioPlayer?.play()
             
             NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDidFinishPlaying:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.audioPlayer?.currentItem)
             NSNotificationCenter.defaultCenter().postNotificationName("SharedPlayerDidFinishObject", object: nil)
+            
+            positionInPlaylist = index
+            
+            if positionInPlaylist == self.itemsToPlay.count-1 {
+                self.getNextSongs()
+            }
+            
+            return
         }
-        
-        positionInPlaylist = index
-        
-        if positionInPlaylist == self.itemsToPlay.count-1 {
-            self.getNextSongs()
-        }
-        
-        return
     }
 }
