@@ -233,6 +233,7 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
     func jumpToItemAtIndex(index: Int) {
         var asset: AVURLAsset
         
+        // check overflow count
         switch self.sourceType {
         case .Stream:
             asset = AVURLAsset(URL: streamItems[index].streamingUrl)
@@ -241,6 +242,8 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
         case .User:
             asset = AVURLAsset(URL: userItems[index].streamingUrl)
         }
+        
+        self.audioPlayer = nil
         
         let keys = ["playable"]
         asset.loadValuesAsynchronouslyForKeys(keys) { () -> Void in
@@ -251,6 +254,7 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
             
             NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDidFinishPlaying:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.audioPlayer?.currentItem)
+            NSNotificationCenter.defaultCenter().postNotificationName("SharedPlayerDidFinishObject", object: nil)
         }
         
         positionInPlaylist = index
@@ -258,8 +262,6 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
         if positionInPlaylist == self.itemsToPlay.count-1 {
             self.getNextSongs()
         }
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("SharedPlayerDidFinishObject", object: nil)
         
         return
     }
