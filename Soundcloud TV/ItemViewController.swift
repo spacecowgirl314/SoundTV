@@ -181,7 +181,7 @@ class ItemViewController: UICollectionViewController, UIGestureRecognizerDelegat
         // this could also double as a follow button for following users that were reposted
 //        actionSheet.addAction(UIAlertAction(title: "Unfollow", style: .Destructive, handler: { (action: UIAlertAction) -> Void in
 //        }))
-        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("dismiss", comment: "Dissmiss"), style: .Default, handler: { (action: UIAlertAction) -> Void in
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("dismiss", comment: "Dissmiss"), style: .Cancel, handler: { (action: UIAlertAction) -> Void in
             return
         }))
         self.presentViewController(actionSheet, animated: true, completion: { () -> Void in
