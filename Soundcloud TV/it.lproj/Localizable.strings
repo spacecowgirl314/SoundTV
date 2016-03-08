@@ -6,7 +6,8 @@
   Copyright © 2015 Chloe Stars. All rights reserved.
 */
 
-"dimiss" = "Ignorare";
+"dismiss" = "Ignora";
+"goto.artist" = "Vai all'artista";
 "incorrect" = "Hai immesso e-mail e password corrette?";
 "like" = "Mi piace";
 "like.remove" = "Non mi piace più";
