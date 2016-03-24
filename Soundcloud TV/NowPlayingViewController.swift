@@ -31,7 +31,7 @@ class NowPlayingArtworkButton: UIButton {
     }
 }
 
-class NowPlayingViewController: UIViewController {
+class NowPlayingViewController: UIViewController, SharedAudioPlayerDelegate {
     @IBOutlet var artworkButton : NowPlayingArtworkButton!
     @IBOutlet var artistLabel : UILabel!
     @IBOutlet var trackLabel : UILabel!
@@ -44,28 +44,38 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet var artistLabelWidthConstraint : NSLayoutConstraint!
     @IBOutlet var trackLabelWidthConstraint : NSLayoutConstraint!
     
-    @IBOutlet var vibrancyView : UIVisualEffectView!
     @IBOutlet var vibrancyImageView : UIImageView!
     
     @IBOutlet var likeButton : UIButton!
     
     let player = SharedAudioPlayer.sharedPlayer
+    var interval : Double?
     var isShowingOptions = false
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        SharedAudioPlayer.sharedPlayer.delegate = self
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.artworkButton.owner = self
+        SharedAudioPlayer.sharedPlayer.delegate = self
         
         // clear out the placement text
         artistLabel.text = ""
         trackLabel.text = ""
         elapsedLabel.text = "--:--"
         timeLeftLabel.text = "--:--"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NowPlayingViewController.updateNowPlaying), name: "SharedPlayerDidFinishObject", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NowPlayingViewController.syncScrubber), name: "SharedAudioPlayerUpdatedTimePlayed", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNowPlaying", name: "SharedPlayerDidFinishObject", object: nil)
+        SharedAudioPlayer.sharedPlayer.delegate = self
+        self.updateNowPlaying()
         
         if animated {
             vibrancyImageView.alpha = 0
@@ -74,7 +84,6 @@ class NowPlayingViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.updateNowPlaying()
         
         if animated {
             UIView.animateWithDuration(1) {
@@ -93,7 +102,6 @@ class NowPlayingViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "SharedPlayerDidFinishObject", object: nil)
         isShowingOptions = true
         self.revealOptions()
     }
@@ -148,22 +156,23 @@ class NowPlayingViewController: UIViewController {
                 }
             }
             
-            // setup playback progress bar indicator
-            var interval = 0.1
-            
-            let playerDuration = self.playerItemDuration()
-            let duration = CMTimeGetSeconds(playerDuration);
-            if isfinite(duration)
-            {
-                let width = CGRectGetWidth(progressBar.bounds);
-                interval = 0.5 * duration / Double(width);
-            }
-            
-            // we're protected from calling on a nil player because we return if we get an invalid time
-            player.audioPlayer?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(interval, Int32(NSEC_PER_SEC)), queue: nil) { (time: CMTime) -> Void in
-                self.syncScrubber()
-            }
+            // this is important, if we don't do this, it won't set the progress if we're paused and switch to now playing
+            self.syncScrubber()
         }
+    }
+    
+    func timeInterval() -> Double {
+        var interval = 0.1
+        
+        let playerDuration = self.playerItemDuration()
+        let duration = CMTimeGetSeconds(playerDuration);
+        if isfinite(duration)
+        {
+            let width = CGRectGetWidth(progressBar.bounds);
+            interval = 0.5 * duration / Double(width);
+        }
+        
+        return interval
     }
     
     func playerItemDuration() -> CMTime

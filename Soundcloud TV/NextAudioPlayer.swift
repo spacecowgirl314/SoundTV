@@ -15,7 +15,14 @@ enum CurrentSourceType: Int {
     case User
 }
 
+protocol SharedAudioPlayerDelegate {
+    func timeInterval() -> Double
+    func syncScrubber()
+}
+
 class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
+    var delegate: SharedAudioPlayerDelegate?
+    
     var streamItems = [AnyObject]()
     var favoriteItems = [AnyObject]()
     var userItems = [AnyObject]()
@@ -28,6 +35,8 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
     var nextStreamPartURL: NSURL?
     var nextFavoritesPartURL: NSURL?
     var nextUserPartURL: NSURL?
+    
+    var timeObserver: AnyObject!
     
     static let sharedPlayer = SharedAudioPlayer()
     
@@ -262,11 +271,24 @@ class SharedAudioPlayer: NSObject, AVAudioPlayerDelegate {
             }
             
             let playerItem = AVPlayerItem(asset: asset)
-            self.audioPlayer = AVPlayer(playerItem: playerItem)
+            if self.audioPlayer == nil {
+                self.audioPlayer = AVPlayer(playerItem: playerItem)
+                self.timeObserver = self.audioPlayer?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds((self.delegate?.timeInterval())!, Int32(NSEC_PER_SEC)), queue: nil, usingBlock: { (time: CMTime) in
+                    self.delegate?.syncScrubber()
+                })
+            }
+            else {
+                self.audioPlayer?.removeTimeObserver(self.timeObserver)
+                self.timeObserver = self.audioPlayer?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds((self.delegate?.timeInterval())!, Int32(NSEC_PER_SEC)), queue: nil, usingBlock: { (time: CMTime) in
+                    self.delegate?.syncScrubber()
+                })
+                self.audioPlayer?.pause()
+                self.audioPlayer?.replaceCurrentItemWithPlayerItem(playerItem)
+            }
             self.audioPlayer?.play()
             
             NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDidFinishPlaying:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.audioPlayer?.currentItem)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SharedAudioPlayer.itemDidFinishPlaying(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: self.audioPlayer?.currentItem)
             NSNotificationCenter.defaultCenter().postNotificationName("SharedPlayerDidFinishObject", object: nil)
             
             positionInPlaylist = index
