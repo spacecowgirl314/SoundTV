@@ -1,6 +1,9 @@
 {
   "layers" : [
     {
+      "filename" : "Speaker.imagestacklayer"
+    },
+    {
       "filename" : "Cloud.imagestacklayer"
     },
     {

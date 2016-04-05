@@ -56,7 +56,10 @@
         if ([[dict objectForKey:@"waveform_url"] isKindOfClass:[NSString class]])
             self.waveformUrl = [NSURL URLWithString:[dict objectForKey:@"waveform_url"]];
         if (self.streamable)
-            self.playerItem = [AVPlayerItem playerItemWithURL:self.streamingUrl];
+        {
+            AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:self.streamingUrl options:nil];
+            self.playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+        }
     }
     return self;
 }
